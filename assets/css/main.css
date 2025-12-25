@@ -2507,8 +2507,7 @@ background: linear-gradient(45deg, var(--accent-color), transparent 0%);
 }
 
 .portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-slide img {
-  aspect-ratio: 3/2;
-  object-fit: cover;
+
   width: 100%;
 }
 
