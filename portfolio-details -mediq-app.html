@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>MediQ App - Hospital Antibiotic Management</title>
+  <meta name="description" content="MediQ App – Hospital Antibiotic Management System - Upcoming Flutter Mobile Application">
+  <meta name="keywords" content="flutter, mobile app, healthcare, hospital, pharmacy, antibiotics, firebase, dart">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Style
+  * Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
+  * Updated: Jul 02 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .healthcare-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .pharmacy-badge {
+      background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    }
+    .medical-icon {
+      font-size: 2rem;
+      color: #667eea;
+    }
+    .feature-card {
+      border-left: 4px solid #667eea;
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .ward-track {
+      background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .stock-track {
+      background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%);
+    }
+    .report-gen {
+      background: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+    }
+    .workflow-card {
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    .workflow-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <!-- Uncomment the line below if you also wish to use an text logo -->
+        <!-- <h1 class="sitename">Style</h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+
+        <div class="profile-img">
+          <img src="assets/img/profile/profile-malitha.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center active">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.webp" alt=""> -->
+          <h1 class="sitename">Malitha Tishamal</h1>
+        </a>
+
+        <div class="d-flex" style="gap: 8px;">
+          <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
+        </div>
+
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php#about">About</a></li>
+          <li><a href="index.php#resume">Resume</a></li>
+          <li><a href="index.php#portfolio">Portfolio</a></li>
+          <li><a href="index.php#portfolio2">Projects</a></li>
+          <li><a href="index.php#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Upcoming Project Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">MediQ App</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <!-- Hero Banner -->
+              <div class="hero-banner healthcare-gradient rounded-4 p-4 text-white mb-4" data-aos="zoom-in">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="me-3">
+                    <i class="bi bi-capsule-pill medical-icon"></i>
+                  </div>
+                  <div>
+                    <h3 class="mb-0">MediQ App</h3>
+                    <p class="mb-0">Hospital Antibiotic Management System</p>
+                  </div>
+                </div>
+                <div class="ribbon bg-warning text-dark px-3 py-1 rounded-pill d-inline-block">
+                  <i class="bi bi-lightning-charge-fill me-1"></i> COMING SOON
+                </div>
+              </div>
+
+              <!-- App Screenshots Carousel -->
+              <div class="main-image">
+                <div class="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 1000,
+                      "autoplay": {
+                        "delay": 3000
+                      },
+                      "effect": "fade",
+                      "slidesPerView": 1,
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      }
+                    }
+                  </script>
+
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="app-screen-container">
+                        <img src="assets/img/portfolio/mediq/dashboard.jpg" alt="MediQ Dashboard" class="img-fluid rounded-3">
+                        <div class="screen-label">📊 Dashboard Overview</div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="app-screen-container">
+                        <img src="assets/img/portfolio/mediq/stock-management.jpg" alt="Stock Management" class="img-fluid rounded-3">
+                        <div class="screen-label">💊 Stock Management</div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="app-screen-container">
+                        <img src="assets/img/portfolio/mediq/ward-tracking.jpg" alt="Ward Tracking" class="img-fluid rounded-3">
+                        <div class="screen-label">🏥 Ward-wise Tracking</div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="app-screen-container">
+                        <img src="assets/img/portfolio/mediq/reports.jpg" alt="Reports" class="img-fluid rounded-3">
+                        <div class="screen-label">📄 Automated Reports</div>
+                      </div>
+                    </div>
+                  </div>
+                    
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+
+              <!-- Thumbnail Grid -->
+              <div class="thumbnail-grid mt-4" data-aos="fade-up" data-aos-delay="200">
+                <h5 class="mb-3"><i class="bi bi-grid-3x3-gap"></i> App Screens Preview</h5>
+                <div class="row g-2">
+                  <div class="col-3">
+                    <div class="app-thumbnail">
+                      <img src="assets/img/portfolio/mediq/login.jpg" alt="Login Screen" class="img-fluid rounded-2 glightbox">
+                      <span class="thumbnail-label">Login</span>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="app-thumbnail">
+                      <img src="assets/img/portfolio/mediq/pharmacist.jpg" alt="Pharmacist View" class="img-fluid rounded-2 glightbox">
+                      <span class="thumbnail-label">Pharmacist</span>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="app-thumbnail">
+                      <img src="assets/img/portfolio/mediq/admin.jpg" alt="Admin Panel" class="img-fluid rounded-2 glightbox">
+                      <span class="thumbnail-label">Admin</span>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="app-thumbnail">
+                      <img src="assets/img/portfolio/mediq/scan.jpg" alt="Barcode Scan" class="img-fluid rounded-2 glightbox">
+                      <span class="thumbnail-label">Scan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Stack -->
+              <div class="tech-stack-section mt-4" data-aos="fade-up" data-aos-delay="300">
+                <h5><i class="bi bi-cpu"></i> Technology Stack</h5>
+                <div class="tech-stack-badges">
+                  <span class="tech-badge flutter">Flutter</span>
+                  <span class="tech-badge dart">Dart</span>
+                  <span class="tech-badge firebase">Firebase Auth</span>
+                  <span class="tech-badge firestore">Firestore DB</span>
+                  <span class="tech-badge storage">Firebase Storage</span>
+                  <span class="tech-badge cloudinary">Cloudinary</span>
+                  <span class="tech-badge barcode">Barcode Scan</span>
+                  <span class="tech-badge api">REST API</span>
+                </div>
+              </div>
+
+              <!-- Development Timeline -->
+              <div class="timeline-section mt-4" data-aos="fade-up" data-aos-delay="400">
+                <h5><i class="bi bi-calendar-week"></i> Development Timeline</h5>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h6>Phase 1: Research & Design</h6>
+                      <p>Completed - Jan 2025</p>
+                      <span class="badge bg-success">100% Complete</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h6>Phase 2: Core Development</h6>
+                      <p>In Progress - Feb 2025</p>
+                      <span class="badge bg-primary">70% Complete</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h6>Phase 3: Testing & QA</h6>
+                      <p>Starting Mar 2025</p>
+                      <span class="badge bg-secondary">Not Started</span>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h6>Phase 4: Launch</h6>
+                      <p>Expected Apr 2025</p>
+                      <span class="badge bg-warning">Coming Soon</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge upcoming">Upcoming Project</span>
+                  <span class="project-badge mobile">Flutter Mobile App</span>
+                  <span class="project-badge healthcare">Healthcare Tech</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item">
+                    <i class="bi bi-calendar-check"></i>
+                    <span>Development: November 2025 - Present</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="bi bi-rocket-takeoff"></i>
+                    <span>Launch: Q2 2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="project-title">MediQ App</h2>
+              <p class="project-subtitle">Hospital Antibiotic Management System</p>
+
+              <div class="project-intro mt-4">
+                <div class="alert alert-primary" role="alert" data-aos="fade-up">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-megaphone-fill me-3 fs-4"></i>
+                    <div>
+                      <h5 class="alert-heading">🚀 Exciting Announcement!</h5>
+                      <p class="mb-0">I'm currently developing MediQ - a revolutionary mobile application built with Flutter & Dart, powered by Firebase services, designed to transform hospital antibiotic management.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mt-3" data-aos="fade-up" data-aos-delay="100">
+                  MediQ App is an innovative mobile solution designed specifically for hospital admins and pharmacists to streamline antibiotic workflows, enhance accountability, and reduce wastage through intelligent, cloud-based management.
+                </p>
+              </div>
+
+              <!-- Key Features Highlight -->
+              <div class="features-highlight mt-4" data-aos="fade-up" data-aos-delay="200">
+                <h4><i class="bi bi-stars"></i> Key Features</h4>
+                <div class="row g-3 mt-3">
+                  <div class="col-md-6">
+                    <div class="feature-card p-3 bg-light rounded-3">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="feature-icon me-2 ward-track rounded-circle p-2">
+                          <i class="bi bi-capsule text-white"></i>
+                        </div>
+                        <h6 class="mb-0">Antibiotic Tracking</h6>
+                      </div>
+                      <p class="mb-0 small">Release & return tracking with barcode scanning</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-card p-3 bg-light rounded-3">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="feature-icon me-2 stock-track rounded-circle p-2">
+                          <i class="bi bi-clipboard-data text-white"></i>
+                        </div>
+                        <h6 class="mb-0">Stock Monitoring</h6>
+                      </div>
+                      <p class="mb-0 small">Real-time stock levels with alerts</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-card p-3 bg-light rounded-3">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="feature-icon me-2 report-gen rounded-circle p-2">
+                          <i class="bi bi-hospital text-white"></i>
+                        </div>
+                        <h6 class="mb-0">Ward Management</h6>
+                      </div>
+                      <p class="mb-0 small">Ward-wise usage logs and analytics</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-card p-3 bg-light rounded-3">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="feature-icon me-2 bg-info rounded-circle p-2">
+                          <i class="bi bi-file-earmark-text text-white"></i>
+                        </div>
+                        <h6 class="mb-0">Automated Reports</h6>
+                      </div>
+                      <p class="mb-0 small">Generate comprehensive reports automatically</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- User Roles Section -->
+              <div class="user-roles mt-4" data-aos="fade-up" data-aos-delay="300">
+                <h4><i class="bi bi-people-fill"></i> Designed For</h4>
+                <div class="row g-3 mt-3">
+                  <div class="col-md-6">
+                    <div class="role-card card h-100 workflow-card">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                          <div class="role-icon bg-primary rounded-circle p-2 me-3">
+                            <i class="bi bi-shield-check text-white"></i>
+                          </div>
+                          <h5 class="card-title mb-0">Hospital Admins</h5>
+                        </div>
+                        <ul class="mb-0">
+                          <li>Full system oversight</li>
+                          <li>User management</li>
+                          <li>Analytics dashboard</li>
+                          <li>Audit trails</li>
+                          <li>System configuration</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="role-card card h-100 workflow-card">
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                          <div class="role-icon bg-success rounded-circle p-2 me-3">
+                            <i class="bi bi-capsule text-white"></i>
+                          </div>
+                          <h5 class="card-title mb-0">Pharmacists</h5>
+                        </div>
+                        <ul class="mb-0">
+                          <li>Antibiotic dispensing</li>
+                          <li>Stock management</li>
+                          <li>Patient records</li>
+                          <li>Return processing</li>
+                          <li>Expiry tracking</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detailed Feature Breakdown -->
+              <div class="accordion mt-4" id="featureAccordion" data-aos="fade-up" data-aos-delay="400">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                      <i class="bi bi-gear-fill me-2"></i> Core Functionality
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <h6>💊 Antibiotic Release & Return Tracking</h6>
+                      <ul>
+                        <li>Barcode/QR code scanning for quick dispensing</li>
+                        <li>Digital signatures for authentication</li>
+                        <li>Return tracking with condition monitoring</li>
+                        <li>Expired medication handling system</li>
+                      </ul>
+                      
+                      <h6 class="mt-3">📊 Real-time Stock Monitoring</h6>
+                      <ul>
+                        <li>Live stock level updates across all departments</li>
+                        <li>Automated low-stock alerts</li>
+                        <li>Expiry date tracking with notifications</li>
+                        <li>Batch number tracking for traceability</li>
+                      </ul>
+                      
+                      <h6 class="mt-3">🏥 Ward-wise Usage Analytics</h6>
+                      <ul>
+                        <li>Department-specific consumption tracking</li>
+                        <li>Usage patterns and trends analysis</li>
+                        <li>Comparison between wards/units</li>
+                        <li>Budget monitoring and forecasting</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                      <i class="bi bi-graph-up me-2"></i> Reporting & Analytics
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <h6>📄 Automated Report Generation</h6>
+                      <ul>
+                        <li>Daily/Monthly/Quarterly usage reports</li>
+                        <li>Customizable report templates</li>
+                        <li>Export to PDF, Excel, CSV formats</li>
+                        <li>Scheduled report delivery via email</li>
+                      </ul>
+                      
+                      <h6 class="mt-3">📈 Advanced Analytics Dashboard</h6>
+                      <ul>
+                        <li>Real-time consumption metrics</li>
+                        <li>Wastage analysis and insights</li>
+                        <li>Cost analysis and savings reports</li>
+                        <li>Compliance tracking and alerts</li>
+                      </ul>
+                      
+                      <h6 class="mt-3">🔍 Audit & Compliance</h6>
+                      <ul>
+                        <li>Complete audit trail for all transactions</li>
+                        <li>Regulatory compliance tracking</li>
+                        <li>Access logs and activity monitoring</li>
+                        <li>Data integrity verification</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                      <i class="bi bi-shield-check me-2"></i> Security & Integration
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <h6>🔒 Enterprise-grade Security</h6>
+                      <ul>
+                        <li>Role-based access control (RBAC)</li>
+                        <li>End-to-end encryption for sensitive data</li>
+                        <li>Two-factor authentication</li>
+                        <li>HIPAA/GDPR compliance ready</li>
+                      </ul>
+                      
+                      <h6 class="mt-3">🔄 System Integration</h6>
+                      <ul>
+                        <li>Hospital Management System (HMS) integration</li>
+                        <li>Electronic Health Records (EHR) compatibility</li>
+                        <li>Pharmacy inventory system sync</li>
+                        <li>RESTful API for third-party services</li>
+                      </ul>
+                      
+                      <h6 class="mt-3">☁️ Cloud Infrastructure</h6>
+                      <ul>
+                        <li>Firebase for real-time data sync</li>
+                        <li>Cloudinary for document/image management</li>
+                        <li>Scalable cloud architecture</li>
+                        <li>Automated backups and recovery</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Benefits Section -->
+              <div class="benefits-section mt-4" data-aos="fade-up" data-aos-delay="500">
+                <h4><i class="bi bi-award-fill"></i> Key Benefits</h4>
+                <div class="row g-3 mt-3">
+                  <div class="col-md-6">
+                    <div class="benefit-item d-flex align-items-start">
+                      <div class="benefit-icon me-3">
+                        <i class="bi bi-speedometer2 text-primary"></i>
+                      </div>
+                      <div>
+                        <h6>Operational Efficiency</h6>
+                        <p class="small mb-0">Streamline workflows and reduce manual processes by 60%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="benefit-item d-flex align-items-start">
+                      <div class="benefit-icon me-3">
+                        <i class="bi bi-cash-coin text-success"></i>
+                      </div>
+                      <div>
+                        <h6>Cost Reduction</h6>
+                        <p class="small mb-0">Reduce antibiotic wastage and optimize inventory costs</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="benefit-item d-flex align-items-start">
+                      <div class="benefit-icon me-3">
+                        <i class="bi bi-shield-check text-info"></i>
+                      </div>
+                      <div>
+                        <h6>Enhanced Accountability</h6>
+                        <p class="small mb-0">Complete audit trail for all antibiotic transactions</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="benefit-item d-flex align-items-start">
+                      <div class="benefit-icon me-3">
+                        <i class="bi bi-clipboard-data text-warning"></i>
+                      </div>
+                      <div>
+                        <h6>Data-driven Decisions</h6>
+                        <p class="small mb-0">Real-time analytics for informed decision making</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Stack Details -->
+              <div class="tech-details mt-4" data-aos="fade-up" data-aos-delay="600">
+                <h4><i class="bi bi-code-slash"></i> Technical Excellence</h4>
+                <div class="card mt-3">
+                  <div class="card-body">
+                    <h6>📱 Flutter & Dart Advantages</h6>
+                    <ul class="mb-3">
+                      <li>Single codebase for iOS and Android</li>
+                      <li>Native performance and smooth animations</li>
+                      <li>Hot reload for rapid development</li>
+                      <li>Rich widget library for beautiful UI</li>
+                    </ul>
+                    
+                    <h6>☁️ Firebase Ecosystem</h6>
+                    <ul>
+                      <li>Firebase Auth for secure authentication</li>
+                      <li>Cloud Firestore for real-time database</li>
+                      <li>Firebase Storage for secure file management</li>
+                      <li>Cloud Functions for backend logic</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Get Involved Section -->
+              <div class="involved-section mt-4" data-aos="fade-up" data-aos-delay="700">
+                <div class="card bg-light">
+                  <div class="card-body">
+                    <h5><i class="bi bi-bell-fill"></i> Stay Updated</h5>
+                    <p class="mb-3">Get notified when MediQ App launches and learn about pilot program opportunities.</p>
+                    <form class="notify-form">
+                      <div class="row g-2">
+                        <div class="col-md-8">
+                          <input type="email" class="form-control" placeholder="Your email address" required>
+                        </div>
+                        <div class="col-md-4">
+                          <button type="submit" class="btn btn-primary w-100">Notify Me</button>
+                        </div>
+                      </div>
+                      <div class="form-text mt-2">We respect your privacy. No spam, ever.</div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Navigation Buttons -->
+              <div class="cta-buttons mt-4" data-aos="fade-up" data-aos-delay="800">
+                <div class="d-flex gap-3">
+                  <a href="portfolio-details-career-system.html" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i> Previous Project
+                  </a>
+                  <a href="portfolio-details-ceytrack.html" class="btn btn-outline-primary">
+                    Next Project <i class="bi bi-arrow-right ms-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Malitha Tishamal</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you also wish to use an text logo -->
+        <!-- <h1 class="sitename">Style</h1>  -->
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Notify Form Script -->
+  <script>
+    document.querySelector('.notify-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      
+      // Show success message
+      const cardBody = this.closest('.card-body');
+      cardBody.innerHTML = `
+        <div class="text-center py-4">
+          <i class="bi bi-check-circle-fill text-success display-4 mb-3"></i>
+          <h5>Thank You!</h5>
+          <p>We'll notify you at <strong>${email}</strong> when MediQ App launches.</p>
+          <p class="small text-muted">You'll be among the first to know about pilot programs and early access.</p>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
+
+</html>
