@@ -3,26 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malitha Tishamal – Fullstack Developer | DevOps | AI & Cybersecurity Enthusiast</title>
+  <title>Malitha Tishamal | Full-Stack Developer • DevOps • AI & Cybersecurity</title>
 
-  <!-- Meta Description for SEO -->
-  <meta name="description" content="Malitha Tishamal – Fullstack Developer, DevOps Engineer, AI & Cybersecurity Enthusiast. I create innovative web and mobile applications with secure, modern, and efficient solutions.">
+<!-- Primary Meta Tags -->
+<meta name="description" content="Official portfolio of Malitha Tishamal — Full-Stack Developer specializing in modern web & mobile applications, DevOps automation, AI solutions, and cybersecurity-focused systems.">
+<meta name="keywords" content="Malitha Tishamal, Full Stack Developer, DevOps Engineer, AI Developer, Cybersecurity, Web Developer Sri Lanka, Software Engineer Portfolio">
+<meta name="author" content="Malitha Tishamal">
+<meta name="robots" content="index, follow">
 
-  <!-- Keywords (optional) -->
-  <meta name="keywords" content="Malitha Tishamal, Fullstack Developer, DevOps, AI, Cybersecurity, Web Developer, Mobile App Developer, Software Engineer, Freelancer">
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.malithatishamal.42web.io/">
 
-  <!-- Open Graph / Social Preview -->
-  <meta property="og:title" content="Malitha Tishamal – Fullstack Developer | DevOps | AI & Cybersecurity Enthusiast">
-  <meta property="og:description" content="Creating innovative web and mobile solutions with expertise in Fullstack Development, DevOps, AI, and Cybersecurity.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="path/to/your-social-preview-image.jpg">
-  <meta property="og:url" content="https://yourwebsite.com">
+<!-- Open Graph / Social Preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Malitha Tishamal | Full-Stack Developer • DevOps • AI & Cybersecurity">
+<meta property="og:description" content="Professional portfolio of Malitha Tishamal — building secure, scalable web & mobile applications using DevOps, AI, and cybersecurity best practices.">
+<meta property="og:image" content="https://www.malithatishamal.42web.io/assets/img/seo-preview.jpg">
+<meta property="og:url" content="https://www.malithatishamal.42web.io/">
+<meta property="og:site_name" content="Malitha Tishamal Portfolio">
 
-  <!-- Optional Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Malitha Tishamal – Fullstack Developer | DevOps | AI & Cybersecurity Enthusiast">
-  <meta name="twitter:description" content="Creating innovative web and mobile solutions with expertise in Fullstack Development, DevOps, AI, and Cybersecurity.">
-  <meta name="twitter:image" content="path/to/your-social-preview-image.jpg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Malitha Tishamal | Full-Stack Developer • DevOps • AI">
+<meta name="twitter:description" content="Secure and scalable web & mobile solutions by Malitha Tishamal — Full-Stack Developer with DevOps, AI & cybersecurity expertise.">
+<meta name="twitter:image" content="https://www.malithatishamal.42web.io/assets/img/seo-preview.jpg">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -43,13 +47,20 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Style
-  * Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
-  * Updated: Jul 02 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Malitha Tishamal",
+  "url": "https://www.malithatishamal.42web.io",
+  "jobTitle": "Full-Stack Developer DevOps AI & Cybersecurity",
+  "sameAs": [
+    "https://www.linkedin.com/in/malitha-tishamal/",
+    "https://github.com/malitha-tishamal"
+  ]
+}
+</script>
+
 </head>
 
 <body class="index-page">
@@ -947,7 +958,7 @@
                       data-glightbox="title: Project Of The Event; description: 1st Place Desktop & Mobile Application Development – INTROVA 1.0">
                       <i class="bi bi-arrows-angle-expand"></i>
                     </a>
-                    <a href="https://www.linkedin.com/posts/malitha-tishamal_applicationdevelopment-webdevelopment-innovation-activity-7271807286140911617-vdts">
+                    <a href="https://www.linkedin.com/posts/malitha-tishamal_applicationdevelopment-webdevelopment-innovation-activity-7271807286140911617-vdts" target="_blank">
                       <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>
@@ -965,7 +976,7 @@
               <div class="entry-overlay">
                 <div class="overlay-content">
                   <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">INTROVA 1.0 HNDIT Event</div>
-                  <h3 class="entry-title">Project Presentation</h3>
+                  <h3 class="entry-title">Event Project Presentation</h3>
                   <div class="entry-links">
                     <a href="assets/img/portfolio/Screenshot 2025-08-17 203217.png"
                     class="glightbox"
@@ -973,7 +984,7 @@
                     data-glightbox="title: E-Learning Platform; description: INTROVA 1.0 – Pulzar Club HNDIT Galle (Dec 2024)">
                     <i class="bi bi-arrows-angle-expand"></i>
                   </a>
-                  <a href="portfolio-details-2.html">
+                  <a href="https://www.linkedin.com/posts/malitha-tishamal_applicationdevelopment-webdevelopment-innovation-activity-7271807286140911617-vdts?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -999,7 +1010,7 @@
                   data-glightbox="title: Software Developer; description: Irrigation Department – Galle">
                   <i class="bi bi-arrows-angle-expand"></i>
                 </a>
-                <a href="portfolio-details-3.html">
+                <a href="https://www.linkedin.com/posts/malitha-tishamal_just-be-yourself-irrigation-department-activity-7341829512214548481-D_IS?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -1025,7 +1036,7 @@
                 data-glightbox="title: Project Presentation; description: INVENT-X 25 – Engineering Dept. HNDE Galle">
                 <i class="bi bi-arrows-angle-expand"></i>
               </a>
-              <a href="portfolio-details-4.html">
+              <a href="https://www.linkedin.com/posts/malitha-tishamal_newest-it-projects-presentation-inventx25-activity-7343868914407198724-f5Rc?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -1051,7 +1062,7 @@
               data-glightbox="title: INVENT-X 25; description: Engineering Department – HNDE Galle">
               <i class="bi bi-arrows-angle-expand"></i>
             </a>
-            <a href="portfolio-details-5.html">
+            <a href="https://www.facebook.com/HNDE.Labuduwa/posts/1170586905098896?ref=embed_post" target="_blank">
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>
@@ -1077,7 +1088,7 @@
             data-glightbox="title: Mobile Application Development; description: Smart field operation tools developed for Irrigation Dept Galle">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-6.html">
+          <a href="https://www.linkedin.com/posts/malitha-tishamal_appdevelopment-digitaltransformation-irrigationdepartment-activity-7392110600799195136-bwfO?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -1103,7 +1114,7 @@
             data-glightbox="title: Electronics Practical Training; description: A/L Engineering Technology – Training Students A/L Practicle Electronic">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-7.html">
+          <a href="portfolio-details-electronic-traning-students.html">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -1129,7 +1140,7 @@
             data-glightbox="title: Electrical Practical Training; description: A/L Engineering Technology – Training Students A/L Practicle Electricle">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-8.html">
+          <a href="portfolio-details-electricle-traning-students.html">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -1266,6 +1277,7 @@
   </figure>
 </article>
 </div>
+
 
 <!-- Edulk Learning Management System -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
