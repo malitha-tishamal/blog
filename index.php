@@ -2,31 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malitha Tishamal | Full-Stack Developer • DevOps • AI & Cybersecurity</title>
-
-<!-- Primary Meta Tags -->
-<meta name="description" content="Official portfolio of Malitha Tishamal — Full-Stack Developer specializing in modern web & mobile applications, DevOps automation, AI solutions, and cybersecurity-focused systems.">
-<meta name="keywords" content="Malitha Tishamal, Full Stack Developer, DevOps Engineer, AI Developer, Cybersecurity, Web Developer Sri Lanka, Software Engineer Portfolio">
-<meta name="author" content="Malitha Tishamal">
-<meta name="robots" content="index, follow">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://www.malithatishamal.42web.io/">
-
-<!-- Open Graph / Social Preview -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Malitha Tishamal | Full-Stack Developer • DevOps • AI & Cybersecurity">
-<meta property="og:description" content="Professional portfolio of Malitha Tishamal — building secure, scalable web & mobile applications using DevOps, AI, and cybersecurity best practices.">
-<meta property="og:image" content="https://www.malithatishamal.42web.io/assets/img/seo-preview.jpg">
-<meta property="og:url" content="https://www.malithatishamal.42web.io/">
-<meta property="og:site_name" content="Malitha Tishamal Portfolio">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Malitha Tishamal | Full-Stack Developer • DevOps • AI">
-<meta name="twitter:description" content="Secure and scalable web & mobile solutions by Malitha Tishamal — Full-Stack Developer with DevOps, AI & cybersecurity expertise.">
-<meta name="twitter:image" content="https://www.malithatishamal.42web.io/assets/img/seo-preview.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  
+  <!-- Primary Title with Focus Keywords -->
+  <title>Malitha Tishamal – Full Stack Developer & DevOps Engineer | AI & Cybersecurity Specialist</title>
+  
+  <!-- Comprehensive Meta Description -->
+  <meta name="description" content="Malitha Tishamal: Expert Full Stack Developer & DevOps Engineer specializing in React, Node.js, Python, cloud solutions, AI integration, and cybersecurity. Building scalable web and mobile applications with modern technologies.">
+  
+  <!-- Semantic Keywords Structure -->
+  <meta name="keywords" content="
+    Malitha Tishamal, 
+    Full Stack Developer Sri Lanka, 
+    DevOps Engineer, 
+    Cybersecurity Expert, 
+    AI Developer, 
+    Web Developer Colombo, 
+    React Developer, 
+    Node.js Developer, 
+    Python Developer, 
+    Cloud Solutions, 
+    API Development, 
+    Software Engineer Sri Lanka, 
+    Freelance Developer,
+    Mobile App Development,
+    System Security,
+    Machine Learning,
+    Docker, Kubernetes,
+    CI/CD Pipelines,
+    Microservices
+  ">
+  
+  <!-- Author with Credentials -->
+  <meta name="author" content="Malitha Tishamal - Full Stack Developer & DevOps Engineer">
+  
+  <!-- Advanced Robots Directives -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- Canonical URL with your actual domain -->
+  <link rel="canonical" href="https://malithatishamal.42web.io/">
+  
+  <!-- Comprehensive Open Graph Protocol -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_LK">
+  <meta property="og:site_name" content="Malitha Tishamal - Developer Portfolio">
+  <meta property="og:title" content="Malitha Tishamal – Full Stack Developer | DevOps | AI & Cybersecurity">
+  <meta property="og:description" content="Professional Full Stack Developer & DevOps Engineer creating secure, scalable applications with React, Node.js, Python, cloud infrastructure, and AI integration.">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/social-preview.jpg">
+  <meta property="og:image:alt" content="Malitha Tishamal - Full Stack Developer & DevOps Engineer">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://malithatishamal.42web.io/">
+  
+  <!-- Enhanced Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@malithatishamal">
+  <meta name="twitter:creator" content="@malithatishamal">
+  <meta name="twitter:title" content="Malitha Tishamal – Full Stack & DevOps Engineer">
+  <meta name="twitter:description" content="Building secure, scalable web applications with expertise in Full Stack Development, DevOps, AI integration, and cybersecurity.">
+  <meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/profile/profile-malitha.jpg">
+  <meta name="twitter:image:alt" content="Portfolio of Malitha Tishamal - Developer & Engineer">
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="subject" content="Full Stack Development, DevOps Engineering, Cybersecurity, Web Development">
+  <meta name="classification" content="Technology, Software Development, IT Services">
+  <meta name="language" content="en">
+  <meta name="coverage" content="Worldwide">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="General">
+  <meta name="revisit-after" content="15 days">
+  <meta name="theme-color" content="#2563eb">
+  
+  <!-- Mobile Optimization -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Structured Data / JSON-LD for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://malithatishamal.42web.io/#person",
+    "name": "Malitha Tishamal",
+    "url": "https://malithatishamal.42web.io",
+    "image": "https://malithatishamal.42web.io/assets/img/profile.jpg",
+    "jobTitle": "Full Stack Developer & DevOps Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance Developer"
+    },
+    "description": "Expert Full Stack Developer and DevOps Engineer specializing in secure web applications, AI integration, and cybersecurity solutions.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Sri Lanka"
+    },
+    "sameAs": [
+      "https://github.com/malitha-tishamal",
+      "https://www.linkedin.com/in/malitha-tishamal/",
+      "https://twitter.com/malithatishamal"
+    ],
+    "knowsAbout": [
+      "Full Stack Development",
+      "DevOps Engineering",
+      "Cybersecurity",
+      "AI and Machine Learning",
+      "Web Application Development",
+      "Cloud Computing",
+      "React.js",
+      "Node.js",
+      "Python",
+      "Docker",
+      "Kubernetes",
+      "API Development"
+    ],
+    "offers": {
+      "@type": "Service",
+      "serviceType": "Web Development",
+      "description": "Custom web application development with focus on security, scalability, and performance"
+    }
+  }
+  </script>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -47,20 +148,13 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Malitha Tishamal",
-  "url": "https://www.malithatishamal.42web.io",
-  "jobTitle": "Full-Stack Developer DevOps AI & Cybersecurity",
-  "sameAs": [
-    "https://www.linkedin.com/in/malitha-tishamal/",
-    "https://github.com/malitha-tishamal"
-  ]
-}
-</script>
-
+  <!-- =======================================================
+  * Template Name: Style
+  * Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
+  * Updated: Jul 02 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -937,218 +1031,647 @@
             <li data-filter=".filter-traning">
               Traning Programs
             </li>
+
+            <li data-filter=".filter-travel">
+              Travel
+            </li>
           </ul>
 
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
 
            <!-- INTROVA 1.0 – Project of the Event -->
-           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-            <article class="portfolio-entry">
-              <figure class="entry-image" style="width: 380px; height: 380px;">
-                <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_f2dbf627.jpg" class="img-fluid" alt="Introva Event Image" loading="lazy">
-                <div class="entry-overlay">
-                  <div class="overlay-content">
-                    <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">INTROVA 1.0 HNDIT Event</div>
-                    <h4 class="entry-title">Project Of The Event</h4>
-                    <h6 class="entry-title">1<sup>st</sup> Place – Desktop & Mobile App Development</h6>
-                    <div class="entry-links">
-                      <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_f2dbf627.jpg"
-                      class="glightbox"
-                      data-gallery="portfolio-gallery-ui"
-                      data-glightbox="title: Project Of The Event; description: 1st Place Desktop & Mobile Application Development – INTROVA 1.0">
-                      <i class="bi bi-arrows-angle-expand"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/posts/malitha-tishamal_applicationdevelopment-webdevelopment-innovation-activity-7271807286140911617-vdts" target="_blank">
-                      <i class="bi bi-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </figure>
-          </article>
-        </div>
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img 
+        src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_f2dbf627.jpg" 
+        class="img-fluid" 
+        alt="INTROVA 1.0 Event Image" 
+        loading="lazy"
+      >
 
-        <!-- INTROVA 1.0 – Project Presentation -->
-        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-          <article class="portfolio-entry">
-            <figure class="entry-image" style="width: 380px; height: 380px;">
-              <img src="assets/img/portfolio/Screenshot 2025-08-17 203217.png" class="img-fluid" alt="Introva Project Presentation" loading="lazy">
-              <div class="entry-overlay">
-                <div class="overlay-content">
-                  <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">INTROVA 1.0 HNDIT Event</div>
-                  <h3 class="entry-title">Event Project Presentation</h3>
-                  <div class="entry-links">
-                    <a href="assets/img/portfolio/Screenshot 2025-08-17 203217.png"
-                    class="glightbox"
-                    data-gallery="portfolio-gallery-development"
-                    data-glightbox="title: E-Learning Platform; description: INTROVA 1.0 – Pulzar Club HNDIT Galle (Dec 2024)">
-                    <i class="bi bi-arrows-angle-expand"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/posts/malitha-tishamal_applicationdevelopment-webdevelopment-innovation-activity-7271807286140911617-vdts?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
-                    <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </figure>
-        </article>
-      </div>
+      <div class="entry-overlay">
+        <div class="overlay-content">
 
-      <!-- Irrigation Department – Development -->
-      <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
-        <article class="portfolio-entry">
-          <figure class="entry-image" style="width: 380px; height: 380px;">
-            <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_11535d1b.jpg" class="img-fluid" alt="Irrigation Department Project" loading="lazy">
-            <div class="entry-overlay">
-              <div class="overlay-content">
-                <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">Development</div>
-                <h3 class="entry-title">Irrigation Department Galle</h3>
-                <div class="entry-links">
-                  <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_11535d1b.jpg"
-                  class="glightbox"
-                  data-gallery="portfolio-gallery-photography"
-                  data-glightbox="title: Software Developer; description: Irrigation Department – Galle">
-                  <i class="bi bi-arrows-angle-expand"></i>
-                </a>
-                <a href="https://www.linkedin.com/posts/malitha-tishamal_just-be-yourself-irrigation-department-activity-7341829512214548481-D_IS?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            INTROVA 1.0 HNDIT Event
           </div>
-        </figure>
-      </article>
-    </div>
 
-    <!-- INVENT-X 25 – DG Presentation -->
-    <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-      <article class="portfolio-entry">
-        <figure class="entry-image" style="width: 380px; height: 380px;">
-          <img src="assets/img/portfolio/512441687_1170234648467455_4874232720881910038_n.jpg" class="img-fluid" alt="InventX DG Project" loading="lazy">
-          <div class="entry-overlay">
-            <div class="overlay-content">
-              <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">INVENT-X 25 HNDE</div>
-              <h3 class="entry-title">Latest Project Presented to SLIATE Director General</h3>
-              <div class="entry-links">
-                <a href="assets/img/portfolio/512441687_1170234648467455_4874232720881910038_n.jpg"
-                class="glightbox"
-                data-gallery="portfolio-gallery-marketing"
-                data-glightbox="title: Project Presentation; description: INVENT-X 25 – Engineering Dept. HNDE Galle">
-                <i class="bi bi-arrows-angle-expand"></i>
-              </a>
-              <a href="https://www.linkedin.com/posts/malitha-tishamal_newest-it-projects-presentation-inventx25-activity-7343868914407198724-f5Rc?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </figure>
-    </article>
-  </div>
+          <!-- Title -->
 
-  <!-- INVENT-X 25 Exhibition -->
-  <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-    <article class="portfolio-entry">
-      <figure class="entry-image" style="width: 380px; height: 380px;">
-        <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_88e0eef9.jpg" class="img-fluid" alt="InventX Exhibition" loading="lazy">
-        <div class="entry-overlay">
-          <div class="overlay-content">
-            <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">INVENT-X 25 HNDE</div>
-            <h3 class="entry-title">INVENT-X 25 Engineering Exhibition</h3>
-            <div class="entry-links">
-              <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_88e0eef9.jpg"
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            🔥🏆🎆 Project of the Event <br>
+            🔥🏆🎆 1<sup>st</sup> Place in Desktop & Mobile Application Category.<br>
+            ✨ INTROVA 1.0 ✨<br>
+            📍 Software Development & Robotics Competition<br>
+            🎯 Organized by Pulzar Club – SLIATE Galle<br>
+          </p>
+
+          <!-- Action buttons -->
+          <div class="entry-links">
+            <a 
+              href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_f2dbf627.jpg"
               class="glightbox"
-              data-gallery="portfolio-gallery-development"
-              data-glightbox="title: INVENT-X 25; description: Engineering Department – HNDE Galle">
+              data-gallery="portfolio-gallery-events"
+              data-glightbox="title: Project Of The Event; description: 🔥🏆🎆 Project of the Event  & 1<sup>st</sup> Place in Desktop & Mobile Application Category."
+            >
               <i class="bi bi-arrows-angle-expand"></i>
             </a>
-            <a href="https://www.facebook.com/HNDE.Labuduwa/posts/1170586905098896?ref=embed_post" target="_blank">
+
+            <a 
+              href="https://www.facebook.com/share/p/17anDnfcwW/"
+              target="_blank"
+            >
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>
+
         </div>
       </div>
     </figure>
   </article>
 </div>
 
+
+       <!-- INTROVA 1.0 – Project Presentation -->
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img 
+        src="assets/img/portfolio/Screenshot 2025-08-17 203217.png" 
+        class="img-fluid" 
+        alt="Introva Project Presentation" 
+        loading="lazy"
+      >
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            INTROVA 1.0 HNDIT Event
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">Project Presentation</h3>
+
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            🏆 Top Performer – Project Presentation for Lecture Panel.<br>
+            My project: <strong>Learning Management System</strong>
+          </p>
+
+          <!-- Action buttons -->
+          <div class="entry-links">
+            <a 
+              href="assets/img/portfolio/Screenshot 2025-08-17 203217.png"
+              class="glightbox"
+              data-gallery="portfolio-gallery-development"
+              data-glightbox="title: Learning Management System; description: INTROVA 1.0 – Pulzar Club HNDIT Galle (Dec 2024)"
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/posts/malitha-tishamal_applicationdevelopment-webdevelopment-innovation-activity-7271807286140911617-vdts?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
+              target="_blank"
+            >
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+
+
+     <!-- ATI Galle – Official Website Launch -->
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img 
+        src="assets/img/portfolio/WhatsApp Image 2026-01-04 at 6.57.01 PM.jpeg" 
+        class="img-fluid" 
+        alt="ATI Galle Official Website Launch" 
+        loading="lazy"
+      >
+
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 20px; font-weight: bold;">
+            Official Website Launch
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">
+            ATI – Advanced Technological Institute, Galle
+          </h3>
+
+          <!-- Description -->
+          <p style="color:#fff; font-size:14px; margin-top:8px;">
+            The official website of ATI Galle was launched on December 22nd with the participation
+            of the Director and lecture staff. I was proud to be a part of the developer team
+            contributing to this digital milestone.
+          </p>
+
+          <!-- Action buttons -->
+          <div class="entry-links">
+            <a 
+              href="assets/img/portfolio/WhatsApp Image 2026-01-04 at 6.57.01 PM.jpeg"
+              class="glightbox"
+              data-gallery="portfolio-gallery-events"
+              data-glightbox="title: Official Website Launch – ATI Galle; description: Launched on December 22nd December 2025 with Director & Lecture Staff. Developer Team Contribution."
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/posts/malitha-tishamal_atigalle-officiallaunch-hndit-activity-7412887393747263488-I2hx?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
+              target="_blank"
+            >
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+
+
+      <!-- Irrigation Department – Development -->
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img 
+        src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_11535d1b.jpg" 
+        class="img-fluid" 
+        alt="Irrigation Department Project" 
+        loading="lazy"
+      >
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            Software Development
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">Irrigation Department – Galle</h3>
+
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            💻 Working as a Full Stack Developer – developed both Web and Mobile applications for the Irrigation Department, Galle. Contributed to database design, backend logic, and responsive frontend interfaces.
+          </p>
+
+          <!-- Action buttons -->
+          <div class="entry-links">
+            <a 
+              href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_11535d1b.jpg"
+              class="glightbox"
+              data-gallery="portfolio-gallery-photography"
+              data-glightbox="title: Full Stack Development; description: Developed Web & Mobile Applications for Irrigation Department – Galle"
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/posts/malitha-tishamal_just-be-yourself-irrigation-department-activity-7341829512214548481-D_IS?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
+              target="_blank"
+            >
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+
+   <!-- INVENT-X 25 – DG Presentation -->
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img 
+        src="assets/img/portfolio/512441687_1170234648467455_4874232720881910038_n.jpg" 
+        class="img-fluid" 
+        alt="InventX DG Project" 
+        loading="lazy"
+      >
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            INVENT-X 25 Engineering
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">Newest IT Projects Presented to SLIATE Director General</h3>
+
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            💡 Featured Projects:<br>
+            🔹 Career Guidance System<br>
+            🔹 Antibiotics Analysis & Management System<br>
+          
+          </p>
+
+          <!-- Action buttons -->
+          <div class="entry-links">
+            <a 
+              href="assets/img/portfolio/512441687_1170234648467455_4874232720881910038_n.jpg"
+              class="glightbox"
+              data-gallery="portfolio-gallery-marketing"
+              data-glightbox="title: INVENT-X 25 Project Presentation; description: Featured projects – Career Guidance System & Antibiotics Analysis & Management System"
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/posts/malitha-tishamal_newest-it-projects-presentation-inventx25-activity-7343868914407198724-f5Rc?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
+              target="_blank"
+            >
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+
+<!-- INVENT-X 25 Exhibition -->
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img 
+        src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_88e0eef9.jpg" 
+        class="img-fluid" 
+        alt="InventX Exhibition" 
+        loading="lazy"
+      >
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            INVENT-X 25 HNDE
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">INVENT-X 25 Engineering Exhibition</h3>
+
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            • INVENTX 2025! 🤖⚙<br>
+            • Engineering Department ⚙️<br>
+            📍 SLIATE Galle 2025<br>
+          </p>
+
+          <!-- Action buttons -->
+          <div class="entry-links">
+            <a 
+              href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_88e0eef9.jpg"
+              class="glightbox"
+              data-gallery="portfolio-gallery-development"
+              data-glightbox="title: INVENT-X 25 Exhibition; description: Engineering Department – HNDE Galle 2025"
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a href="https://www.facebook.com/share/v/1BdVGZLSxn/" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+            <a href="https://www.facebook.com/share/r/1b3AkKo3qX/" target="_blank">
+              <i class="bi bi-camera-reels"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+
 <!-- Irrigation Department – Mobile App -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
   <article class="portfolio-entry">
     <figure class="entry-image" style="width: 380px; height: 380px;">
-      <img src="assets/img/portfolio/irrigation-dept.jpg" class="img-fluid" alt="Mobile App Development" loading="lazy">
+      <img 
+        src="assets/img/portfolio/irrigation-dept.jpg" 
+        class="img-fluid" 
+        alt="Mobile App Development" 
+        loading="lazy"
+      >
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">Irrigation Department Galle</div>
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            Irrigation Department Galle
+          </div>
+
+          <!-- Title -->
           <h3 class="entry-title">Mobile Application Development</h3>
+
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            🌊💧 Excited to be part of a meaningful project — Mobile Application Development for the Irrigation Department, Galle.<br>
+            Empowering smarter field operations through technology.<br>
+          </p>
+
+          <!-- Action buttons -->
           <div class="entry-links">
-            <a href="assets/img/portfolio/irrigation-dept.jpg"
-            class="glightbox"
-            data-gallery="portfolio-gallery-photography"
-            data-glightbox="title: Mobile Application Development; description: Smart field operation tools developed for Irrigation Dept Galle">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="https://www.linkedin.com/posts/malitha-tishamal_appdevelopment-digitaltransformation-irrigationdepartment-activity-7392110600799195136-bwfO?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314" target="_blank">
-            <i class="bi bi-arrow-right"></i>
-          </a>
+            <a 
+              href="assets/img/portfolio/irrigation-dept.jpg"
+              class="glightbox"
+              data-gallery="portfolio-gallery-photography"
+              data-glightbox="title: Mobile Application Development; description: Smart field operation tools developed for Irrigation Dept Galle"
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/posts/malitha-tishamal_appdevelopment-digitaltransformation-irrigationdepartment-activity-7392110600799195136-bwfO?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
+              target="_blank"
+            >
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </figure>
-</article>
+    </figure>
+  </article>
 </div>
 
+
 <!-- A/L Training – Electronics Practical -->
+<!-- Electronic Practical A/L Training -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-traning">
   <article class="portfolio-entry">
     <figure class="entry-image" style="width: 380px; height: 380px;">
-      <img src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg" class="img-fluid" alt="Electronics Training" loading="lazy">
+      <img 
+        src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg" 
+        class="img-fluid" 
+        alt="Electronics Training" 
+        loading="lazy"
+      >
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">Electronic Practical A/L</div>
-          <h3 class="entry-title">Training Students for A/L Engineering Technology – Electronics</h3>
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            Electronic Practical A/L
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">
+            Training Students for A/L Engineering Technology – Electronics
+          </h3>
+
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            🔧 Training program to support students in A/L Engineering Technology – Electronics practical sessions, helping them understand real-world electronic applications and hands-on skills.
+          </p>
+
+          <!-- Action buttons -->
           <div class="entry-links">
-            <a href="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg"
-            class="glightbox"
-            data-gallery="portfolio-gallery-ui"
-            data-glightbox="title: Electronics Practical Training; description: A/L Engineering Technology – Training Students A/L Practicle Electronic">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-electronic-traning-students.html">
-            <i class="bi bi-arrow-right"></i>
-          </a>
+            <a 
+              href="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg"
+              class="glightbox"
+              data-gallery="portfolio-gallery-ui"
+              data-glightbox="title: Electronics Practical Training; description: A/L Engineering Technology – Hands-on training for students"
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a href="portfolio-details-electronic-traning-students.php" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </figure>
-</article>
+    </figure>
+  </article>
 </div>
+
 
 <!-- A/L Training – Electrical Practical -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-traning">
   <article class="portfolio-entry">
     <figure class="entry-image" style="width: 380px; height: 380px;">
-      <img src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg" class="img-fluid" alt="Electrical Training" loading="lazy">
+      <img 
+        src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg" 
+        class="img-fluid" 
+        alt="Electrical Training" 
+        loading="lazy"
+      >
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">Electrical Practical A/L</div>
-          <h3 class="entry-title">Training Students for A/L Engineering Technology – Electrical</h3>
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            Electrical Practical A/L
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">
+            Training Students for A/L Engineering Technology – Electrical
+          </h3>
+
+          <!-- Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            ⚡ Training program supporting A/L Engineering Technology students in Electrical practical sessions, helping them gain hands-on experience and practical understanding of electrical systems.
+          </p>
+
+          <!-- Action buttons -->
           <div class="entry-links">
-            <a href="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg"
-            class="glightbox"
-            data-gallery="portfolio-gallery-ui"
-            data-glightbox="title: Electrical Practical Training; description: A/L Engineering Technology – Training Students A/L Practicle Electricle">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-electricle-traning-students.html">
-            <i class="bi bi-arrow-right"></i>
-          </a>
+            <a 
+              href="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg"
+              class="glightbox"
+              data-gallery="portfolio-gallery-ui"
+              data-glightbox="title: Electrical Practical Training; description: Hands-on practical training for A/L Electrical students"
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a href="portfolio-details-electricle-traning-students.php" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </figure>
-</article>
+    </figure>
+  </article>
 </div>
+
+
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.11_8440db55.jpg" 
+           class="img-fluid" 
+           alt="Matara to Badulla Trip 2025" 
+           loading="lazy">
+
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Location -->
+          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">
+            Matara → Badulla
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">
+            Badulla Travel Trip 2025
+          </h3>
+
+          <!-- Short description -->
+          <p style="color:#fff; font-size:14px; margin-bottom:10px;">
+            Dunhida Waterfall, Kubalwela Maha Asapuwa, Ella & Scenic Views
+          </p>
+
+          <div class="entry-links">
+            <!-- Image preview -->
+            <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.11_8440db55.jpg"
+               class="glightbox"
+               data-gallery="portfolio-gallery-travel"
+               data-glightbox="title: Matara to Badulla Trip 2025; 
+               description: A memorable journey covering Dunhida Waterfall, Kubalwela Maha Asapuwa, Ella Rock, Nine Arches Bridge and beautiful hill country landscapes.">
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <!-- Details page -->
+            <a href="https://www.facebook.com/share/p/17JmYsWetd/" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.12_fec59360.jpg" 
+           class="img-fluid" 
+           alt="Night Mail Train Colombo to Badulla" 
+           loading="lazy">
+
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Route -->
+          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">
+            Colombo → Badulla
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">
+            Night Mail Train Journey
+          </h3>
+
+          <!-- Description -->
+          <p style="color:#fff; font-size:14px; margin-bottom:10px;">
+            Colombo to Badulla • Night Ride • Hill Country Experience
+          </p>
+
+          <div class="entry-links">
+            <!-- Image Lightbox -->
+            <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.12_fec59360.jpg"
+               class="glightbox"
+               data-gallery="portfolio-gallery-travel"
+               data-glightbox="title: Night Mail Train – Colombo to Badulla; 
+               description: A classic Sri Lankan railway experience through the hill country, traveling overnight from Colombo to Badulla with misty mornings, tunnels, and scenic views.">
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <!-- Details page -->
+            <a href="https://www.facebook.com/share/p/16fr1VLJ5d/" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
+  <article class="portfolio-entry">
+    <figure class="entry-image" style="width: 380px; height: 380px;">
+      <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.08_a79e85cc.jpg" 
+           class="img-fluid" 
+           alt="Nuwara Eliya Trip" 
+           loading="lazy">
+
+      <div class="entry-overlay">
+        <div class="overlay-content">
+
+          <!-- Location -->
+          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">
+            Nuwara Eliya
+          </div>
+
+          <!-- Title -->
+          <h3 class="entry-title">
+            Nuwara Eliya Travel Experience
+          </h3>
+
+          <!-- Description -->
+          <p style="color:#fff; font-size:14px; margin-bottom:10px;">
+            Little England • Tea Gardens • Cool Climate
+          </p>
+
+          <div class="entry-links">
+            <!-- Image Preview -->
+            <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.08_a79e85cc.jpg"
+               class="glightbox"
+               data-gallery="portfolio-gallery-travel"
+               data-glightbox="title: Nuwara Eliya Trip; 
+               description: Exploring the beauty of Little England with misty mornings, lush tea estates, Gregory Lake, waterfalls, and the charming cool climate of Nuwara Eliya.">
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <!-- Details Page -->
+            <a href="https://www.facebook.com/share/p/1D6n51RXdD/" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </figure>
+  </article>
+</div>
+
+
+
 
 
 
@@ -1198,29 +1721,50 @@
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/app/mediq-app.png" style="padding: 30px 0px 30px 0px;"  class="img-fluid" alt="MediQ App" loading="lazy">
+      <img 
+        src="assets/img/portfolio/app/mediq-app.png" 
+        style="padding: 30px 0px 30px 0px;"  
+        class="img-fluid" 
+        alt="MediQ App" 
+        loading="lazy"
+      >
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
-            MediQ Antibiotic Management (Flutter + Firebase) (Upcoming...)
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+            MediQ Antibiotic Management App (Upcomming...)
           </div>
-          <h3 class="entry-title">MediQ Antibiotic Management App</h3>
+
+
+          <!-- Short Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            🧪 Tracks antibiotic release & return, real-time stock monitoring, ward-wise usage logs, and automated reports. <br>
+            📱 Built with Flutter & Firebase for cross-platform, cloud-powered management.
+          </p>
+
+          <!-- Action buttons -->
           <div class="entry-links">
-            <a href="assets/img/portfolio/app/mediq-app.png" 
-            class="glightbox" 
-            data-gallery="portfolio-gallery-development"
-            data-glightbox="title: Designed for Admins & Pharmacists; description: Tracks antibiotic release & return in hospitals.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details -mediq-app.html">
-            <i class="bi bi-arrow-right"></i>
-          </a>
+            <a 
+              href="assets/img/portfolio/app/mediq-app.png" 
+              class="glightbox" 
+              data-gallery="portfolio-gallery-development"
+              data-glightbox="title: MediQ App; description: Cross-platform hospital antibiotic management app."
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a href="portfolio-details-mediq-app.html" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </figure>
-</article>
+    </figure>
+  </article>
 </div>
+
 
 <!-- CeyTrack App (Upcoming) -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
