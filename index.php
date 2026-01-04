@@ -1754,7 +1754,7 @@
               <i class="bi bi-arrows-angle-expand"></i>
             </a>
 
-            <a href="portfolio-details-mediq-app.html" target="_blank">
+            <a href="portfolio-details -mediq-app.php" target="_blank">
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>

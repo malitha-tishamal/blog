@@ -161,13 +161,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Style
-  * Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
-  * Updated: Jul 02 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <style>
     .healthcare-gradient {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -207,49 +200,8 @@
 
 <body class="portfolio-details-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <!-- Uncomment the line below if you also wish to use an text logo -->
-        <!-- <h1 class="sitename">Style</h1>  -->
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-
-        <div class="profile-img">
-          <img src="assets/img/profile/profile-malitha.jpg" alt="" class="img-fluid rounded-circle">
-        </div>
-
-        <a href="index.html" class="logo d-flex align-items-center justify-content-center active">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.webp" alt=""> -->
-          <h1 class="sitename">Malitha Tishamal</h1>
-        </a>
-
-        <div class="d-flex" style="gap: 8px;">
-          <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
-        </div>
-
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="index.php#about">About</a></li>
-          <li><a href="index.php#resume">Resume</a></li>
-          <li><a href="index.php#portfolio">Portfolio</a></li>
-          <li><a href="index.php#portfolio2">Projects</a></li>
-          <li><a href="index.php#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
+    <?php include_once ("includes/header.php") ?>
 
   <main class="main">
 
@@ -773,27 +725,7 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Malitha Tishamal</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you also wish to use an text logo -->
-        <!-- <h1 class="sitename">Style</h1>  -->
-      </div>
-    </div>
-
-  </footer>
+     <?php include_once ("includes/footer.php") ?>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
