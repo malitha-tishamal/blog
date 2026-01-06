@@ -105,9 +105,9 @@
     ],
     "softwareRequirements": "Flutter Framework, Firebase Backend",
     "screenshot": [
-      "https://malithatishamal.42web.io/assets/img/portfolio/mediq-screenshot-1.jpg",
-      "https://malithatishamal.42web.io/assets/img/portfolio/mediq-screenshot-2.jpg",
-      "https://malithatishamal.42web.io/assets/img/portfolio/mediq-screenshot-3.jpg"
+      "https://malithatishamal.42web.io/assets/img/portfolio/app/mediq/screens1.png",
+      "https://malithatishamal.42web.io/assets/img/portfolio/app/mediq/screens2.png",
+      "https://malithatishamal.42web.io/assets/img/portfolio/app/mediq/screens3.png"
     ],
     "softwareVersion": "1.0.0",
     "offers": {
@@ -265,19 +265,16 @@
                     <div class="swiper-slide">
                       <div class="app-screen-container">
                         <img src="assets/img/portfolio/app/mediq/screens1.png" class="img-fluid rounded-3">
-                        <div class="screen-label">📊 Dashboard Overview</div>
                       </div>
                     </div>
                     <div class="swiper-slide">
                       <div class="app-screen-container">
                         <img src="assets/img/portfolio/app/mediq/screens2.png" class="img-fluid rounded-3">
-                        <div class="screen-label">💊 Stock Management</div>
                       </div>
                     </div>
                     <div class="swiper-slide">
                       <div class="app-screen-container">
                         <img src="assets/img/portfolio/app/mediq/screens3.png" class="img-fluid rounded-3">
-                        <div class="screen-label">🏥 Ward-wise Tracking</div>
                       </div>
                     </div>
                   </div>
@@ -324,44 +321,6 @@
                 </div>
               </div>
 
-              <!-- Development Timeline -->
-              <div class="timeline-section mt-4" data-aos="fade-up" data-aos-delay="400">
-                <h5><i class="bi bi-calendar-week"></i> Development Timeline</h5>
-                <div class="timeline">
-                  <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                      <h6>Phase 1: Research & Design</h6>
-                      <p>Completed - Jan 2025</p>
-                      <span class="badge bg-success">100% Complete</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                      <h6>Phase 2: Core Development</h6>
-                      <p>In Progress - Feb 2025</p>
-                      <span class="badge bg-primary">70% Complete</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                      <h6>Phase 3: Testing & QA</h6>
-                      <p>Starting Mar 2025</p>
-                      <span class="badge bg-secondary">Not Started</span>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                      <h6>Phase 4: Launch</h6>
-                      <p>Expected Apr 2025</p>
-                      <span class="badge bg-warning">Coming Soon</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -683,34 +642,11 @@
                 </div>
               </div>
 
-              <!-- Get Involved Section -->
-              <div class="involved-section mt-4" data-aos="fade-up" data-aos-delay="700">
-                <div class="card bg-light">
-                  <div class="card-body">
-                    <h5><i class="bi bi-bell-fill"></i> Stay Updated</h5>
-                    <p class="mb-3">Get notified when MediQ App launches and learn about pilot program opportunities.</p>
-                    <form class="notify-form">
-                      <div class="row g-2">
-                        <div class="col-md-8">
-                          <input type="email" class="form-control" placeholder="Your email address" required>
-                        </div>
-                        <div class="col-md-4">
-                          <button type="submit" class="btn btn-primary w-100">Notify Me</button>
-                        </div>
-                      </div>
-                      <div class="form-text mt-2">We respect your privacy. No spam, ever.</div>
-                    </form>
-                  </div>
-                </div>
-              </div>
 
               <!-- Navigation Buttons -->
               <div class="cta-buttons mt-4" data-aos="fade-up" data-aos-delay="800">
                 <div class="d-flex gap-3">
-                  <a href="portfolio-details-career-system.html" class="btn btn-outline-primary">
-                    <i class="bi bi-arrow-left me-2"></i> Previous Project
-                  </a>
-                  <a href="portfolio-details-ceytrack.html" class="btn btn-outline-primary">
+                  <a href="portfolio-details -ceytrack-app.php" class="btn btn-outline-primary">
                     Next Project <i class="bi bi-arrow-right ms-2"></i>
                   </a>
                 </div>
@@ -727,23 +663,6 @@
 
      <?php include_once ("includes/footer.php") ?>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
 
   <!-- Notify Form Script -->
   <script>

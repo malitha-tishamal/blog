@@ -67,7 +67,7 @@
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="A/L Electronics Practical Training | Engineering Technology">
   <meta itemprop="description" content="Professional electronics practical training program for G.C.E. Advanced Level Engineering Technology students in Sri Lanka.">
-  <meta itemprop="image" content="https://www.malithatishamal.42web.io/assets/img/portfolio/electronic/1.png">
+  <meta itemprop="image" content="https://www.malithatishamal.42web.io/assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg">
   
   <!-- Dublin Core Metadata -->
   <meta name="DC.title" content="Advanced Level Electronics Practical Training - Engineering Technology">
@@ -516,25 +516,6 @@
 
   <?php include_once ("includes/footer.php") ?>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- Custom Lightbox JavaScript -->
   <script>
     // Custom Lightbox for Thumbnail Images
     document.addEventListener('DOMContentLoaded', function() {

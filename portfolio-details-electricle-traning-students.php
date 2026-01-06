@@ -58,7 +58,7 @@
 <meta name="twitter:creator" content="@malithatishamal">
 <meta name="twitter:title" content="A/L Electrical Practical Training - DB Board Wiring & Circuits">
 <meta name="twitter:description" content="Hands-on electrical practical training for G.C.E. A/L Engineering Technology students in Sri Lanka. Learn DB board wiring, MCB installation, and circuit troubleshooting.">
-<meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/portfolio/electrical-training-preview.jpg">
+<meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg">
 <meta name="twitter:image:alt" content="Electrical Practical Training Workshop for A/L Students">
 
 <!-- Additional SEO Meta Tags -->
@@ -645,24 +645,6 @@
   </main>
 
    <?php include_once ("includes/footer.php") ?>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
 
   <!-- Custom Lightbox JavaScript -->
   <script>

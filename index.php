@@ -148,13 +148,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Style
-  * Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
-  * Updated: Jul 02 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -1010,7 +1003,10 @@
       <!-- Section Title -->
       <div class="container section-title">
         <h2>Portfolio</h2>
-        <p>Explore a curated collection of projects, events, and training programs showcasing creativity, innovation, and hands-on experience across various domains.</p>
+        <p>
+Explore a diverse portfolio capturing professional events and achievements, office environments, training programs, and travel experiences—showcasing growth, collaboration, and real-world exposure.
+</p>
+
 
       </div><!-- End Section Title -->
 
@@ -1672,9 +1668,6 @@
 
 
 
-
-
-
 </div><!-- End Portfolio Container -->
 
 </div>
@@ -1770,29 +1763,49 @@
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/app/caytrack-app.png" style="padding: 30px 0px 30px 0px;" class="img-fluid" alt="CeyTrack App" loading="lazy">
+      <img 
+        src="assets/img/portfolio/app/caytrack-app.png" 
+        style="padding: 30px 0px 30px 0px;" 
+        class="img-fluid" 
+        alt="CeyTrack App" 
+        loading="lazy"
+      >
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
+
+          <!-- Highlight text -->
+          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
             CeyTrack (Flutter + Firebase) (Upcoming...)
           </div>
-          <h3 class="entry-title">Land-to-Factory Order & Geo-Location System</h3>
+
+          <!-- Short Description -->
+          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+            🌾 Cey-Track App – Land-to-Factory Order Management & Geo-Location System<br>
+            Allows landowners (Tea, Cinnamon, etc.) to submit orders while factories track total, pending & completed orders in real-time 📝
+          </p>
+
+          <!-- Action buttons -->
           <div class="entry-links">
-            <a href="assets/img/portfolio/app/caytrack-app.png"
-            class="glightbox"
-            data-gallery="portfolio-gallery-development"
-            data-glightbox="title: CeyTrack; description: Order management + geo-location tracking for agriculture factories.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details -ceytrack-app.html">
-            <i class="bi bi-arrow-right"></i>
-          </a>
+            <a 
+              href="assets/img/portfolio/app/caytrack-app.png"
+              class="glightbox"
+              data-gallery="portfolio-gallery-development"
+              data-glightbox="title: CeyTrack App; description: Order management + geo-location tracking for agriculture factories."
+            >
+              <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+
+            <a href="portfolio-details-ceytrack-app.html" target="_blank">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </figure>
-</article>
+    </figure>
+  </article>
 </div>
+
 
 <!-- Advanced Career Guideline System (Upcoming) -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">

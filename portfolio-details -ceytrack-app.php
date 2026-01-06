@@ -3,10 +3,149 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Cey-Track App - Upcoming Project Details</title>
-  <meta name="description" content="Cey-Track App – Land-to-Factory Order Management & Geo-Location System - Upcoming Flutter Project">
-  <meta name="keywords" content="flutter, mobile app, agriculture, supply chain, firebase, dart, gps tracking">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport">
+  
+  <!-- Primary Title with Focus Keywords -->
+  <title>Cey-Track App - Agricultural Supply Chain Management | GPS Tracking & Order Management System</title>
+  
+  <!-- Comprehensive Meta Description -->
+  <meta name="description" content="Cey-Track App: Flutter-based agricultural supply chain management system with real-time GPS tracking, land-to-factory order management, and logistics optimization for Sri Lankan farming operations.">
+  
+  <!-- Enhanced Keyword Strategy -->
+  <meta name="keywords" content="
+    Cey-Track App, 
+    Agricultural Supply Chain Management, 
+    Land-to-Factory Order System, 
+    Flutter Agriculture App, 
+    GPS Tracking for Farming, 
+    Crop Logistics Management, 
+    Sri Lanka Agriculture Technology, 
+    Farm-to-Factory Tracking, 
+    Real-time GPS Monitoring, 
+    Agricultural Order Management, 
+    Flutter Firebase Application, 
+    Supply Chain Optimization, 
+    Farming Logistics App, 
+    Geo-location Tracking System, 
+    Agricultural Product Tracking, 
+    Mobile App for Farmers, 
+    Harvest Transportation Management, 
+    Agricultural Business Software, 
+    Crop Supply Chain App, 
+    Field-to-Factory Monitoring,
+    Precision Agriculture App,
+    Sri Lankan Farming Solutions
+  ">
+  
+  <!-- Author & Credibility -->
+  <meta name="author" content="Malitha Tishamal - Flutter Developer & AgriTech Specialist">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://malithatishamal.42web.io/portfolio/cey-track-agriculture-app">
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_LK">
+  <meta property="og:site_name" content="AgriTech App Portfolio">
+  <meta property="og:title" content="Cey-Track App - Agricultural Supply Chain & GPS Tracking System">
+  <meta property="og:description" content="Flutter mobile application for agricultural supply chain management with real-time GPS tracking, order processing, and logistics optimization for Sri Lankan farming operations.">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/portfolio/ceytrack-app-preview.jpg">
+  <meta property="og:image:alt" content="Cey-Track App - Agricultural Supply Chain Management Interface">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://malithatishamal.42web.io/portfolio/cey-track-agriculture-app">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@malithatishamal">
+  <meta name="twitter:creator" content="@malithatishamal">
+  <meta name="twitter:title" content="Cey-Track App - Agricultural Supply Chain Management">
+  <meta name="twitter:description" content="Flutter app for agricultural supply chain with real-time GPS tracking and order management for Sri Lankan farming logistics.">
+  <meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/portfolio/ceytrack-app-preview.jpg">
+  <meta name="twitter:image:alt" content="Cey-Track AgriTech Mobile Application Interface">
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="subject" content="Agricultural Technology, Supply Chain Management, Flutter Development">
+  <meta name="classification" content="Technology, Agriculture, Mobile Development, Logistics Software">
+  <meta name="language" content="en">
+  <meta name="coverage" content="Sri Lanka">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="General">
+  <meta name="revised" content="2024-01-02">
+  
+  <!-- App-Specific Meta Tags -->
+  <meta name="application-name" content="Cey-Track Agriculture App">
+  <meta name="apple-mobile-web-app-title" content="Cey-Track">
+  <meta name="theme-color" content="#2E7D32">
+  
+  <!-- Structured Data for Agricultural Application -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Cey-Track Agricultural Supply Chain App",
+    "description": "Flutter-based mobile application for agricultural supply chain management with GPS tracking and order processing",
+    "url": "https://malithatishamal.42web.io/portfolio/cey-track-agriculture-app",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": ["Android", "iOS", "Web"],
+    "author": {
+      "@type": "Person",
+      "name": "Malitha Tishamal",
+      "url": "https://malithatishamal.42web.io"
+    },
+    "datePublished": "2024-01-02",
+    "featureList": [
+      "Real-time GPS Tracking",
+      "Land-to-Factory Order Management",
+      "Crop Supply Chain Monitoring",
+      "Delivery Route Optimization",
+      "Inventory Management",
+      "Farmer-Supplier Connectivity",
+      "Harvest Scheduling",
+      "Quality Control Tracking",
+      "Payment Integration",
+      "Offline Functionality"
+    ],
+    "softwareRequirements": "Flutter Framework, Firebase, Google Maps API",
+    "screenshot": [
+      "https://malithatishamal.42web.io/assets/img/portfolio/ceytrack-screenshot-1.jpg",
+      "https://malithatishamal.42web.io/assets/img/portfolio/ceytrack-screenshot-2.jpg",
+      "https://malithatishamal.42web.io/assets/img/portfolio/ceytrack-screenshot-3.jpg"
+    ],
+    "softwareVersion": "1.0.0",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "category": "Agricultural Software"
+    },
+    "keywords": "agriculture, supply chain, gps tracking, flutter app, Sri Lanka"
+  }
+  </script>
+  
+  <!-- Additional Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cey-Track AgriTech Application Portfolio",
+    "description": "Portfolio showcase of Cey-Track agricultural supply chain management mobile application",
+    "mainEntity": {
+      "@type": "MobileApplication",
+      "name": "Cey-Track",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android, iOS",
+      "description": "Agricultural supply chain management with GPS tracking and order processing"
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "Agricultural Supply Chain Solutions",
+      "description": "Technology solutions for farming logistics and supply chain optimization"
+    },
+    "keywords": "agricultural app, supply chain management, gps tracking, flutter development, Sri Lanka farming"
+  }
+  </script>
+  
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
