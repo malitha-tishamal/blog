@@ -14,18 +14,18 @@
           <img src="assets/img/profile/profile-malitha.jpg" alt="" class="img-fluid rounded-circle">
         </div>
 
-        <a href="index.html" class="logo d-flex align-items-center justify-content-center active">
+        <a href="index.php" class="logo d-flex align-items-center justify-content-center active">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.webp" alt=""> -->
           <h1 class="sitename">Malitha Tishamal</h1>
         </a>
 
         <div class="d-flex" style="gap: 8px;"> <!-- adjust 8px as needed -->
-  <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
-  <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
-  <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
-  <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
-  <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
+  <a href="https://x.com/MalithaTishamal" target="_blank" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+  <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+  <a href="https://github.com/malitha-tishamal" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+  <a href="https://www.instagram.com/malithatishamal" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+  <a href="https://www.facebook.com/malitha.tishamal" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
 </div>
 
 

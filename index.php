@@ -188,11 +188,11 @@
               </div>
 
               <div class="social-links" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
-                <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://x.com/MalithaTishamal" target="_blank" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/malitha-tishamal" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.instagram.com/malithatishamal" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/malitha.tishamal" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
               </div>
             </div>
           </div>
@@ -222,7 +222,7 @@
     </div>
   </div>
 
-  <img src="assets/img/profile/profile-malitha.jpg" alt="Portfolio Hero" class="img-fluid hero-main-image">
+  <img src="assets/img/profile/profile-malitha.jpg" alt="Portfolio Hero" class="img-fluid hero-main-image" width="400" height="400" loading="eager">
   <div class="image-overlay"></div>
 </div>
 
@@ -245,27 +245,12 @@
 
       </div><!-- End Section Title -->
       <div class="about-section-wrapper" style="display:flex; align-content: center;">
-        <style>
-          @media (max-width: 768px) {
-            .about-section-wrapper {
-              flex-direction: column !important;
-            }
 
-            .about-section-wrapper > div {
-              width: 100% !important;
-            }
-
-            .profile-image-wrapper {
-              margin-bottom: 30px;
-            }
-          }
-
-        </style>
 
         <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
           <div class="profile-image-wrapper">
             <div class="profile-image">
-              <img src="assets/img/profile/profile-malitha.jpg" alt="Profile" class="img-fluid">
+              <img src="assets/img/profile/profile-malitha.jpg" alt="Profile" class="img-fluid" loading="lazy" width="280" height="280">
             </div>
             <div class="signature-section">
               <img src="assets/img/misc/signature-1.png" width="300px" alt="Signature" class="signature">
@@ -1044,6 +1029,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="INTROVA 1.0 Event Image" 
         loading="lazy"
+        width="380" height="380"
       >
 
       <div class="entry-overlay">
@@ -1100,6 +1086,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="Introva Project Presentation" 
         loading="lazy"
+        width="380" height="380"
       >
       <div class="entry-overlay">
         <div class="overlay-content">
@@ -1154,6 +1141,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="ATI Galle Official Website Launch" 
         loading="lazy"
+        width="380" height="380"
       >
 
       <div class="entry-overlay">
@@ -1212,12 +1200,13 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="Irrigation Department Project" 
         loading="lazy"
+        width="380" height="380"
       >
       <div class="entry-overlay">
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Software Development
           </div>
 
@@ -1225,7 +1214,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           <h3 class="entry-title">Irrigation Department – Galle</h3>
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             💻 Working as a Full Stack Developer – developed both Web and Mobile applications for the Irrigation Department, Galle. Contributed to database design, backend logic, and responsive frontend interfaces.
           </p>
 
@@ -1264,12 +1253,13 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="InventX DG Project" 
         loading="lazy"
+        width="380" height="380"
       >
       <div class="entry-overlay">
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             INVENT-X 25 Engineering
           </div>
 
@@ -1277,7 +1267,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           <h3 class="entry-title">Newest IT Projects Presented to SLIATE Director General</h3>
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             💡 Featured Projects:<br>
             🔹 Career Guidance System<br>
             🔹 Antibiotics Analysis & Management System<br>
@@ -1319,12 +1309,13 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="InventX Exhibition" 
         loading="lazy"
+        width="380" height="380"
       >
       <div class="entry-overlay">
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             INVENT-X 25 HNDE
           </div>
 
@@ -1332,7 +1323,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           <h3 class="entry-title">INVENT-X 25 Engineering Exhibition</h3>
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             • INVENTX 2025! 🤖⚙<br>
             • Engineering Department ⚙️<br>
             📍 SLIATE Galle 2025<br>
@@ -1374,12 +1365,13 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="Mobile App Development" 
         loading="lazy"
+        width="380" height="380"
       >
       <div class="entry-overlay">
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Irrigation Department Galle
           </div>
 
@@ -1387,7 +1379,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           <h3 class="entry-title">Mobile Application Development</h3>
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             🌊💧 Excited to be part of a meaningful project — Mobile Application Development for the Irrigation Department, Galle.<br>
             Empowering smarter field operations through technology.<br>
           </p>
@@ -1428,6 +1420,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="Electronics Training" 
         loading="lazy"
+        width="380" height="380"
       >
       <div class="entry-overlay">
         <div class="overlay-content">
@@ -1479,6 +1472,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         class="img-fluid" 
         alt="Electrical Training" 
         loading="lazy"
+        width="380" height="380"
       >
       <div class="entry-overlay">
         <div class="overlay-content">
@@ -1527,7 +1521,8 @@ Explore a diverse portfolio capturing professional events and achievements, offi
       <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.11_8440db55.jpg" 
            class="img-fluid" 
            alt="Matara to Badulla Trip 2025" 
-           loading="lazy">
+           loading="lazy"
+           width="380" height="380">
 
       <div class="entry-overlay">
         <div class="overlay-content">
@@ -1576,7 +1571,8 @@ Explore a diverse portfolio capturing professional events and achievements, offi
       <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.12_fec59360.jpg" 
            class="img-fluid" 
            alt="Night Mail Train Colombo to Badulla" 
-           loading="lazy">
+           loading="lazy"
+           width="380" height="380">
 
       <div class="entry-overlay">
         <div class="overlay-content">
