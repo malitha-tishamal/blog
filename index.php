@@ -1023,7 +1023,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
            <!-- INTROVA 1.0 – Project of the Event -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_f2dbf627.jpg" 
         class="img-fluid" 
@@ -1036,14 +1036,14 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             INTROVA 1.0 HNDIT Event
           </div>
 
           <!-- Title -->
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             🔥🏆🎆 Project of the Event <br>
             🔥🏆🎆 1<sup>st</sup> Place in Desktop & Mobile Application Category.<br>
             ✨ INTROVA 1.0 ✨<br>
@@ -1080,7 +1080,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
        <!-- INTROVA 1.0 – Project Presentation -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/Screenshot 2025-08-17 203217.png" 
         class="img-fluid" 
@@ -1092,7 +1092,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             INTROVA 1.0 HNDIT Event
           </div>
 
@@ -1100,7 +1100,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           <h3 class="entry-title">Project Presentation</h3>
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             🏆 Top Performer – Project Presentation for Lecture Panel.<br>
             My project: <strong>Learning Management System</strong>
           </p>
@@ -1135,7 +1135,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
      <!-- ATI Galle – Official Website Launch -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/WhatsApp Image 2026-01-04 at 6.57.01 PM.jpeg" 
         class="img-fluid" 
@@ -1148,7 +1148,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 20px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Official Website Launch
           </div>
 
@@ -1158,7 +1158,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </h3>
 
           <!-- Description -->
-          <p style="color:#fff; font-size:14px; margin-top:8px;">
+          <p class="text-white-desc">
             The official website of ATI Galle was launched on December 22nd with the participation
             of the Director and lecture staff. I was proud to be a part of the developer team
             contributing to this digital milestone.
@@ -1194,7 +1194,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
       <!-- Irrigation Department – Development -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_11535d1b.jpg" 
         class="img-fluid" 
@@ -1247,7 +1247,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
    <!-- INVENT-X 25 – DG Presentation -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/512441687_1170234648467455_4874232720881910038_n.jpg" 
         class="img-fluid" 
@@ -1303,7 +1303,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <!-- INVENT-X 25 Exhibition -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_88e0eef9.jpg" 
         class="img-fluid" 
@@ -1359,7 +1359,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <!-- Irrigation Department – Mobile App -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/irrigation-dept.jpg" 
         class="img-fluid" 
@@ -1414,7 +1414,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <!-- Electronic Practical A/L Training -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-traning">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg" 
         class="img-fluid" 
@@ -1426,7 +1426,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Electronic Practical A/L
           </div>
 
@@ -1436,7 +1436,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </h3>
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             🔧 Training program to support students in A/L Engineering Technology – Electronics practical sessions, helping them understand real-world electronic applications and hands-on skills.
           </p>
 
@@ -1466,7 +1466,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <!-- A/L Training – Electrical Practical -->
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-traning">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img 
         src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg" 
         class="img-fluid" 
@@ -1478,7 +1478,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Electrical Practical A/L
           </div>
 
@@ -1488,7 +1488,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </h3>
 
           <!-- Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             ⚡ Training program supporting A/L Engineering Technology students in Electrical practical sessions, helping them gain hands-on experience and practical understanding of electrical systems.
           </p>
 
@@ -1517,7 +1517,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.11_8440db55.jpg" 
            class="img-fluid" 
            alt="Matara to Badulla Trip 2025" 
@@ -1528,7 +1528,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Location -->
-          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">
+          <div class="entry-meta text-highlight">
             Matara → Badulla
           </div>
 
@@ -1538,7 +1538,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </h3>
 
           <!-- Short description -->
-          <p style="color:#fff; font-size:14px; margin-bottom:10px;">
+          <p class="text-white-desc">
             Dunhida Waterfall, Kubalwela Maha Asapuwa, Ella & Scenic Views
           </p>
 
@@ -1567,7 +1567,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.12_fec59360.jpg" 
            class="img-fluid" 
            alt="Night Mail Train Colombo to Badulla" 
@@ -1578,7 +1578,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Route -->
-          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">
+          <div class="entry-meta text-highlight">
             Colombo → Badulla
           </div>
 
@@ -1588,7 +1588,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </h3>
 
           <!-- Description -->
-          <p style="color:#fff; font-size:14px; margin-bottom:10px;">
+          <p class="text-white-desc">
             Colombo to Badulla • Night Ride • Hill Country Experience
           </p>
 
@@ -1616,7 +1616,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
   <article class="portfolio-entry">
-    <figure class="entry-image" style="width: 380px; height: 380px;">
+    <figure class="entry-image entry-image-fixed">
       <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.08_a79e85cc.jpg" 
            class="img-fluid" 
            alt="Nuwara Eliya Trip" 
@@ -1626,7 +1626,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Location -->
-          <div class="entry-meta" style="color:yellow; font-size:22px; font-weight:bold;">
+          <div class="entry-meta text-highlight">
             Nuwara Eliya
           </div>
 
@@ -1636,7 +1636,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </h3>
 
           <!-- Description -->
-          <p style="color:#fff; font-size:14px; margin-bottom:10px;">
+          <p class="text-white-desc">
             Little England • Tea Gardens • Cool Climate
           </p>
 
@@ -1712,8 +1712,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
     <figure class="entry-image">
       <img 
         src="assets/img/portfolio/app/mediq-app.png" 
-        style="padding: 30px 0px 30px 0px;"  
-        class="img-fluid" 
+        class="img-fluid portfolio-app-img" 
         alt="MediQ App" 
         loading="lazy"
       >
@@ -1721,13 +1720,13 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             MediQ Antibiotic Management App (Upcomming...)
           </div>
 
 
           <!-- Short Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             🧪 Tracks antibiotic release & return, real-time stock monitoring, ward-wise usage logs, and automated reports. <br>
             📱 Built with Flutter & Firebase for cross-platform, cloud-powered management.
           </p>
@@ -1761,8 +1760,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
     <figure class="entry-image">
       <img 
         src="assets/img/portfolio/app/caytrack-app.png" 
-        style="padding: 30px 0px 30px 0px;" 
-        class="img-fluid" 
+        class="img-fluid portfolio-app-img" 
         alt="CeyTrack App" 
         loading="lazy"
       >
@@ -1770,12 +1768,12 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <div class="overlay-content">
 
           <!-- Highlight text -->
-          <div class="entry-meta" style="color: yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             CeyTrack (Flutter + Firebase) (Upcoming...)
           </div>
 
           <!-- Short Description -->
-          <p style="color: #fff; font-size: 14px; margin-top: 8px;">
+          <p class="text-white-desc">
             🌾 Cey-Track App – Land-to-Factory Order Management & Geo-Location System<br>
             Allows landowners (Tea, Cinnamon, etc.) to submit orders while factories track total, pending & completed orders in real-time 📝
           </p>
@@ -1807,10 +1805,10 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/eduwide/2.png" style="padding: 30px 0px 30px 0px;" class="img-fluid" alt="Career System" loading="lazy">
+      <img src="assets/img/portfolio/eduwide/2.png" class="img-fluid portfolio-app-img" alt="Career System" loading="lazy">
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Advanced Career Guideline System
           </div>
           <h3 class="entry-title">Career Guideline System for ATI Galle</h3>
@@ -1836,10 +1834,10 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/edulk/edulk.png" style="padding: 30px 0px 30px 0px;" class="img-fluid" alt="Edulk LMS" loading="lazy">
+      <img src="assets/img/portfolio/edulk/edulk.png" class="img-fluid portfolio-app-img" alt="Edulk LMS" loading="lazy">
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Edulk Learning Management System
           </div>
           <h3 class="entry-title">Learning Management System</h3>
@@ -1864,10 +1862,10 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-offcial">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/antibiogram.png" style="padding: 30px 0px 30px 0px;" class="img-fluid" alt="Antibiogram System" loading="lazy">
+      <img src="assets/img/portfolio/antibiogram.png" class="img-fluid portfolio-app-img" alt="Antibiogram System" loading="lazy">
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             MediQ Antibiogram Analyze System
           </div>
           <h3 class="entry-title">Antibiogram System – Karapitiya Hospital</h3>
@@ -1892,10 +1890,10 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-offcial">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/Screenshot 2025-09-01 111145.png" style="padding: 30px 0px 30px 0px;" class="img-fluid" alt="Irrigation Website" loading="lazy">
+      <img src="assets/img/portfolio/Screenshot 2025-09-01 111145.png" class="img-fluid portfolio-app-img" alt="Irrigation Website" loading="lazy">
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Irrigation Department Website
           </div>
           <h3 class="entry-title">Southern Province Irrigation Department</h3>
@@ -1920,10 +1918,10 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-hndit">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/eduwide.png" style="padding: 30px 0px 30px 0px;" class="img-fluid" alt="Eduwide Project" loading="lazy">
+      <img src="assets/img/portfolio/eduwide.png" class="img-fluid portfolio-app-img" alt="Eduwide Project" loading="lazy">
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             Eduwide – HNDIT 2nd Sem Project
           </div>
           <h3 class="entry-title">Career Guideline & Learning Support System</h3>
@@ -1948,10 +1946,10 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-offcial">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/mediq.png" style="padding:10px;" class="img-fluid" alt="MediQ System" loading="lazy">
+      <img src="assets/img/portfolio/mediq.png" class="img-fluid portfolio-app-img-sm" alt="MediQ System" loading="lazy">
       <div class="entry-overlay">
         <div class="overlay-content">
-          <div class="entry-meta" style="color:yellow; font-size: 22px; font-weight: bold;">
+          <div class="entry-meta text-highlight">
             MediQ Antibiotic Analyze System
           </div>
           <h3 class="entry-title">Antibiotic Usage Analysis Platform</h3>

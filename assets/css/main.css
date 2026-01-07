@@ -3211,3 +3211,26 @@ section,
     margin-bottom: 30px;
   }
 }
+
+/* Portfolio Utilities */
+.portfolio-app-img {
+  padding: 30px 0;
+}
+
+.portfolio-app-img-sm {
+  padding: 10px;
+}
+
+.entry-image-fixed {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+}
+
+/* Fix for slight variations in text-white-desc */
+.text-white-desc {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
