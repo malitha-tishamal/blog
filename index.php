@@ -1833,7 +1833,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             data-glightbox="title: Advanced Career Guideline System; description: Smart LMS + student support system.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-advanced-carrier-guideline-system.php">
+          <a href="portfolio-details-advanced-carrier-guideline-system.php" target="_blank">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -1862,7 +1862,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             data-glightbox="title: Edulk LMS; description: LMS with advanced features for students.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-10.html">
+          <a href="portfolio-details-edulk.php" target="_blank">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -1890,7 +1890,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             data-glightbox="title: Antibiogram System; description: Hospital-scale antibiotic sensitivity analysis system.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-antibiogram.html">
+          <a href="portfolio-details-antibiogram.php" target="_blank">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>

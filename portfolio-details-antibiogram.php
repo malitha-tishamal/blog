@@ -3,90 +3,161 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>MediQ Antibiogram Management System Details</title>
-  <meta name="description" content="MediQ Antibiogram Management System - Revolutionizing antimicrobial resistance tracking and analysis">
-  <meta name="keywords" content="antibiogram, antimicrobial resistance, healthcare, data analysis, hospital management">
-
-  <!-- Favicons -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  
+  <!-- Primary Title with Focus Keywords -->
+  <title>MediQ Antibiogram Management System | Antimicrobial Resistance Tracking & Analysis Platform</title>
+    <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
+  <!-- Comprehensive Meta Description -->
+  <meta name="description" content="MediQ Antibiogram Management System: Advanced healthcare software for tracking, analyzing, and managing antimicrobial resistance patterns. Streamline hospital antibiotic stewardship, enhance infection control, and improve patient outcomes with data-driven insights.">
+  
+  <!-- Enhanced Keyword Strategy -->
+  <meta name="keywords" content="
+    MediQ Antibiogram Management System,
+    Antimicrobial Resistance Tracking,
+    Hospital Antibiotic Stewardship,
+    Healthcare Data Analysis Platform,
+    Infection Control Software,
+    Antibiotic Sensitivity Testing,
+    Microbiology Data Management,
+    Hospital Epidemiology System,
+    Antimicrobial Susceptibility Testing,
+    Clinical Decision Support System,
+    Hospital Infection Prevention,
+    Antibiotic Resistance Monitoring,
+    Healthcare Analytics Platform,
+    Medical Laboratory Software,
+    Patient Safety Monitoring,
+    Hospital Data Management,
+    Clinical Microbiology Software,
+    Public Health Surveillance,
+    Antibiotic Usage Tracking,
+    Healthcare Quality Improvement,
+    Electronic Antibiogram System,
+    Hospital Pharmacy Management,
+    Medical Data Visualization,
+    Healthcare Compliance Software
+  ">
+  
+  <!-- Author & Credibility -->
+  <meta name="author" content="MediQ Healthcare Solutions">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://mediq.42web.io/antibiogram/">
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="MediQ Healthcare Systems">
+  <meta property="og:title" content="MediQ Antibiogram Management System | Healthcare Data Analytics">
+  <meta property="og:description" content="Advanced software for antimicrobial resistance tracking, antibiotic stewardship, and hospital infection control with comprehensive data analytics and reporting.">
+  <meta property="og:image" content="https://mediq.42web.io/assets\img\portfolio\antibiogram/1.png">
+  <meta property="og:image:alt" content="MediQ Antibiogram Management System Dashboard Interface">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://mediq.42web.io/antibiogram/">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mediq_health">
+  <meta name="twitter:creator" content="@mediq_health">
+  <meta name="twitter:title" content="MediQ Antibiogram Management System">
+  <meta name="twitter:description" content="Healthcare software for antimicrobial resistance tracking and antibiotic stewardship in hospitals and clinical settings.">
+  <meta name="twitter:image" content="https://mediq.42web.io/assets\img\portfolio\antibiogram/1.png">
+  <meta name="twitter:image:alt" content="Antibiogram Management System Interface">
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="subject" content="Healthcare Software, Antimicrobial Resistance, Hospital Management">
+  <meta name="classification" content="Healthcare Technology, Medical Software, Data Analytics">
+  <meta name="language" content="en">
+  <meta name="coverage" content="Worldwide">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="General">
+  <meta name="revised" content="2025-07-02">
+  
+  <!-- Application-Specific Meta Tags -->
+  <meta name="application-name" content="MediQ Antibiogram Management">
+  <meta name="apple-mobile-web-app-title" content="MediQ Antibiogram">
+  <meta name="theme-color" content="#0EA5E9">
+  
+  <!-- Preconnect for Performance -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  
   <!-- Combined CSS Bundle -->
   <link href="assets/css/bundle.min.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Style
-  * Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
-  * Updated: Jul 02 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
+  <!-- Structured Data for Healthcare Software -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MediQ Antibiogram Management System",
+    "description": "Healthcare software for tracking and analyzing antimicrobial resistance patterns in hospital settings",
+    "url": "https://mediq.42web.io/antibiogram/",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "Web",
+    "author": {
+      "@type": "Organization",
+      "name": "MediQ Healthcare Solutions",
+      "url": "https://mediq.42web.io"
+    },
+    "datePublished": "2025-07-02",
+    "featureList": [
+      "Antimicrobial Resistance Tracking",
+      "Antibiotic Sensitivity Analysis",
+      "Hospital Epidemiology Reporting",
+      "Infection Control Monitoring",
+      "Patient Safety Analytics",
+      "Antibiotic Stewardship Tools",
+      "Clinical Decision Support",
+      "Data Visualization Dashboard",
+      "Automated Reporting",
+      "Multi-hospital Data Aggregation",
+      "Real-time Alert System",
+      "Compliance Tracking",
+      "Laboratory Integration",
+      "Pharmacy Interface",
+      "Mobile Access"
+    ],
+    "softwareRequirements": "Modern Web Browser",
+    "screenshot": [
+      "https://mediq.42web.io/assets/img/portfolio/antibiogram/1.png",
+      "https://mediq.42web.io/assets/img/portfolio/antibiogram/2.png",
+      "https://mediq.42web.io/assets/img/portfolio/antibiogram/3.png"
+    ],
+    "softwareVersion": "1.5.0",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "category": "Healthcare Software"
+    },
+    "keywords": "antibiogram, antimicrobial resistance, healthcare analytics, hospital management"
+  }
+  </script>
+  
+  <!-- Additional Schema for Medical Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "MediQ Healthcare Systems",
+    "description": "Healthcare technology solutions for antimicrobial resistance management and infection control",
+    "url": "https://mediq.42web.io",
+    "medicalSpecialty": "Infectious Diseases, Hospital Epidemiology, Pharmacy Management"
+  }
+  </script>
 </head>
 
 <body class="portfolio-details-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <!-- Uncomment the line below if you also wish to use an text logo -->
-        <!-- <h1 class="sitename">Style</h1>  -->
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-
-        <div class="profile-img">
-          <img src="assets/img/profile/profile-malitha.jpg" alt="" class="img-fluid rounded-circle">
-        </div>
-
-        <a href="index.html" class="logo d-flex align-items-center justify-content-center active">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.webp" alt=""> -->
-          <h1 class="sitename">Malitha Tishamal</h1>
-        </a>
-
-        <div class="d-flex" style="gap: 8px;">
-          <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
-        </div>
-
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="index.php#about">About</a></li>
-          <li><a href="index.php#resume">Resume</a></li>
-          <li><a href="index.php#portfolio">Portfolio</a></li>
-          <li><a href="index.php#portfolio2">Projects</a></li>
-          <!--li><a href="#services">Services</a></li-->
-          <!--li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-            </ul>
-          </li-->
-          <li><a href="index.php#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
+   <?php include_once ("includes/header.php") ?>
 
   <main class="main">
 
@@ -140,25 +211,25 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/1.png" alt="Antibiogram Dashboard" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/1.png"  class="img-fluid">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/2.png" alt="Data Analytics View" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/2.png"  class="img-fluid">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/3.png" alt="Admin Management" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/3.png" class="img-fluid">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/4.png" alt="Report Generation" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/4.png"  class="img-fluid">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/5.png" alt="Mobile Responsive View" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/5.png" class="img-fluid">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/6.png" alt="Mobile Responsive View" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/6.png"  class="img-fluid">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/7.png" alt="Mobile Responsive View" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/7.png" class="img-fluid">
                     </div>
                   </div>
                     
@@ -170,25 +241,25 @@
               <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2 mt-3">
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/1.png" alt="Dashboard" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/1.png"  class="img-fluid glightbox">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/2.png" alt="Analytics" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/2.png"  class="img-fluid glightbox">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/3.png" alt="Admin Panel" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/3.png" class="img-fluid glightbox">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/4.png" alt="Reports" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/4.png" class="img-fluid glightbox">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/5.png" alt="Mobile View" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/5.png" class="img-fluid glightbox">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/6.png" alt="Data Import" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/6.png"  class="img-fluid glightbox">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/7.png" alt="User Management" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/7.png"  class="img-fluid glightbox">
                   </div>
                 </div>
               </div>
@@ -229,7 +300,7 @@
 
               <div class="project-website">
                 <i class="bi bi-link-45deg"></i>
-                <a href="https://mediq-antibiogram.infy.uk" target="_blank">https://mediq.42web.io/antibiogram/</a>
+                <a href="https://mediq.42web.io/antibiogram/" target="_blank">https://mediq.42web.io/antibiogram/</a>
               </div>
 
               <div class="project-overview">
@@ -385,7 +456,7 @@
 
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
                   <a href="https://mediq.42web.io/antibiogram/" target="_blank" class="btn-view-project">View Live Project</a>
-                  <a href="portfolio-details-eduwide.html" class="btn-next-project">Previous Project <i class="bi bi-arrow-left"></i></a>
+                  <a href="portfolio-details-spid-web.php" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>
@@ -398,34 +469,12 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Malitha Tishamal</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/MalithaTishamal" target="_blank"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.linkedin.com/in/malitha-tishamal" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/malitha-tishamal" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/malithatishamal" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.facebook.com/malitha.tishamal" target="_blank"><i class="bi bi-facebook"></i></a>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-      </div>
-    </div>
-
-  </footer>
+<?php include_once ("includes/footer.php") ?>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Combined JS Bundle -->
-  <script src="assets/js/bundle.min.js"></script>
+
 
 </body>
 
