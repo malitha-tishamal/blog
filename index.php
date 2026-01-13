@@ -1783,7 +1783,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
           <!-- Highlight text -->
           <div class="entry-meta text-highlight">
-            CeyTrack (Flutter + Firebase) (Upcoming...)
+            CeyTrack (Flutter + Firebase)
           </div>
 
           <!-- Short Description -->
@@ -1803,7 +1803,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
               <i class="bi bi-arrows-angle-expand"></i>
             </a>
 
-            <a href="portfolio-details-ceytrack-app.html" target="_blank">
+            <a href="portfolio-details -ceytrack-app.php" target="_blank">
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>
@@ -1833,7 +1833,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             data-glightbox="title: Advanced Career Guideline System; description: Smart LMS + student support system.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-advanced-carrier-guideline-system.html">
+          <a href="portfolio-details-advanced-carrier-guideline-system.php">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
