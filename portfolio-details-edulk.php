@@ -159,6 +159,9 @@
   }
   </script>
 
+    <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
 </head>
 
 <body class="portfolio-details-page">
@@ -587,9 +590,6 @@
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Combined JS Bundle -->
-  <script src="assets/js/bundle.min.js"></script>
 
   <style>
     /* Custom Styles for Edulk LMS - Blue & White Theme */
