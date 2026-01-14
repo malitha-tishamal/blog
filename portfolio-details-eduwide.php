@@ -367,7 +367,7 @@
 
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
                   <a href="https://eduwide.infy.uk" target="_blank" class="btn-view-project">View Live Project</a>
-                  <a href="portfolio-details-mediq.html" class="btn-next-project">Next Project <i class="bi bi-arrow-left"></i></a>
+                  <a href="portfolio-details-mediq.php" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>

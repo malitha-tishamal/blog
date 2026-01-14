@@ -48,7 +48,7 @@
   <meta property="og:site_name" content="Malitha Tishamal - Developer Portfolio">
   <meta property="og:title" content="Malitha Tishamal – Full Stack Developer | DevOps | AI & Cybersecurity">
   <meta property="og:description" content="Professional Full Stack Developer & DevOps Engineer creating secure, scalable applications with React, Node.js, Python, cloud infrastructure, and AI integration.">
-  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/social-preview.jpg">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/profile/profile-malitha.jpg">
   <meta property="og:image:alt" content="Malitha Tishamal - Full Stack Developer & DevOps Engineer">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -91,7 +91,7 @@
     "@id": "https://malithatishamal.42web.io/#person",
     "name": "Malitha Tishamal",
     "url": "https://malithatishamal.42web.io",
-    "image": "https://malithatishamal.42web.io/assets/img/profile.jpg",
+    "image": "https://malithatishamal.42web.io/assets/img/profile/profile-malitha.jpg",
     "jobTitle": "Full Stack Developer & DevOps Engineer",
     "worksFor": {
       "@type": "Organization",
@@ -1918,7 +1918,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             data-glightbox="title: Irrigation Website; description: Official government website redesign.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="https://irrigationdept.sp.gov.lk/" target="_blank">
+          <a href="portfolio-details-spid-web.php" target="_blank">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -1946,7 +1946,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             data-glightbox="title: Eduwide; description: Career guideline + learning support system for students.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-eduwide.html">
+          <a href="portfolio-details-eduwide.php" target="_blank">
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -1974,7 +1974,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             data-glightbox="title: MediQ Antibiotic Analyze System; description: Online antibiotic tracking & analytics system.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
-          <a href="portfolio-details-mediq.html"><i class="bi bi-arrow-right"></i></a>
+          <a href="portfolio-details-mediq.php"><i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
     </div>
