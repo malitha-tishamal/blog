@@ -54,7 +54,7 @@
   <meta property="og:site_name" content="MediQ Healthcare Systems">
   <meta property="og:title" content="MediQ Antibiogram Management System | Healthcare Data Analytics">
   <meta property="og:description" content="Advanced software for antimicrobial resistance tracking, antibiotic stewardship, and hospital infection control with comprehensive data analytics and reporting.">
-  <meta property="og:image" content="https://mediq.42web.io/assets\img\portfolio\antibiogram/1.png">
+  <meta property="og:image" content="https://mediq.42web.io/assets/img/portfolio/antibiogram/1.png">
   <meta property="og:image:alt" content="MediQ Antibiogram Management System Dashboard Interface">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -66,7 +66,7 @@
   <meta name="twitter:creator" content="@mediq_health">
   <meta name="twitter:title" content="MediQ Antibiogram Management System">
   <meta name="twitter:description" content="Healthcare software for antimicrobial resistance tracking and antibiotic stewardship in hospitals and clinical settings.">
-  <meta name="twitter:image" content="https://mediq.42web.io/assets\img\portfolio\antibiogram/1.png">
+  <meta name="twitter:image" content="https://mediq.42web.io/assets/img/portfolio/antibiogram/1.png">
   <meta name="twitter:image:alt" content="Antibiogram Management System Interface">
   
   <!-- Additional SEO Meta Tags -->
@@ -167,7 +167,7 @@
         <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="current">Portfolio Details</li>
           </ol>
         </nav>
@@ -211,25 +211,25 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/1.png"  class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/1.png" alt="Antibiogram Management System Dashboard" class="img-fluid" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/2.png"  class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/2.png" alt="Microbiology Lab Results Interface" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/3.png" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/3.png" alt="Antibiotic Resistance Analysis Report" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/4.png"  class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/4.png" alt="Patient Data Management for Microbiology" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/5.png" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/5.png" alt="Real-time Antibiotic Usage Statistics" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/6.png"  class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/6.png" class="img-fluid" alt="Interpretation and Reporting Panel" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/7.png" class="img-fluid">
+                      <img src="assets/img/portfolio/antibiogram/7.png" class="img-fluid" alt="Historical Data Filtering Overview" loading="lazy" width="800" height="600">
                     </div>
                   </div>
                     
@@ -241,25 +241,25 @@
               <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2 mt-3">
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/1.png"  class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/1.png" class="img-fluid glightbox" alt="Dashboard Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/2.png"  class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/2.png" class="img-fluid glightbox" alt="Lab Interface Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/3.png" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/3.png" class="img-fluid glightbox" alt="Analysis Report Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/4.png" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/4.png" class="img-fluid glightbox" alt="Patient Management Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/5.png" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/5.png" class="img-fluid glightbox" alt="Statistics View Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/6.png"  class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/6.png" class="img-fluid glightbox" alt="Reporting View Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/antibiogram/7.png"  class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/antibiogram/7.png" class="img-fluid glightbox" alt="Filtering View Preview" loading="lazy" width="200" height="150">
                   </div>
                 </div>
               </div>

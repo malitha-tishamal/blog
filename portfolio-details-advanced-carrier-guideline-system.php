@@ -50,7 +50,7 @@
   <meta property="og:site_name" content="Advanced Career Guideline System">
   <meta property="og:title" content="Advanced Career Guideline System | AI-Powered Career Platform">
   <meta property="og:description" content="Intelligent role-based career management platform connecting students, lecturers, companies, and administrators with AI-driven matching and skill assessment.">
-  <meta property="og:image" content="https://eduwide.42web.io/assets\img\portfolio\acgs/1.jpg">
+  <meta property="og:image" content="https://eduwide.42web.io/assets/img/portfolio/acgs/1.jpg">
   <meta property="og:image:alt" content="Advanced Career Guideline System Dashboard Interface">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -62,7 +62,7 @@
   <meta name="twitter:creator" content="@eduwide_system">
   <meta name="twitter:title" content="Advanced Career Guideline System">
   <meta name="twitter:description" content="AI-powered career management platform for education-industry collaboration and intelligent talent matching.">
-  <meta name="twitter:image" content="https://eduwide.42web.io/assets\img\portfolio\acgs\1.jpg">
+  <meta name="twitter:image" content="https://eduwide.42web.io/assets/img/portfolio/acgs/1.jpg">
   <meta name="twitter:image:alt" content="Career Guideline System Platform Overview">
   
   <!-- Additional SEO Meta Tags -->
@@ -214,16 +214,16 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/acgs/1.jpg" class="img-fluid">
+                      <img src="assets/img/portfolio/acgs/1.jpg" class="img-fluid" alt="Advanced Career Guideline System Homepage" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/acgs/2.jpg" class="img-fluid">
+                      <img src="assets/img/portfolio/acgs/2.jpg" class="img-fluid" alt="Intelligent Admin Dashboard Interface" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/acgs/3.jpg" alt="Student Profile View" class="img-fluid">
+                      <img src="assets/img/portfolio/acgs/3.jpg" alt="Comprehensive Student Profile View" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/acgs/4.jpg" alt="Company Talent Discovery" class="img-fluid">
+                      <img src="assets/img/portfolio/acgs/4.jpg" alt="Employer Talent Discovery and Search" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                   </div>
                     
@@ -235,16 +235,16 @@
               <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2 mt-3">
                   <div class="col-3">
-                    <img src="assets/img/portfolio/acgs/1.jpg" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/acgs/1.jpg" class="img-fluid glightbox" alt="ACGS Overview Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/acgs/2.jpg" alt="Admin Panel" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/acgs/2.jpg" alt="Admin Control Center Preview" class="img-fluid glightbox" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/acgs/3.jpg" alt="Student Profile" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/acgs/3.jpg" alt="Student Career Path Preview" class="img-fluid glightbox" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/acgs/4.jpg" alt="Company View" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/acgs/4.jpg" alt="Talent Matching Preview" class="img-fluid glightbox" loading="lazy" width="200" height="150">
                   </div>
                 </div>
               </div>

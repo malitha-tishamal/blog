@@ -225,7 +225,7 @@
         <h1 class="mb-2 mb-lg-0">Upcoming Project Details</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="current">MediQ App</li>
           </ol>
         </nav>
@@ -278,17 +278,17 @@
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="app-screen-container">
-                        <img src="assets/img/portfolio/app/mediq/screens1.png" class="img-fluid rounded-3">
+                        <img src="assets/img/portfolio/app/mediq/screens1.png" class="img-fluid rounded-3" alt="MediQ App Dashboard Interface" width="600" height="400">
                       </div>
                     </div>
                     <div class="swiper-slide">
                       <div class="app-screen-container">
-                        <img src="assets/img/portfolio/app/mediq/screens2.png" class="img-fluid rounded-3">
+                        <img src="assets/img/portfolio/app/mediq/screens2.png" class="img-fluid rounded-3" alt="MediQ App Prescription Tracking" loading="lazy" width="600" height="400">
                       </div>
                     </div>
                     <div class="swiper-slide">
                       <div class="app-screen-container">
-                        <img src="assets/img/portfolio/app/mediq/screens3.png" class="img-fluid rounded-3">
+                        <img src="assets/img/portfolio/app/mediq/screens3.png" class="img-fluid rounded-3" alt="MediQ App Pharmacy Analytics" loading="lazy" width="600" height="400">
                       </div>
                     </div>
                   </div>
@@ -304,17 +304,17 @@
                 <div class="row g-2">
                   <div class="col-3">
                     <div class="app-thumbnail">
-                      <img src="assets/img/portfolio/app/mediq/screens1.png" class="img-fluid rounded-2 glightbox">
+                      <img src="assets/img/portfolio/app/mediq/screens1.png" class="img-fluid rounded-2 glightbox" alt="MediQ Dashboard Preview" loading="lazy" width="150" height="100">
                     </div>
                   </div>
                   <div class="col-3">
                     <div class="app-thumbnail">
-                      <img src="assets/img/portfolio/app/mediq/screens2.png" class="img-fluid rounded-2 glightbox">
+                      <img src="assets/img/portfolio/app/mediq/screens2.png" class="img-fluid rounded-2 glightbox" alt="MediQ Prescription Preview" loading="lazy" width="150" height="100">
                     </div>
                   </div>
                   <div class="col-3">
                     <div class="app-thumbnail">
-                      <img src="assets/img/portfolio/app/mediq/screens3.png" class="img-fluid rounded-2 glightbox">
+                      <img src="assets/img/portfolio/app/mediq/screens3.png" class="img-fluid rounded-2 glightbox" alt="MediQ Analytics Preview" loading="lazy" width="150" height="100">
                     </div>
                   </div>
                 </div>

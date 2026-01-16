@@ -42,7 +42,7 @@
   <meta property="og:image:alt" content="A/L Engineering Technology Student Working on Electronic Circuit Practical">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://www.malithatishamal.42web.io/">
+  <meta property="og:url" content="https://www.malithatishamal.42web.io/electronics-practical-training">
   
   <!-- Twitter Card with Enhanced Details -->
   <meta name="twitter:card" content="summary_large_image">
@@ -197,7 +197,7 @@
         <h1 class="mb-2 mb-lg-0">Portfolio Details: Training Students Electronic Practical | A/L Engineering Technology</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="current">Portfolio Details</li>
           </ol>
         </nav>
@@ -241,31 +241,31 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/1.png"  class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/1.png" alt="Students learning electronic circuit assembly" class="img-fluid" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/2.png" class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/2.png" alt="Oscilloscope training session for A/L students" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/3.jpg"class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/3.jpg" alt="Hands-on electronic practical workshop" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/3.png"class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/3.png" alt="Electronic component testing on breadboard" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/4.png" class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/4.png" alt="Advanced Level Engineering Technology electronics lab" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/5.jpg" class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/5.jpg" alt="Student measuring voltage with a multimeter" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/6.jpg" class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/6.jpg" alt="Digital logic gate practical training" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/7.jpg"  class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/7.jpg" alt="OP-AMP circuit configuration practical" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/8.jpg"  class="img-fluid">
+                      <img src="assets/img/portfolio/electronic/8.jpg" alt="Troubleshooting electronic circuits workshop" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                   </div>
                     
@@ -515,8 +515,8 @@
               </div>
 
               <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
-                <a href="contact.html" class="btn-view-project">Enquire About Training</a>
-                <a href="portfolio.html" class="btn-next-project">View Other Projects</a>
+                <a href="index.php#contact" class="btn-view-project">Enquire About Training</a>
+                <a href="index.php#portfolio" class="btn-next-project">View Other Projects</a>
               </div>
             </div>
           </div>

@@ -48,7 +48,7 @@
   <meta property="og:site_name" content="Web Development Portfolio">
   <meta property="og:title" content="Southern Provincial Irrigation Department Official Website - Complete Project Details">
   <meta property="og:description" content="Complete portfolio details of government website development project for Southern Provincial Irrigation Department with admin panel and user management system.">
-  <meta property="og:image" content="https://malithatishamal.42web.io/assets\img\portfolio\spid/1.png">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/portfolio/spid/1.png">
   <meta property="og:image:alt" content="Southern Provincial Irrigation Department Website Interface">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -60,7 +60,7 @@
   <meta name="twitter:creator" content="@malithatishamal">
   <meta name="twitter:title" content="Government Website Development - Southern Provincial Irrigation Department">
   <meta name="twitter:description" content="Complete project portfolio: Government website with admin panel, user management, and responsive design.">
-  <meta name="twitter:image" content="https://malithatishamal.42web.io//assets\img\portfolio\spid/1.png">
+  <meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/portfolio/spid/1.png">
   <meta name="twitter:image:alt" content="Government Website Development Project">
   
   <!-- Additional SEO Meta Tags -->
@@ -319,6 +319,72 @@
       transform: translateY(-2px);
     }
 
+    /* Custom Lightbox Styles (Added from second page) */
+    .custom-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .custom-lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      animation: zoomIn 0.3s ease;
+    }
+    
+    .custom-lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      z-index: 100000;
+    }
+    
+    .custom-lightbox-close:hover {
+      background: rgba(255,0,0,0.7);
+    }
+    
+    /* Make thumbnail images clickable */
+    .thumbnail-grid img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .thumbnail-grid img:hover {
+      transform: scale(1.05);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
     /* Responsive Adjustments */
     @media (max-width: 768px) {
       .tech-stack-grid {
@@ -406,26 +472,26 @@
 
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/1.png" class="img-fluid" alt="Homepage Design">
+                    <img src="assets/img/portfolio/spid/1.png" class="img-fluid" alt="SPID Website Homepage Interface" width="800" height="600">
                   </div>
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/2.png" class="img-fluid" alt="Admin Panel">
+                    <img src="assets/img/portfolio/spid/2.png" class="img-fluid" alt="Advanced Admin Panel for Content Management" loading="lazy" width="800" height="600">
                   </div>
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/3.png" class="img-fluid" alt="News Module">
+                    <img src="assets/img/portfolio/spid/3.png" class="img-fluid" alt="News and Announcements Module" loading="lazy" width="800" height="600">
                   </div>
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/4.png" class="img-fluid" alt="Tenders Section">
+                    <img src="assets/img/portfolio/spid/4.png" class="img-fluid" alt="Government Tender Management Section" loading="lazy" width="800" height="600">
                   </div>
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/5.png" class="img-fluid" alt="User Registration">
+                    <img src="assets/img/portfolio/spid/5.png" class="img-fluid" alt="Secure User Registration Portal" loading="lazy" width="800" height="600">
                   </div>
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/6.png" class="img-fluid" alt="Mobile Responsive">
+                    <img src="assets/img/portfolio/spid/6.png" class="img-fluid" alt="Mobile Responsive Website Design" loading="lazy" width="800" height="600">
                   </div>
 
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/7.png" class="img-fluid" alt="Mobile Responsive">
+                    <img src="assets/img/portfolio/spid/7.png" class="img-fluid" alt="Public Inquiry and Contact System" loading="lazy" width="800" height="600">
                   </div>
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -438,39 +504,39 @@
                 <div class="row g-2">
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/spid/1.png" class="img-fluid glightbox" alt="Admin Panel">
+                      <img src="assets/img/portfolio/spid/1.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/spid/1.png" alt="Homepage Preview" loading="lazy" width="200" height="150">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/spid/2.png" class="img-fluid glightbox" alt="News Management">
+                      <img src="assets/img/portfolio/spid/2.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/spid/2.png" alt="Admin Dashboard Preview" loading="lazy" width="200" height="150">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/spid/3.png" class="img-fluid glightbox" alt="Tenders Section">
+                      <img src="assets/img/portfolio/spid/3.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/spid/3.png" alt="News Module Preview" loading="lazy" width="200" height="150">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/spid/4.png" class="img-fluid glightbox" alt="User Dashboard">
+                      <img src="assets/img/portfolio/spid/4.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/spid/4.png" alt="Tenders Portal Preview" loading="lazy" width="200" height="150">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/spid/5.png" class="img-fluid glightbox" alt="Mobile View">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="flow-image">
-                      <img src="assets/img/portfolio/spid/6.png" class="img-fluid glightbox" alt="Mobile View">
+                      <img src="assets/img/portfolio/spid/5.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/spid/5.png" alt="Mobile Design Preview" loading="lazy" width="200" height="150">
                     </div>
                   </div>
 
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/spid/7.png" class="img-fluid glightbox" alt="Mobile View">
+                      <img src="assets/img/portfolio/spid/6.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/spid/6.png" alt="User Management Preview" loading="lazy" width="200" height="150">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="flow-image">
+                      <img src="assets/img/portfolio/spid/7.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/spid/7.png" alt="Public Interface Preview" loading="lazy" width="200" height="150">
                     </div>
                   </div>
                 </div>
@@ -960,7 +1026,7 @@
 
                 <!-- Demo Section -->
                 <div class="demo-section" data-aos="fade-up" data-aos-delay="600">
-                  <h4><i class="bi bi-play-btn"></i> Project Demos</h4>
+                  <h4><i class="bi bi-play-btn"></i> Project </h4>
                   <div class="row g-3">
                     <div class="col-md-6">
                       <div class="demo-card">
@@ -969,23 +1035,12 @@
                         </div>
                         <h6>Live Website Tour</h6>
                         <p>Complete walkthrough of the deployed website features</p>
-                        <a href="#" class="btn" onclick="showDemoAlert('Website Tour')">
-                          <i class="bi bi-play-circle"></i> View Demo
+                        <a href="https://irrigationdept.sp.gov.lk/" target="_blank" >
+                          <i class="bi bi-play-circle"></i> View Project
                         </a>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="demo-card">
-                        <div class="demo-icon">
-                          <i class="bi bi-gear"></i>
-                        </div>
-                        <h6>Admin Panel Demo</h6>
-                        <p>Administrative features and content management</p>
-                        <a href="#" class="btn" onclick="showDemoAlert('Admin Panel')">
-                          <i class="bi bi-play-circle"></i> View Demo
-                        </a>
-                      </div>
-                    </div>
+                   
                   </div>
                   
                 </div>
@@ -1037,31 +1092,106 @@
 
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Gallery Lightbox Script -->
+  <!-- Custom Lightbox JavaScript (Added from second page) -->
   <script>
-    // Initialize gallery lightbox
-    const lightbox = GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true,
-      autoplayVideos: true
-    });
-    
-    // Track project views
+    // Custom Lightbox for Thumbnail Images
     document.addEventListener('DOMContentLoaded', function() {
-      const projectName = 'Southern Provincial Irrigation Department Website';
-      console.log(`Viewing portfolio project: ${projectName}`);
-      
-      // Initialize image zoom on click
-      const images = document.querySelectorAll('.flow-image img');
-      images.forEach(img => {
-        img.addEventListener('click', function() {
-          lightbox.open({
-            src: this.src,
-            type: 'image'
-          });
+        console.log('Initializing custom lightbox functionality for SPID Website page...');
+        
+        // Get all thumbnail images
+        const thumbnailImages = document.querySelectorAll('.thumbnail-image');
+        
+        // Add click event to each thumbnail
+        thumbnailImages.forEach((img, index) => {
+            img.addEventListener('click', function() {
+                console.log('Thumbnail clicked:', this.src);
+                
+                // Remove any existing lightbox
+                const existingLightbox = document.querySelector('.custom-lightbox');
+                if (existingLightbox) {
+                    document.body.removeChild(existingLightbox);
+                }
+                
+                // Create lightbox container
+                const lightbox = document.createElement('div');
+                lightbox.className = 'custom-lightbox';
+                lightbox.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.95);
+                    z-index: 99999;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    animation: fadeIn 0.3s ease;
+                `;
+                
+                // Create image element
+                const lightboxImg = document.createElement('img');
+                lightboxImg.src = this.getAttribute('data-full-src') || this.src;
+                lightboxImg.alt = this.alt;
+                lightboxImg.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    object-fit: contain;
+                    border-radius: 8px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                    animation: zoomIn 0.3s ease;
+                `;
+                
+                // Create close button
+                const closeBtn = document.createElement('div');
+                closeBtn.className = 'custom-lightbox-close';
+                closeBtn.innerHTML = '✕';
+                closeBtn.setAttribute('aria-label', 'Close lightbox');
+                
+                // Add click event to close button
+                closeBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    document.body.removeChild(lightbox);
+                    document.body.style.overflow = '';
+                });
+                
+                // Add click event to lightbox background
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        document.body.removeChild(lightbox);
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Append elements
+                lightbox.appendChild(lightboxImg);
+                lightbox.appendChild(closeBtn);
+                document.body.appendChild(lightbox);
+                
+                // Prevent body scroll when lightbox is open
+                document.body.style.overflow = 'hidden';
+                
+                // Add ESC key support
+                function handleEscKey(e) {
+                    if (e.key === 'Escape') {
+                        const lightbox = document.querySelector('.custom-lightbox');
+                        if (lightbox) {
+                            document.body.removeChild(lightbox);
+                            document.body.style.overflow = '';
+                        }
+                        document.removeEventListener('keydown', handleEscKey);
+                    }
+                }
+                
+                document.addEventListener('keydown', handleEscKey);
+            });
         });
-      });
+        
+        console.log('Custom lightbox initialized for', thumbnailImages.length, 'images');
+        
+        // Track project views
+        const projectName = 'Southern Provincial Irrigation Department Website';
+        console.log(`Viewing portfolio project: ${projectName}`);
     });
     
     // Demo alert function
@@ -1184,12 +1314,6 @@ Contact: malitha.tishamal@email.com
       window.URL.revokeObjectURL(url);
       
       alert('Project report download started!');
-    }
-    
-    // Download technical documentation
-    function downloadTechnicalDocs() {
-      alert('Technical documentation would download as a PDF. In a real implementation, this would link to the actual documentation file.');
-      console.log('Downloading technical documentation');
     }
   </script>
 

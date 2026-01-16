@@ -11,7 +11,32 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-ceytrack-app.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://malithatishamal.42web.io/portfolio-details-mediq-app.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-advanced-carrier-guideline-system.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-antibiogram.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-edulk.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-eduwide.php</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -22,6 +47,21 @@
   </url>
   <url>
     <loc>https://malithatishamal.42web.io/portfolio-details-electronic-traning-students.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-larninglk.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-mediq.php</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://malithatishamal.42web.io/portfolio-details-spid-web.php</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>

@@ -220,16 +220,16 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/edulk/edulk.png" class="img-fluid">
+                      <img src="assets/img/portfolio/edulk/edulk.png" class="img-fluid" alt="Edulk LMS Dashboard Overview" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/edulk/2.jpg" class="img-fluid">
+                      <img src="assets/img/portfolio/edulk/2.jpg" class="img-fluid" alt="Course Management and Enrollment Interface" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/edulk/3.jpg" class="img-fluid">
+                      <img src="assets/img/portfolio/edulk/3.jpg" class="img-fluid" alt="Lecturer and Content Creator Portal" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/edulk/4.jpg" class="img-fluid">
+                      <img src="assets/img/portfolio/edulk/4.jpg" class="img-fluid" alt="Student Learning and Assessment Dashboard" loading="lazy" width="800" height="600">
                     </div>
                     
                   </div>
@@ -242,16 +242,16 @@
               <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2 mt-3">
                   <div class="col-3">
-                    <img src="assets/img/portfolio/edulk/edulk.png" alt="Dashboard" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/edulk/edulk.png" alt="Admin Analytics Preview" class="img-fluid glightbox" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/edulk/2.jpg" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/edulk/2.jpg" class="img-fluid glightbox" alt="Course Catalog Preview" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/edulk/3.jpg" alt="Lecturer View" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/edulk/3.jpg" alt="Lecturer Tools Preview" class="img-fluid glightbox" loading="lazy" width="200" height="150">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/edulk/4.jpg" alt="Student View" class="img-fluid glightbox">
+                    <img src="assets/img/portfolio/edulk/4.jpg" alt="Student Interface Preview" class="img-fluid glightbox" loading="lazy" width="200" height="150">
                   </div>
               
                 </div>

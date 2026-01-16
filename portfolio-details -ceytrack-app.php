@@ -54,7 +54,7 @@
   <meta property="og:image:alt" content="CeyLogix Field Tracking App V1.0 - Complete Detailed Report">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://malithatishamal.42web.io/portfolio-details -ceytrack-app.php">
+  <meta property="og:url" content="https://malithatishamal.42web.io/portfolio/cey-track-agriculture-app">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -490,25 +490,25 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/app/ceytrack/1.png" class="img-fluid">
+                      <img src="assets/img/portfolio/app/ceytrack/1.png" class="img-fluid" alt="CeyTrack App Social Feed and Profiles" width="400" height="800">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/app/ceytrack/2.png" class="img-fluid">
+                      <img src="assets/img/portfolio/app/ceytrack/2.png" class="img-fluid" alt="Agricultural Supply Chain Tracking Interface" loading="lazy" width="400" height="800">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/app/ceytrack/3.png" class="img-fluid">
+                      <img src="assets/img/portfolio/app/ceytrack/3.png" class="img-fluid" alt="Real-time GPS Location Mapping for Farmers" loading="lazy" width="400" height="800">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/app/ceytrack/4.png" class="img-fluid">
+                      <img src="assets/img/portfolio/app/ceytrack/4.png" class="img-fluid" alt="Crop Harvest Documentation and Photos" loading="lazy" width="400" height="800">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/app/ceytrack/5.png" class="img-fluid">
+                      <img src="assets/img/portfolio/app/ceytrack/5.png" class="img-fluid" alt="Factory Owner Dashboard and Analytics" loading="lazy" width="400" height="800">
                     </div>
                     <div class="swiper-slide">
-                     <img src="assets/img/portfolio/app/ceytrack/6.png" class="img-fluid">
+                     <img src="assets/img/portfolio/app/ceytrack/6.png" class="img-fluid" alt="Order Management and Status Tracking" loading="lazy" width="400" height="800">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/app/ceytrack/7.png" class="img-fluid">
+                      <img src="assets/img/portfolio/app/ceytrack/7.png" class="img-fluid" alt="Secure Farmer Login and Authentication" loading="lazy" width="400" height="800">
                     </div>
                     <div class="swiper-slide">
                   </div>
@@ -524,37 +524,37 @@
                 <div class="row g-2">
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/app/ceytrack/1.png" class="img-fluid glightbox" alt="CeyTrack Screen 1">
+                      <img src="assets/img/portfolio/app/ceytrack/1.png" class="img-fluid glightbox" alt="Farmer Feed Preview" loading="lazy" width="150" height="300">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/app/ceytrack/2.png" class="img-fluid glightbox" alt="CeyTrack Screen 2">
+                      <img src="assets/img/portfolio/app/ceytrack/2.png" class="img-fluid glightbox" alt="Inventory Preview" loading="lazy" width="150" height="300">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/app/ceytrack/3.png" class="img-fluid glightbox" alt="CeyTrack Screen 3">
+                      <img src="assets/img/portfolio/app/ceytrack/3.png" class="img-fluid glightbox" alt="GPS Tracking Preview" loading="lazy" width="150" height="300">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/app/ceytrack/4.png" class="img-fluid glightbox" alt="CeyTrack Screen 4">
+                      <img src="assets/img/portfolio/app/ceytrack/4.png" class="img-fluid glightbox" alt="Photo Docs Preview" loading="lazy" width="150" height="300">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/app/ceytrack/5.png" class="img-fluid glightbox" alt="CeyTrack Screen 5">
+                      <img src="assets/img/portfolio/app/ceytrack/5.png" class="img-fluid glightbox" alt="Factory Dashboard Preview" loading="lazy" width="150" height="300">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/app/ceytrack/6.png" class="img-fluid glightbox" alt="CeyTrack Screen 6">
+                      <img src="assets/img/portfolio/app/ceytrack/6.png" class="img-fluid glightbox" alt="Order Status Preview" loading="lazy" width="150" height="300">
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="flow-image">
-                      <img src="assets/img/portfolio/app/ceytrack/7.png" class="img-fluid glightbox" alt="CeyTrack Screen 7">
+                      <img src="assets/img/portfolio/app/ceytrack/7.png" class="img-fluid glightbox" alt="Login Interface Preview" loading="lazy" width="150" height="300">
                     </div>
                   </div>
                 </div>

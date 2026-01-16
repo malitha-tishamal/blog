@@ -176,9 +176,8 @@
     <div class="container">
       <div class="row g-0 align-items-center">
         <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
-          <h1 class="hero-title">Malitha Tishamal</h1>
           <div class="content-wrapper">
-            <h1 class="hero-title"> I'm Creative & Innovative <br><span class="typed" data-typed-items="Designer, Full-Stack Developer, Mobile App Developer, Web Developer, DevOps Engineer, AI Enthusiast, Cybersecurity Enthusiast, Problem Solver, Freelancer"></span></h1>
+            <h1 class="hero-title">Malitha Tishamal - <span class="typed" data-typed-items="Designer, Full-Stack Developer, Mobile App Developer, Web Developer, DevOps Engineer, AI Enthusiast, Cybersecurity Enthusiast, Problem Solver, Freelancer"></span></h1>
             <p class="lead">I create digital experiences that inspire and engage. With a passion for clean design, modern development, and innovative solutions, I transform ideas into beautiful, secure, and functional realities.</p>
 
             <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
@@ -236,7 +235,7 @@
     </div>
   </div>
 
-  <img src="assets/img/profile/profile-malitha.jpg" alt="Portfolio Hero" class="img-fluid hero-main-image" width="400" height="400" loading="eager">
+  <img src="assets/img/profile/profile-malitha.jpg" alt="Malitha Tishamal - Full Stack Developer & DevOps Engineer" class="img-fluid hero-main-image" width="400" height="400" loading="eager">
   <div class="image-overlay"></div>
 </div>
 
@@ -264,7 +263,7 @@
         <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
           <div class="profile-image-wrapper">
             <div class="profile-image">
-              <img src="assets/img/profile/profile-malitha.jpg" alt="Profile" class="img-fluid" loading="lazy" width="280" height="280">
+              <img src="assets/img/profile/profile-malitha.jpg" alt="Malitha Tishamal Profile" class="img-fluid" loading="lazy" width="280" height="280">
             </div>
             <div class="signature-section">
               <img src="assets/img/misc/signature-1.png" width="300px" alt="Signature" class="signature">
@@ -1819,7 +1818,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
   <article class="portfolio-entry">
     <figure class="entry-image">
-      <img src="assets/img/portfolio/eduwide/2.png" class="img-fluid portfolio-app-img" alt="Career System" loading="lazy">
+      <img src="assets/img/portfolio/acgs/4.jpg" class="img-fluid portfolio-app-img" alt="Career System" loading="lazy">
       <div class="entry-overlay">
         <div class="overlay-content">
           <div class="entry-meta text-highlight">
@@ -1827,10 +1826,10 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </div>
           <h3 class="entry-title">Career Guideline System for ATI Galle</h3>
           <div class="entry-links">
-            <a href="assets/img/portfolio/eduwide/2.png"
+            <a href="assets\img\portfolio\acgs/4.jpg"
             class="glightbox"
             data-gallery="portfolio-gallery-development"
-            data-glightbox="title: Advanced Career Guideline System; description: Smart LMS + student support system.">
+            data-glightbox="title: Advanced Career Guideline System; description: Intelligent Role-Based Career Platform for Education & Recruitment.">
             <i class="bi bi-arrows-angle-expand"></i>
           </a>
           <a href="portfolio-details-advanced-carrier-guideline-system.php" target="_blank">

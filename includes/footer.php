@@ -24,6 +24,10 @@
     <div class="footer-bottom text-center">
       <p>© <span id="year"></span> <strong>Malitha Tishamal</strong> — All Rights Reserved</p>
       <p class="footer-credit">Designed & Developed by Malitha Tishamal</p>
+      <div class="footer-views">
+        <i class="bi bi-globe"></i>
+        <span><?php echo number_format($totalViews); ?> Website Visits</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -32,6 +36,19 @@
   document.getElementById("year").innerText = new Date().getFullYear();
 </script>
 <style>
+  .footer-views {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  border-radius: 20px;
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(108, 99, 255, 0.35);
+  color: #cfcfff;
+}
+
   .footer-section {
   background: linear-gradient(110deg, #0a0a0f, #11121a, #0d0f14);
   padding: 60px 0 30px;

@@ -256,7 +256,7 @@
         <h1 class="mb-2 mb-lg-0">Portfolio Details: Students Electrical Practical Training for A/L Engineering Technology</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="current">Portfolio Details</li>
           </ol>
         </nav>
@@ -300,37 +300,37 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/1.png" alt="DB Board Wiring Practical" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/1.png" alt="DB Board Wiring Practical Session" class="img-fluid" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/2.png" alt="MCB Installation Training" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/2.png" alt="MCB Installation Hands-on Training" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/3.png" alt="Switch Circuit Assembly" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/3.png" alt="Electrical Switch Circuit Assembly" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/4.png" alt="Wiring Diagram Implementation" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/4.png" alt="Wiring Diagram Implementation Exercise" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/5.png" alt="Component Identification Session" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/5.png" alt="Electrical Component Identification" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/6.png" alt="Practical Workshop Training" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/6.png" alt="A/L Engineering Technology Practical Workshop" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/7.png" alt="Circuit Testing & Troubleshooting" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/7.png" alt="Circuit Testing and Troubleshooting" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/8.png" alt="Safety Procedures Demonstration" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/8.png" alt="Safety Procedures and Electrical Standards" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/9.png" alt="Distribution Board Assembly" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/9.png" alt="Distribution Board Assembly Training" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/10.png" alt="Hands-on Wiring Practice" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/10.png" alt="Hands-on Wiring Practice for Students" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electrical/11.png" alt="Final Circuit Testing" class="img-fluid">
+                      <img src="assets/img/portfolio/electrical/11.png" alt="Final Electrical Circuit Testing Phase" class="img-fluid" loading="lazy" width="800" height="600">
                     </div>
                   </div>
                     
@@ -342,40 +342,40 @@
               <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2 mt-3">
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/1.png" alt="DB Board Wiring" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/1.png">
+                    <img src="assets/img/portfolio/electrical/1.png" alt="Electrical DB Wiring Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/1.png" loading="lazy" width="150" height="112">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/2.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/2.png">
+                    <img src="assets/img/portfolio/electrical/2.png" alt="MCB Installation Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/2.png" loading="lazy" width="150" height="112">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/3.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/3.png">
+                    <img src="assets/img/portfolio/electrical/3.png" alt="Switch Circuit Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/3.png" loading="lazy" width="150" height="112">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/4.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/4.png">
+                    <img src="assets/img/portfolio/electrical/4.png" alt="Wiring Diagram Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/4.png" loading="lazy" width="150" height="112">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/5.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/5.png">
+                    <img src="assets/img/portfolio/electrical/5.png" alt="Components Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/5.png" loading="lazy" width="150" height="112">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/6.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/6.png">
+                    <img src="assets/img/portfolio/electrical/6.png" alt="Workshop Session Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/6.png" loading="lazy" width="150" height="112">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/7.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/7.png">
+                    <img src="assets/img/portfolio/electrical/7.png" alt="Troubleshooting Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/7.png" loading="lazy" width="150" height="112">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/8.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/8.png">
+                    <img src="assets/img/portfolio/electrical/8.png" alt="Safety Procedures Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/8.png" loading="lazy" width="150" height="112">
                   </div>
 
                    <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/9.png" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/9.png">
+                    <img src="assets/img/portfolio/electrical/9.png" alt="DB Assembly Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/9.png" loading="lazy" width="150" height="112">
                   </div>
 
                    <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/10.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/10.png">
+                    <img src="assets/img/portfolio/electrical/10.png" alt="Wiring Practice Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/10.png" loading="lazy" width="150" height="112">
                   </div>
 
                    <div class="col-3">
-                    <img src="assets/img/portfolio/electrical/11.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/11.png">
+                    <img src="assets/img/portfolio/electrical/11.png" alt="Final Testing Preview" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electrical/11.png" loading="lazy" width="150" height="112">
                   </div>
                   
                 </div>
@@ -645,8 +645,8 @@
               </div>
 
               <div class="cta-buttons" data-aos="fade-up" data-aos-delay="700">
-                <a href="contact.html" class="btn-view-project">Enquire About Training</a>
-                <a href="portfolio.html" class="btn-next-project">View Other Projects</a>
+                <a href="index.php#contact" class="btn-view-project">Enquire About Training</a>
+                <a href="index.php#portfolio" class="btn-next-project">View Other Projects</a>
               </div>
             </div>
           </div>
