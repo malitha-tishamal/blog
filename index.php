@@ -177,7 +177,7 @@
       <div class="row g-0 align-items-center">
         <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
           <div class="content-wrapper">
-            <h1 class="hero-title">Malitha Tishamal - <span class="typed" data-typed-items="Designer, Full-Stack Developer, Mobile App Developer, Web Developer, DevOps Engineer, AI Enthusiast, Cybersecurity Enthusiast, Problem Solver, Freelancer"></span></h1>
+            <h1 class="hero-title">Malitha Tishamal - <span class="typed" data-typed-items="Designer, Full-Stack Developer, Mobile App Developer, Web Developer, DevOps, AI Enthusiast, Cybersecurity Enthusiast, Problem Solver, Freelancer"></span></h1>
             <p class="lead">I create digital experiences that inspire and engage. With a passion for clean design, modern development, and innovative solutions, I transform ideas into beautiful, secure, and functional realities.</p>
 
             <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
