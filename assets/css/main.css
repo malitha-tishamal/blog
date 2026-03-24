@@ -1861,14 +1861,14 @@ section,
   display: flex;
   align-items: flex-end;
   padding: 30px;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio .portfolio-entry .entry-image .entry-overlay .overlay-content {
   width: 100%;
-  transform: translateY(20px);
+  transform: translateY(0);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1904,8 +1904,8 @@ section,
   border-radius: 12px;
   font-size: 20px;
   transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .portfolio .portfolio-entry .entry-image .entry-overlay .entry-links a:hover {
