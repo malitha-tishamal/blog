@@ -46,7 +46,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://mediq.42web.io/antibiogram/">
+  <link rel="canonical" href="https://malithatishamal.42web.io/antibiogram/">
   
   <!-- Open Graph for Social Sharing -->
   <meta property="og:type" content="website">
@@ -54,11 +54,11 @@
   <meta property="og:site_name" content="MediQ Healthcare Systems">
   <meta property="og:title" content="MediQ Antibiogram Management System | Healthcare Data Analytics">
   <meta property="og:description" content="Advanced software for antimicrobial resistance tracking, antibiotic stewardship, and hospital infection control with comprehensive data analytics and reporting.">
-  <meta property="og:image" content="https://mediq.42web.io/assets/img/portfolio/antibiogram/1.png">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/portfolio/antibiogram/1.png">
   <meta property="og:image:alt" content="MediQ Antibiogram Management System Dashboard Interface">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://mediq.42web.io/antibiogram/">
+  <meta property="og:url" content="https://malithatishamal.42web.io/antibiogram/">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -66,7 +66,7 @@
   <meta name="twitter:creator" content="@mediq_health">
   <meta name="twitter:title" content="MediQ Antibiogram Management System">
   <meta name="twitter:description" content="Healthcare software for antimicrobial resistance tracking and antibiotic stewardship in hospitals and clinical settings.">
-  <meta name="twitter:image" content="https://mediq.42web.io/assets/img/portfolio/antibiogram/1.png">
+  <meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/portfolio/antibiogram/1.png">
   <meta name="twitter:image:alt" content="Antibiogram Management System Interface">
   
   <!-- Additional SEO Meta Tags -->
@@ -91,6 +91,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Combined CSS Bundle -->
+  <link rel="preload" href="assets/css/bundle.min.css" as="style">
   <link href="assets/css/bundle.min.css" rel="stylesheet">
   
   <!-- Structured Data for Healthcare Software -->
@@ -100,13 +101,13 @@
     "@type": "SoftwareApplication",
     "name": "MediQ Antibiogram Management System",
     "description": "Healthcare software for tracking and analyzing antimicrobial resistance patterns in hospital settings",
-    "url": "https://mediq.42web.io/antibiogram/",
+    "url": "https://malithatishamal.42web.io/antibiogram/",
     "applicationCategory": "MedicalApplication",
     "operatingSystem": "Web",
     "author": {
       "@type": "Organization",
       "name": "MediQ Healthcare Solutions",
-      "url": "https://mediq.42web.io"
+      "url": "https://malithatishamal.42web.io"
     },
     "datePublished": "2025-07-02",
     "featureList": [
@@ -128,9 +129,9 @@
     ],
     "softwareRequirements": "Modern Web Browser",
     "screenshot": [
-      "https://mediq.42web.io/assets/img/portfolio/antibiogram/1.png",
-      "https://mediq.42web.io/assets/img/portfolio/antibiogram/2.png",
-      "https://mediq.42web.io/assets/img/portfolio/antibiogram/3.png"
+      "https://malithatishamal.42web.io/assets/img/portfolio/antibiogram/1.png",
+      "https://malithatishamal.42web.io/assets/img/portfolio/antibiogram/2.png",
+      "https://malithatishamal.42web.io/assets/img/portfolio/antibiogram/3.png"
     ],
     "softwareVersion": "1.5.0",
     "offers": {
@@ -149,7 +150,7 @@
     "@type": "MedicalOrganization",
     "name": "MediQ Healthcare Systems",
     "description": "Healthcare technology solutions for antimicrobial resistance management and infection control",
-    "url": "https://mediq.42web.io",
+    "url": "https://malithatishamal.42web.io",
     "medicalSpecialty": "Infectious Diseases, Hospital Epidemiology, Pharmacy Management"
   }
   </script>
@@ -300,7 +301,7 @@
 
               <div class="project-website">
                 <i class="bi bi-link-45deg"></i>
-                <a href="https://mediq.42web.io/antibiogram/" target="_blank">https://mediq.42web.io/antibiogram/</a>
+                <a href="https://malithatishamal.42web.io/antibiogram/" target="_blank">https://malithatishamal.42web.io/antibiogram/</a>
               </div>
 
               <div class="project-overview">
@@ -455,7 +456,7 @@
                 </div>
 
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
-                  <a href="https://mediq.42web.io/antibiogram/" target="_blank" class="btn-view-project">View Live Project</a>
+                  <a href="https://malithatishamal.42web.io/antibiogram/" target="_blank" class="btn-view-project">View Live Project</a>
                   <a href="portfolio-details-spid-web.php" class="btn-next-project">Next Project <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
