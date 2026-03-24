@@ -15,28 +15,32 @@
     die( 'Unable to load the "PHP Email Form" Library!');
   }
 
+  // ==== Database Logging ====
+  require_once '../includes/db-conn.php';
+  $name = $_POST['name'] ?? '';
+  $email = $_POST['email'] ?? '';
+  $subject = $_POST['subject'] ?? 'Website Contact';
+  $msg = $_POST['message'] ?? '';
+  
+  $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
+  if($stmt) {
+      $stmt->bind_param("ssss", $name, $email, $subject, $msg);
+      $stmt->execute();
+  }
+  // ==========================
+
   $contact = new PHP_Email_Form;
   $contact->ajax = true;
   
   $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  $contact->from_name = $name;
+  $contact->from_email = $email;
+  $contact->subject = $subject;
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
+  $contact->add_message( $name, 'From');
+  $contact->add_message( $email, 'Email');
   isset($_POST['phone']) && $contact->add_message($_POST['phone'], 'Phone');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+  $contact->add_message( $msg, 'Message', 10);
 
   echo $contact->send();
 ?>

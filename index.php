@@ -1,3 +1,8 @@
+<?php
+require_once 'includes/db-conn.php';
+$site_settings = $conn->query("SELECT * FROM site_settings WHERE id=1")->fetch_assoc();
+$about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,8 +183,8 @@
       <div class="row g-0 align-items-center">
         <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
           <div class="content-wrapper">
-            <h1 class="hero-title">Malitha Tishamal - <span class="typed" data-typed-items="Designer, Full-Stack Developer, Mobile App Developer, Web Developer, DevOps, AI Enthusiast, Cybersecurity Enthusiast, Problem Solver, Freelancer"></span></h1>
-            <p class="lead">I create digital experiences that inspire and engage. With a passion for clean design, modern development, and innovative solutions, I transform ideas into beautiful, secure, and functional realities.</p>
+            <h1 class="hero-title"><?php echo htmlspecialchars($site_settings['site_name']); ?> - <span class="typed" data-typed-items="<?php echo htmlspecialchars($site_settings['hero_title']); ?>"></span></h1>
+            <p class="lead"><?php echo htmlspecialchars($site_settings['hero_description']); ?></p>
 
             <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
               <div class="stat-item">
@@ -292,92 +297,51 @@
                   </div>
 
                   <div class="skills-grid">
-                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                    <?php 
+                    $service_res = $conn->query("SELECT * FROM services ORDER BY display_order ASC");
+                    $delay = 400;
+                    if($service_res->num_rows > 0) {
+                        while($s = $service_res->fetch_assoc()): 
+                    ?>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="<?php echo $delay; ?>">
                       <div class="skill-icon">
-                        <i class="bi bi-palette"></i>
+                        <i class="<?php echo htmlspecialchars($s['icon_class']); ?>"></i>
                       </div>
-                      <h4>UI/UX Design</h4>
-                      <p>Designing clean, intuitive, and user-focused interfaces that enhance every interaction.</p>
+                      <h4><?php echo htmlspecialchars($s['title']); ?></h4>
+                      <p><?php echo htmlspecialchars($s['description']); ?></p>
                     </div>
-
-                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
-                      <div class="skill-icon">
-                        <i class="bi bi-code-slash"></i>
-                      </div>
-                      <h4>Full Stack Development</h4>
-                      <p>Developing dynamic, high-performance web and mobile applications with clean, maintainable code.</p>
-                    </div>
-
-                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
-                      <div class="skill-icon">
-                        <i class="bi bi-cloud"></i>
-                      </div>
-                      <h4>Cloud & Backend Integration</h4>
-                      <p>Empowering apps with scalable, secure, and real-time cloud-powered backend systems.</p>
-                    </div>
-
-                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="550">
-                      <div class="skill-icon">
-                        <i class="bi bi-gear-fill"></i>
-                      </div>
-                      <h4>DevOps</h4>
-                      <p>Streamlining development pipelines with automation, CI/CD, monitoring, and deployment best practices.</p>
-                    </div>
-
-                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="600">
-                      <div class="skill-icon">
-                        <i class="bi bi-cpu-fill"></i>
-                      </div>
-                      <h4>AI & Machine Learning</h4>
-                      <p>Building intelligent systems that leverage data, predictive models, and automation to solve complex problems.</p>
-                    </div>
-
-                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="650">
-                      <div class="skill-icon">
-                        <i class="bi bi-shield-lock-fill"></i>
-                      </div>
-                      <h4>Cybersecurity</h4>
-                      <p>Implementing secure coding practices, vulnerability assessments, and protective measures to safeguard applications.</p>
-                    </div>
+                    <?php 
+                            $delay += 50;
+                        endwhile; 
+                    } else {
+                        echo "<p class='text-muted'>No services added yet.</p>";
+                    }
+                    ?>
                   </div>
-
-
                   <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
+                    <?php 
+                    $resume_res = $conn->query("SELECT * FROM resume_entries ORDER BY display_order ASC");
+                    if($resume_res->num_rows > 0) {
+                        while($r = $resume_res->fetch_assoc()): 
+                    ?>
                    <div class="timeline-item">
-                    <div class="year">2024 October - </div>
-                    <div class="description">Started working as Volunteer Software Developer at Irrigation Department, Galle</div>
+                    <div class="year"><?php echo htmlspecialchars($r['duration']); ?></div>
+                    <div class="description">
+                        <strong><?php echo htmlspecialchars($r['organization']); ?></strong> - <?php echo htmlspecialchars($r['title']); ?>
+                        <?php if(!empty($r['description'])): ?>
+                            <br><?php echo htmlspecialchars($r['description']); ?>
+                        <?php endif; ?>
+                    </div>
                   </div>
-
-                  <div class="timeline-item">
-                    <div class="year">2024 August - </div>
-                    <div class="description">Studying Higher National Diploma In Information Technology From Sri Lanka Institute of Advanced Technological Instatuite Galle</div>
-                  </div>
-
-                  <div class="timeline-item">
-                    <div class="year">2023</div>
-                    <div class="description">Completed Cetificate In Web Development From Southern Instatute of Information Technology</div>
-                  </div>
-
-                  <div class="timeline-item">
-                    <div class="year">2023</div>
-                    <div class="description">Completed Cetificate In Java Application Development From Southern Instatute of Information Technology</div>
-                  </div>
-
-                  <div class="timeline-item">
-                    <div class="year">2019</div>
-                    <div class="description">Graduated With Dip In Information Technology from Esoft Metro Campus</div>
-                  </div>
-
-                  <div class="timeline-item">
-                    <div class="year">2019</div>
-                    <div class="description">Graduated With Dip In English from Esoft Metro Campus</div>
-                  </div>
-
-                  <div class="timeline-item">
-                    <div class="year">2021</div>
-                    <div class="description">Completed Advanced Level-Technology Stream From Matara Central College</div>
-                  </div>
+                    <?php 
+                        endwhile; 
+                    } else {
+                        echo "<p class='text-muted'>No timeline entries found.</p>";
+                    }
+                    ?>
                 </div>
+                
+                
 
                 <div class="cta-section" data-aos="fade-up" data-aos-delay="400">
                   <div class="fun-fact">
@@ -1033,652 +997,27 @@ Explore a diverse portfolio capturing professional events and achievements, offi
           </ul>
 
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-           <!-- INTROVA 1.0 – Project of the Event -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_f2dbf627.jpg" 
-        class="img-fluid" 
-        alt="INTROVA 1.0 Event Image" 
-        loading="lazy"
-        width="380" height="380"
-      >
-
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            INTROVA 1.0 HNDIT Event
-          </div>
-
-          <!-- Title -->
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            🔥🏆🎆 Project of the Event <br>
-            🔥🏆🎆 1<sup>st</sup> Place in Desktop & Mobile Application Category.<br>
-            ✨ INTROVA 1.0 ✨<br>
-            📍 Software Development & Robotics Competition<br>
-            🎯 Organized by Pulzar Club – SLIATE Galle<br>
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_f2dbf627.jpg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-events"
-              data-glightbox="title: Project Of The Event; description: 🔥🏆🎆 Project of the Event  & 1<sup>st</sup> Place in Desktop & Mobile Application Category."
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a 
-              href="https://www.facebook.com/share/p/17anDnfcwW/"
-              target="_blank"
-            >
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-       <!-- INTROVA 1.0 – Project Presentation -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/Screenshot 2025-08-17 203217.png" 
-        class="img-fluid" 
-        alt="Introva Project Presentation" 
-        loading="lazy"
-        width="380" height="380"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            INTROVA 1.0 HNDIT Event
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">Project Presentation</h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            🏆 Top Performer – Project Presentation for Lecture Panel.<br>
-            My project: <strong>Learning Management System</strong>
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/Screenshot 2025-08-17 203217.png"
-              class="glightbox"
-              data-gallery="portfolio-gallery-development"
-              data-glightbox="title: Learning Management System; description: INTROVA 1.0 – Pulzar Club HNDIT Galle (Dec 2024)"
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a 
-              href="https://www.linkedin.com/posts/malitha-tishamal_applicationdevelopment-webdevelopment-innovation-activity-7271807286140911617-vdts?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
-              target="_blank"
-            >
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-
-     <!-- ATI Galle – Official Website Launch -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/WhatsApp Image 2026-01-04 at 6.57.01 PM.jpeg" 
-        class="img-fluid" 
-        alt="ATI Galle Official Website Launch" 
-        loading="lazy"
-        width="380" height="380"
-      >
-
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            Official Website Launch
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">
-            ATI – Advanced Technological Institute, Galle
-          </h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            The official website of ATI Galle was launched on December 22nd with the participation
-            of the Director and lecture staff. I was proud to be a part of the developer team
-            contributing to this digital milestone.
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/WhatsApp Image 2026-01-04 at 6.57.01 PM.jpeg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-events"
-              data-glightbox="title: Official Website Launch – ATI Galle; description: Launched on December 22nd December 2025 with Director & Lecture Staff. Developer Team Contribution."
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a 
-              href="https://www.linkedin.com/posts/malitha-tishamal_atigalle-officiallaunch-hndit-activity-7412887393747263488-I2hx?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
-              target="_blank"
-            >
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-
-      <!-- Irrigation Department – Development -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_11535d1b.jpg" 
-        class="img-fluid" 
-        alt="Irrigation Department Project" 
-        loading="lazy"
-        width="380" height="380"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            Software Development
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">Irrigation Department – Galle</h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            💻 Working as a Full Stack Developer – developed both Web and Mobile applications for the Irrigation Department, Galle. Contributed to database design, backend logic, and responsive frontend interfaces.
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_11535d1b.jpg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-photography"
-              data-glightbox="title: Full Stack Development; description: Developed Web & Mobile Applications for Irrigation Department – Galle"
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a 
-              href="https://www.linkedin.com/posts/malitha-tishamal_just-be-yourself-irrigation-department-activity-7341829512214548481-D_IS?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
-              target="_blank"
-            >
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-   <!-- INVENT-X 25 – DG Presentation -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/512441687_1170234648467455_4874232720881910038_n.jpg" 
-        class="img-fluid" 
-        alt="InventX DG Project" 
-        loading="lazy"
-        width="380" height="380"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            INVENT-X 25 Engineering
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">Newest IT Projects Presented to SLIATE Director General</h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            💡 Featured Projects:<br>
-            🔹 Career Guidance System<br>
-            🔹 Antibiotics Analysis & Management System<br>
-          
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/512441687_1170234648467455_4874232720881910038_n.jpg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-marketing"
-              data-glightbox="title: INVENT-X 25 Project Presentation; description: Featured projects – Career Guidance System & Antibiotics Analysis & Management System"
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a 
-              href="https://www.linkedin.com/posts/malitha-tishamal_newest-it-projects-presentation-inventx25-activity-7343868914407198724-f5Rc?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
-              target="_blank"
-            >
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<!-- INVENT-X 25 Exhibition -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-events">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_88e0eef9.jpg" 
-        class="img-fluid" 
-        alt="InventX Exhibition" 
-        loading="lazy"
-        width="380" height="380"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            INVENT-X 25 HNDE
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">INVENT-X 25 Engineering Exhibition</h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            • INVENTX 2025! 🤖⚙<br>
-            • Engineering Department ⚙️<br>
-            📍 SLIATE Galle 2025<br>
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 11.44.13_88e0eef9.jpg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-development"
-              data-glightbox="title: INVENT-X 25 Exhibition; description: Engineering Department – HNDE Galle 2025"
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a href="https://www.facebook.com/share/v/1BdVGZLSxn/" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
-
-            <a href="https://www.facebook.com/share/r/1b3AkKo3qX/" target="_blank">
-              <i class="bi bi-camera-reels"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<!-- Irrigation Department – Mobile App -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-office">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/irrigation-dept.jpg" 
-        class="img-fluid" 
-        alt="Mobile App Development" 
-        loading="lazy"
-        width="380" height="380"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            Irrigation Department Galle
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">Mobile Application Development</h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            🌊💧 Excited to be part of a meaningful project — Mobile Application Development for the Irrigation Department, Galle.<br>
-            Empowering smarter field operations through technology.<br>
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/irrigation-dept.jpg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-photography"
-              data-glightbox="title: Mobile Application Development; description: Smart field operation tools developed for Irrigation Dept Galle"
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a 
-              href="https://www.linkedin.com/posts/malitha-tishamal_appdevelopment-digitaltransformation-irrigationdepartment-activity-7392110600799195136-bwfO?utm_source=share&utm_medium=member_desktop&rcm=ACoAACt-9MEB0xnd63ORqOqlYjGi186im0mO314"
-              target="_blank"
-            >
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<!-- A/L Training – Electronics Practical -->
-<!-- Electronic Practical A/L Training -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-traning">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg" 
-        class="img-fluid" 
-        alt="Electronics Training" 
-        loading="lazy"
-        width="380" height="380"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            Electronic Practical A/L
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">
-            Training Students for A/L Engineering Technology – Electronics
-          </h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            🔧 Training program to support students in A/L Engineering Technology – Electronics practical sessions, helping them understand real-world electronic applications and hands-on skills.
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-ui"
-              data-glightbox="title: Electronics Practical Training; description: A/L Engineering Technology – Hands-on training for students"
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a href="portfolio-details-electronic-traning-students.php" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<!-- A/L Training – Electrical Practical -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-traning">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img 
-        src="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg" 
-        class="img-fluid" 
-        alt="Electrical Training" 
-        loading="lazy"
-        width="380" height="380"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            Electrical Practical A/L
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">
-            Training Students for A/L Engineering Technology – Electrical
-          </h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            ⚡ Training program supporting A/L Engineering Technology students in Electrical practical sessions, helping them gain hands-on experience and practical understanding of electrical systems.
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_8996eb1e.jpg"
-              class="glightbox"
-              data-gallery="portfolio-gallery-ui"
-              data-glightbox="title: Electrical Practical Training; description: Hands-on practical training for A/L Electrical students"
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a href="portfolio-details-electricle-traning-students.php" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.11_8440db55.jpg" 
-           class="img-fluid" 
-           alt="Matara to Badulla Trip 2025" 
-           loading="lazy"
-           width="380" height="380">
-
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Location -->
-          <div class="entry-meta text-highlight">
-            Matara → Badulla
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">
-            Badulla Travel Trip 2025
-          </h3>
-
-          <!-- Short description -->
-          <p class="text-white-desc">
-            Dunhida Waterfall, Kubalwela Maha Asapuwa, Ella & Scenic Views
-          </p>
-
-          <div class="entry-links">
-            <!-- Image preview -->
-            <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.11_8440db55.jpg"
-               class="glightbox"
-               data-gallery="portfolio-gallery-travel"
-               data-glightbox="title: Matara to Badulla Trip 2025; 
-               description: A memorable journey covering Dunhida Waterfall, Kubalwela Maha Asapuwa, Ella Rock, Nine Arches Bridge and beautiful hill country landscapes.">
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <!-- Details page -->
-            <a href="https://www.facebook.com/share/p/17JmYsWetd/" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.12_fec59360.jpg" 
-           class="img-fluid" 
-           alt="Night Mail Train Colombo to Badulla" 
-           loading="lazy"
-           width="380" height="380">
-
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Route -->
-          <div class="entry-meta text-highlight">
-            Colombo → Badulla
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">
-            Night Mail Train Journey
-          </h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            Colombo to Badulla • Night Ride • Hill Country Experience
-          </p>
-
-          <div class="entry-links">
-            <!-- Image Lightbox -->
-            <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.12_fec59360.jpg"
-               class="glightbox"
-               data-gallery="portfolio-gallery-travel"
-               data-glightbox="title: Night Mail Train – Colombo to Badulla; 
-               description: A classic Sri Lankan railway experience through the hill country, traveling overnight from Colombo to Badulla with misty mornings, tunnels, and scenic views.">
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <!-- Details page -->
-            <a href="https://www.facebook.com/share/p/16fr1VLJ5d/" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-travel">
-  <article class="portfolio-entry">
-    <figure class="entry-image entry-image-fixed">
-      <img src="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.08_a79e85cc.jpg" 
-           class="img-fluid" 
-           alt="Nuwara Eliya Trip" 
-           loading="lazy">
-
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Location -->
-          <div class="entry-meta text-highlight">
-            Nuwara Eliya
-          </div>
-
-          <!-- Title -->
-          <h3 class="entry-title">
-            Nuwara Eliya Travel Experience
-          </h3>
-
-          <!-- Description -->
-          <p class="text-white-desc">
-            Little England • Tea Gardens • Cool Climate
-          </p>
-
-          <div class="entry-links">
-            <!-- Image Preview -->
-            <a href="assets/img/portfolio/WhatsApp Image 2025-08-18 at 18.48.08_a79e85cc.jpg"
-               class="glightbox"
-               data-gallery="portfolio-gallery-travel"
-               data-glightbox="title: Nuwara Eliya Trip; 
-               description: Exploring the beauty of Little England with misty mornings, lush tea estates, Gregory Lake, waterfalls, and the charming cool climate of Nuwara Eliya.">
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <!-- Details Page -->
-            <a href="https://www.facebook.com/share/p/1D6n51RXdD/" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-
-</div><!-- End Portfolio Container -->
+          <?php 
+          $proj_res = $conn->query("SELECT * FROM portfolio_projects ORDER BY display_order ASC");
+          if($proj_res->num_rows > 0) {
+              while($p = $proj_res->fetch_assoc()): 
+          ?>
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($p['category']); ?>">
+            <div class="portfolio-content h-100">
+              <a href="<?php echo htmlspecialchars($p['main_image']); ?>" data-gallery="portfolio-gallery-app" class="glightbox"><img src="<?php echo htmlspecialchars($p['main_image']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($p['title']); ?>" loading="lazy"></a>
+              <div class="portfolio-info">
+                <h4><a href="<?php echo htmlspecialchars($p['details_link']); ?>" title="More Details"><?php echo htmlspecialchars($p['title']); ?></a></h4>
+                <p><?php echo htmlspecialchars($p['short_description']); ?></p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+          <?php 
+              endwhile; 
+          } else {
+              echo "<p class='text-center w-100 text-muted'>No portfolio projects found.</p>";
+          }
+          ?>
+          <!-- End Portfolio Container -->
 
 </div>
 
@@ -2036,7 +1375,7 @@ Explore a diverse portfolio capturing professional events and achievements, offi
                 </div>
                 <div class="content">
                   <h4>Email Address</h4>
-                  <p>malithatishamal@gmail.com</p>
+                  <p><?php echo htmlspecialchars($site_settings['contact_email']); ?></p>
                 </div>
               </div>
             </div>
