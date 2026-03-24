@@ -43,7 +43,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://edulk.42web.io/">
+  <link rel="canonical" href="https://malithatishamal.42web.io/">
   
   <!-- Open Graph for Social Sharing -->
   <meta property="og:type" content="website">
@@ -51,11 +51,11 @@
   <meta property="og:site_name" content="Edulk Learning Management System">
   <meta property="og:title" content="Edulk LMS - Modern PHP-Based Learning Management Platform">
   <meta property="og:description" content="Complete Learning Management System with student portals, course management, assessments, and administrative tools for educational institutions and corporate training.">
-  <meta property="og:image" content="https://edulk.42web.io/assets/img/og-preview.jpg">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/og-preview.jpg">
   <meta property="og:image:alt" content="Edulk LMS Dashboard and Course Management Interface">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://edulk.42web.io/">
+  <meta property="og:url" content="https://malithatishamal.42web.io/">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -63,7 +63,7 @@
   <meta name="twitter:creator" content="@edulk_lms">
   <meta name="twitter:title" content="Edulk LMS - Modern Learning Management System">
   <meta name="twitter:description" content="PHP-based LMS platform with complete course management, student portals, and administrative tools for digital education.">
-  <meta name="twitter:image" content="https://edulk.42web.io/assets/img/twitter-preview.jpg">
+  <meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/twitter-preview.jpg">
   <meta name="twitter:image:alt" content="Edulk LMS Platform Overview">
   
   <!-- Additional SEO Meta Tags -->
@@ -88,6 +88,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Combined CSS Bundle -->
+  <link rel="preload" href="assets/css/bundle.min.css" as="style">
   <link href="assets/css/bundle.min.css" rel="stylesheet">
   
   <!-- Structured Data for Educational Software -->
@@ -97,13 +98,13 @@
     "@type": "SoftwareApplication",
     "name": "Edulk Learning Management System",
     "description": "Modern PHP-based Learning Management System for educational institutions and corporate training",
-    "url": "https://edulk.42web.io",
+    "url": "https://malithatishamal.42web.io",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web",
     "author": {
       "@type": "Organization",
       "name": "Edulk Learning Solutions",
-      "url": "https://edulk.42web.io"
+      "url": "https://malithatishamal.42web.io"
     },
     "datePublished": "2025-07-02",
     "featureList": [
@@ -125,9 +126,9 @@
     ],
     "softwareRequirements": "PHP 7.4+, MySQL 5.6+, Web Server",
     "screenshot": [
-      "https://edulk.42web.io/assets/img/portfolio/edulk/edulk.png",
-      "https://edulk.42web.io/assets/img/portfolio/edulk/2.jpg",
-      "https://edulk.42web.io/assets/img/portfolio/edulk/3.jpg"
+      "https://malithatishamal.42web.io/assets/img/portfolio/edulk/edulk.png",
+      "https://malithatishamal.42web.io/assets/img/portfolio/edulk/2.jpg",
+      "https://malithatishamal.42web.io/assets/img/portfolio/edulk/3.jpg"
     ],
     "softwareVersion": "2.0.0",
     "offers": {
@@ -146,7 +147,7 @@
     "@type": "WebApplication",
     "name": "Edulk LMS Platform",
     "description": "Web-based Learning Management System for educational institutions",
-    "url": "https://edulk.42web.io",
+    "url": "https://malithatishamal.42web.io",
     "browserRequirements": "Modern web browser with JavaScript enabled",
     "featureList": [
       "Interactive Course Content",
@@ -303,7 +304,7 @@
 
               <div class="project-website">
                 <i class="bi bi-link-45deg"></i>
-                <a href="https://edulk.42web.io/" target="_blank">Live Demo: https://edulk.42web.io/</a>
+                <a href="https://malithatishamal.42web.io/" target="_blank">Live Demo: https://malithatishamal.42web.io/</a>
               </div>
 
               <div class="project-overview">
@@ -497,7 +498,7 @@
                         <i class="bi bi-globe"></i>
                         <div>
                           <h6>Live Demo</h6>
-                          <p>https://edulk.42web.io/</p>
+                          <p>https://malithatishamal.42web.io/</p>
                         </div>
                       </div>
                     </div>
@@ -564,7 +565,7 @@
 
                 <div class="cta-buttons mt-5" data-aos="fade-up" data-aos-delay="800">
                   <div class="d-flex flex-wrap gap-3 justify-content-center">
-                    <a href="https://edulk.42web.io/" target="_blank" class="btn btn-primary">
+                    <a href="https://malithatishamal.42web.io/" target="_blank" class="btn btn-primary">
                       <i class="bi bi-globe"></i> Visit Live Demo
                     </a>
                     <a href="portfolio-details-antibiogram.php" class="btn btn-outline-primary">
