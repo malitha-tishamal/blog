@@ -30,7 +30,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.malithatishamal.42web.io/electronics-practical-training">
+  <link rel="canonical" href="https://malithatishamal.42web.io/electronics-practical-training">
   
   <!-- Open Graph with Enhanced Content -->
   <meta property="og:type" content="website">
@@ -38,11 +38,11 @@
   <meta property="og:site_name" content="Engineering Technology Practical Training - Sri Lanka">
   <meta property="og:title" content="Advanced Level Electronics Practical Training | Engineering Technology A/L">
   <meta property="og:description" content="Complete G.C.E. A/L Engineering Technology electronics practical program. Learn real-world circuit design, testing, troubleshooting, and measurements for exam success and technical skills development.">
-  <meta property="og:image" content="https://www.malithatishamal.42web.io/assets/img/portfolio/electronic/1.png">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/portfolio/electronic/1.png">
   <meta property="og:image:alt" content="A/L Engineering Technology Student Working on Electronic Circuit Practical">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://www.malithatishamal.42web.io/electronics-practical-training">
+  <meta property="og:url" content="https://malithatishamal.42web.io/electronics-practical-training">
   
   <!-- Twitter Card with Enhanced Details -->
   <meta name="twitter:card" content="summary_large_image">
@@ -50,7 +50,7 @@
   <meta name="twitter:creator" content="@malithatishamal">
   <meta name="twitter:title" content="A/L Electronics Practical Training - Engineering Technology Sri Lanka">
   <meta name="twitter:description" content="Master A/L Engineering Technology electronics practicals with hands-on training in circuit design, measurements, and troubleshooting techniques.">
-  <meta name="twitter:image" content="https://www.malithatishamal.42web.io/assets/img/portfolio/electronic/1.png">
+  <meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/portfolio/electronic/1.png">
   <meta name="twitter:image:alt" content="Electronics Practical Training for A/L Engineering Technology Students">
   
   <!-- Additional SEO Meta Tags -->
@@ -67,7 +67,7 @@
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="A/L Electronics Practical Training | Engineering Technology">
   <meta itemprop="description" content="Professional electronics practical training program for G.C.E. Advanced Level Engineering Technology students in Sri Lanka.">
-  <meta itemprop="image" content="https://www.malithatishamal.42web.io/assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg">
+  <meta itemprop="image" content="https://malithatishamal.42web.io/assets/img/portfolio/WhatsApp Image 2025-08-28 at 12.53.57_fe5e9127.jpg">
   
   <!-- Dublin Core Metadata -->
   <meta name="DC.title" content="Advanced Level Electronics Practical Training - Engineering Technology">
@@ -91,11 +91,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Combined CSS Bundle -->
+  <link rel="preload" href="assets/css/bundle.min.css" as="style">
   <link href="assets/css/bundle.min.css" rel="stylesheet">
 
   <?php
   // HTML Minification
-  function minify_html($buffer) {
+  function minify_html($buffer) { return $buffer;
       $search = array(
           '/\>[^\S ]+/s',     // strip whitespaces after tags, except space
           '/[^\S ]+\</s',     // strip whitespaces before tags, except space
