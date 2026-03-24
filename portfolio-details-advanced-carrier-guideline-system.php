@@ -42,7 +42,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://eduwide.42web.io/">
+  <link rel="canonical" href="https://malithatishamal.42web.io/">
   
   <!-- Open Graph for Social Sharing -->
   <meta property="og:type" content="website">
@@ -50,11 +50,11 @@
   <meta property="og:site_name" content="Advanced Career Guideline System">
   <meta property="og:title" content="Advanced Career Guideline System | AI-Powered Career Platform">
   <meta property="og:description" content="Intelligent role-based career management platform connecting students, lecturers, companies, and administrators with AI-driven matching and skill assessment.">
-  <meta property="og:image" content="https://eduwide.42web.io/assets/img/portfolio/acgs/1.jpg">
+  <meta property="og:image" content="https://malithatishamal.42web.io/assets/img/portfolio/acgs/1.jpg">
   <meta property="og:image:alt" content="Advanced Career Guideline System Dashboard Interface">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://eduwide.42web.io/">
+  <meta property="og:url" content="https://malithatishamal.42web.io/">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -62,7 +62,7 @@
   <meta name="twitter:creator" content="@eduwide_system">
   <meta name="twitter:title" content="Advanced Career Guideline System">
   <meta name="twitter:description" content="AI-powered career management platform for education-industry collaboration and intelligent talent matching.">
-  <meta name="twitter:image" content="https://eduwide.42web.io/assets/img/portfolio/acgs/1.jpg">
+  <meta name="twitter:image" content="https://malithatishamal.42web.io/assets/img/portfolio/acgs/1.jpg">
   <meta name="twitter:image:alt" content="Career Guideline System Platform Overview">
   
   <!-- Additional SEO Meta Tags -->
@@ -91,6 +91,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Combined CSS Bundle -->
+  <link rel="preload" href="assets/css/bundle.min.css" as="style">
   <link href="assets/css/bundle.min.css" rel="stylesheet">
   
   <!-- Structured Data for Educational Platform -->
@@ -100,13 +101,13 @@
     "@type": "WebApplication",
     "name": "Advanced Career Guideline System",
     "description": "Intelligent role-based career management platform for education-industry collaboration",
-    "url": "https://eduwide.42web.io",
+    "url": "https://malithatishamal.42web.io",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "author": {
       "@type": "Organization",
       "name": "EduWide Career Solutions",
-      "url": "https://eduwide.42web.io"
+      "url": "https://malithatishamal.42web.io"
     },
     "datePublished": "2025-07-02",
     "featureList": [
@@ -123,9 +124,9 @@
     ],
     "softwareRequirements": "Modern Web Browser",
     "screenshot": [
-      "https://eduwide.42web.io/assets/img/portfolio/acgs/1.jpg",
-      "https://eduwide.42web.io/assets/img/portfolio/acgs/2.jpg",
-      "https://eduwide.42web.io/assets/img/portfolio/acgs/3.jpg"
+      "https://malithatishamal.42web.io/assets/img/portfolio/acgs/1.jpg",
+      "https://malithatishamal.42web.io/assets/img/portfolio/acgs/2.jpg",
+      "https://malithatishamal.42web.io/assets/img/portfolio/acgs/3.jpg"
     ],
     "softwareVersion": "2.0.0",
     "offers": {
@@ -144,7 +145,7 @@
     "@type": "EducationalOrganization",
     "name": "EduWide Career Platform",
     "description": "Advanced career guidance and industry-academia collaboration platform",
-    "url": "https://eduwide.42web.io",
+    "url": "https://malithatishamal.42web.io",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "Digital Platform"
@@ -292,7 +293,7 @@
 
               <div class="project-website">
                 <i class="bi bi-link-45deg"></i>
-                <a href="https://eduwide.42web.io/" target="_blank">Live Project: https://eduwide.42web.io/</a>
+                <a href="https://malithatishamal.42web.io/" target="_blank">Live Project: https://malithatishamal.42web.io/</a>
               </div>
 
               <div class="project-overview">
@@ -620,7 +621,7 @@
 
                 <div class="cta-buttons mt-5" data-aos="fade-up" data-aos-delay="800">
                   <div class="d-flex flex-wrap gap-3 justify-content-center">
-                    <a href="https://eduwide.42web.io/" target="_blank" class="btn btn-primary">
+                    <a href="https://malithatishamal.42web.io/" target="_blank" class="btn btn-primary">
                       <i class="bi bi-globe"></i> Visit Live Project
                     </a>
                     <a href="https://2cm.es/1gODF" target="_blank" class="btn btn-success">
