@@ -56,6 +56,7 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
             <a href="about.php"><i class="bi bi-person me-2"></i> About Me</a>
             <a href="resume.php"><i class="bi bi-file-earmark-person me-2"></i> Resume</a>
             <a href="portfolio.php"><i class="bi bi-grid me-2"></i> Portfolio</a>
+            <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
             <a href="messages.php"><i class="bi bi-envelope me-2"></i> Messages</a>
             <hr class="text-secondary">
@@ -119,6 +120,7 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
                         </div>
                         <div class="card-body text-center p-4">
                             <a href="portfolio.php" class="btn btn-lg btn-outline-primary m-2"><i class="bi bi-plus-circle me-1"></i> Add New Project</a>
+            <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
                             <a href="resume.php" class="btn btn-lg btn-outline-success m-2"><i class="bi bi-plus-circle me-1"></i> Add Resume Entry</a>
                             <a href="settings.php" class="btn btn-lg btn-outline-secondary m-2"><i class="bi bi-pencil-square me-1"></i> Update Hero Text</a>
                         </div>
