@@ -327,7 +327,7 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
                    <div class="timeline-item">
                     <div class="year"><?php echo htmlspecialchars($r['duration']); ?></div>
                     <div class="description">
-                        <strong><?php echo htmlspecialchars($r['organization']); ?></strong> - <?php echo htmlspecialchars($r['title']); ?>
+                        <strong><span style="color:blue"><?php echo htmlspecialchars($r['organization']); ?></strong> <br><?php echo htmlspecialchars($r['title']); ?>
                         <?php if(!empty($r['description'])): ?>
                             <br><?php echo htmlspecialchars($r['description']); ?>
                         <?php endif; ?>
@@ -998,23 +998,32 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
           <?php 
-          $proj_res = $conn->query("SELECT * FROM portfolio_projects ORDER BY display_order ASC");
-          if($proj_res->num_rows > 0) {
-              while($p = $proj_res->fetch_assoc()): 
+          $evt_res = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order ASC");
+          if($evt_res->num_rows > 0) {
+              while($e = $evt_res->fetch_assoc()): 
           ?>
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($p['category']); ?>">
-            <div class="portfolio-content h-100">
-              <a href="<?php echo htmlspecialchars($p['main_image']); ?>" data-gallery="portfolio-gallery-app" class="glightbox"><img src="<?php echo htmlspecialchars($p['main_image']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($p['title']); ?>" loading="lazy"></a>
-              <div class="portfolio-info">
-                <h4><a href="<?php echo htmlspecialchars($p['details_link']); ?>" title="More Details"><?php echo htmlspecialchars($p['title']); ?></a></h4>
-                <p><?php echo htmlspecialchars($p['short_description']); ?></p>
-              </div>
-            </div>
-          </div><!-- End Portfolio Item -->
+           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($e['category']); ?>">
+             <article class="portfolio-entry">
+               <figure class="entry-image entry-image-fixed">
+                 <img src="<?php echo htmlspecialchars($e['main_image']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($e['title']); ?>" loading="lazy" width="380" height="380">
+                 <div class="entry-overlay">
+                   <div class="overlay-content">
+                     <div class="entry-meta text-highlight"><?php echo htmlspecialchars($e['highlight_text']); ?></div>
+                     <h3 class="entry-title"><?php echo htmlspecialchars($e['title']); ?></h3>
+                     <p class="text-white-desc"><?php echo $e['description']; ?></p>
+                     <div class="entry-links">
+                       <a href="<?php echo htmlspecialchars($e['main_image']); ?>" class="glightbox" data-gallery="<?php echo htmlspecialchars($e['gallery_id']); ?>" data-glightbox="title: <?php echo htmlspecialchars($e['title']); ?>; description: <?php echo htmlspecialchars(strip_tags(str_replace('<br>', ' ', $e['description']))); ?>"><i class="bi bi-arrows-angle-expand"></i></a>
+                       <a href="<?php echo htmlspecialchars($e['link_url']); ?>" target="_blank"><i class="bi bi-arrow-right"></i></a>
+                     </div>
+                   </div>
+                 </div>
+               </figure>
+             </article>
+           </div>
           <?php 
               endwhile; 
           } else {
-              echo "<p class='text-center w-100 text-muted'>No portfolio projects found.</p>";
+              echo "<p class='text-center w-100 text-muted'>No events found.</p>";
           }
           ?>
           <!-- End Portfolio Container -->
@@ -1043,6 +1052,11 @@ Explore a diverse portfolio capturing professional events and achievements, offi
         <li data-filter="*" class="filter-active">
           <i class="bi bi-grid-3x3"></i> All Projects
         </li>
+
+         <li data-filter=".filter-customer">
+          Customers Projects
+        </li>
+
         <li data-filter=".filter-hndit">
           HNDIT Projects
         </li>
@@ -1058,268 +1072,36 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
 
       <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-<!-- MediQ Antibiotic Management App (Upcoming) -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img 
-        src="assets/img/portfolio/app/mediq-app.png" 
-        class="img-fluid portfolio-app-img" 
-        alt="MediQ App" 
-        loading="lazy"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            MediQ Antibiotic Management App (Upcomming...)
+          <?php 
+          $proj_res = $conn->query("SELECT * FROM portfolio_projects ORDER BY display_order ASC");
+          if($proj_res->num_rows > 0) {
+              while($p = $proj_res->fetch_assoc()): 
+          ?>
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($p['category']); ?>">
+            <article class="portfolio-entry">
+              <figure class="entry-image">
+                <img src="<?php echo htmlspecialchars($p['main_image']); ?>" class="img-fluid portfolio-app-img" alt="<?php echo htmlspecialchars($p['title']); ?>" loading="lazy">
+                <div class="entry-overlay">
+                  <div class="overlay-content">
+                    <div class="entry-meta text-highlight"><?php echo htmlspecialchars($p['title']); ?></div>
+                    <p class="text-white-desc"><?php echo htmlspecialchars($p['short_description']); ?></p>
+                    <div class="entry-links">
+                      <a href="<?php echo htmlspecialchars($p['main_image']); ?>" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: <b><?php echo htmlspecialchars($p['title']); ?></b><br><br><?php echo htmlspecialchars($p['short_description']); ?>"><i class="bi bi-arrows-angle-expand"></i></a>
+                      <a href="<?php echo htmlspecialchars($p['details_link']); ?>"><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+            </article>
           </div>
-
-
-          <!-- Short Description -->
-          <p class="text-white-desc">
-            🧪 Tracks antibiotic release & return, real-time stock monitoring, ward-wise usage logs, and automated reports. <br>
-            📱 Built with Flutter & Firebase for cross-platform, cloud-powered management.
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/app/mediq-app.png" 
-              class="glightbox" 
-              data-gallery="portfolio-gallery-development"
-              data-glightbox="title: MediQ App; description: Cross-platform hospital antibiotic management app."
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a href="portfolio-details -mediq-app.php" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
+          <?php 
+              endwhile; 
+          } else {
+              echo "<p class='text-center w-100 text-muted'>No projects found.</p>";
+          }
+          ?>
+          <!-- End Portfolio Container -->
           </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<!-- CeyTrack App (Upcoming) -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img 
-        src="assets/img/portfolio/app/caytrack-app.png" 
-        class="img-fluid portfolio-app-img" 
-        alt="CeyTrack App" 
-        loading="lazy"
-      >
-      <div class="entry-overlay">
-        <div class="overlay-content">
-
-          <!-- Highlight text -->
-          <div class="entry-meta text-highlight">
-            CeyTrack (Flutter + Firebase)
-          </div>
-
-          <!-- Short Description -->
-          <p class="text-white-desc">
-            🌾 Cey-Track App – Land-to-Factory Order Management & Geo-Location System<br>
-            Allows landowners (Tea, Cinnamon, etc.) to submit orders while factories track total, pending & completed orders in real-time 📝
-          </p>
-
-          <!-- Action buttons -->
-          <div class="entry-links">
-            <a 
-              href="assets/img/portfolio/app/caytrack-app.png"
-              class="glightbox"
-              data-gallery="portfolio-gallery-development"
-              data-glightbox="title: CeyTrack App; description: Order management + geo-location tracking for agriculture factories."
-            >
-              <i class="bi bi-arrows-angle-expand"></i>
-            </a>
-
-            <a href="portfolio-details -ceytrack-app.php" target="_blank">
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </figure>
-  </article>
-</div>
-
-
-<!-- Advanced Career Guideline System (Upcoming) -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img src="assets/img/portfolio/acgs/4.jpg" class="img-fluid portfolio-app-img" alt="Career System" loading="lazy">
-      <div class="entry-overlay">
-        <div class="overlay-content">
-          <div class="entry-meta text-highlight">
-            Advanced Career Guideline System
-          </div>
-          <h3 class="entry-title">Career Guideline System for ATI Galle</h3>
-          <div class="entry-links">
-            <a href="assets\img\portfolio\acgs/4.jpg"
-            class="glightbox"
-            data-gallery="portfolio-gallery-development"
-            data-glightbox="title: Advanced Career Guideline System; description: Intelligent Role-Based Career Platform for Education & Recruitment.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-advanced-carrier-guideline-system.php" target="_blank">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </figure>
-</article>
-</div>
-
-
-<!-- Edulk Learning Management System -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-personal">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img src="assets/img/portfolio/edulk/edulk.png" class="img-fluid portfolio-app-img" alt="Edulk LMS" loading="lazy">
-      <div class="entry-overlay">
-        <div class="overlay-content">
-          <div class="entry-meta text-highlight">
-            Edulk Learning Management System
-          </div>
-          <h3 class="entry-title">Learning Management System</h3>
-          <div class="entry-links">
-            <a href="assets/img/portfolio/edulk/edulk.png"
-            class="glightbox"
-            data-gallery="portfolio-gallery-development"
-            data-glightbox="title: Edulk LMS; description: LMS with advanced features for students.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-edulk.php" target="_blank">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </figure>
-</article>
-</div>
-
-<!-- Antibiogram Analyze System -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-offcial">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img src="assets/img/portfolio/antibiogram.png" class="img-fluid portfolio-app-img" alt="Antibiogram System" loading="lazy">
-      <div class="entry-overlay">
-        <div class="overlay-content">
-          <div class="entry-meta text-highlight">
-            MediQ Antibiogram Analyze System
-          </div>
-          <h3 class="entry-title">Antibiogram System – Karapitiya Hospital</h3>
-          <div class="entry-links">
-            <a href="assets/img/portfolio/antibiogram.png"
-            class="glightbox"
-            data-gallery="portfolio-gallery-marketing"
-            data-glightbox="title: Antibiogram System; description: Hospital-scale antibiotic sensitivity analysis system.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-antibiogram.php" target="_blank">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </figure>
-</article>
-</div>
-
-<!-- Irrigation Department Website -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-offcial">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img src="assets/img/portfolio/Screenshot 2025-09-01 111145.png" class="img-fluid portfolio-app-img" alt="Irrigation Website" loading="lazy">
-      <div class="entry-overlay">
-        <div class="overlay-content">
-          <div class="entry-meta text-highlight">
-            Irrigation Department Website
-          </div>
-          <h3 class="entry-title">Southern Province Irrigation Department</h3>
-          <div class="entry-links">
-            <a href="assets/img/portfolio/Screenshot 2025-09-01 111145.png"
-            class="glightbox"
-            data-gallery="portfolio-gallery-ui"
-            data-glightbox="title: Irrigation Website; description: Official government website redesign.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-spid-web.php" target="_blank">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </figure>
-</article>
-</div>
-
-<!-- Eduwide HNDIT 2nd Sem Project -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-hndit">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img src="assets/img/portfolio/eduwide.png" class="img-fluid portfolio-app-img" alt="Eduwide Project" loading="lazy">
-      <div class="entry-overlay">
-        <div class="overlay-content">
-          <div class="entry-meta text-highlight">
-            Eduwide – HNDIT 2nd Sem Project
-          </div>
-          <h3 class="entry-title">Career Guideline & Learning Support System</h3>
-          <div class="entry-links">
-            <a href="assets/img/portfolio/eduwide.png" 
-            class="glightbox" 
-            data-gallery="portfolio-gallery-ui"
-            data-glightbox="title: Eduwide; description: Career guideline + learning support system for students.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-eduwide.php" target="_blank">
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </figure>
-</article>
-</div>
-
-<!-- MediQ Antibiotic Analyze System -->
-<div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-offcial">
-  <article class="portfolio-entry">
-    <figure class="entry-image">
-      <img src="assets/img/portfolio/mediq.png" class="img-fluid portfolio-app-img-sm" alt="MediQ System" loading="lazy">
-      <div class="entry-overlay">
-        <div class="overlay-content">
-          <div class="entry-meta text-highlight">
-            MediQ Antibiotic Analyze System
-          </div>
-          <h3 class="entry-title">Antibiotic Usage Analysis Platform</h3>
-          <div class="entry-links">
-            <a href="assets/img/portfolio/mediq.png" 
-            class="glightbox" 
-            data-gallery="portfolio-gallery-photography"
-            data-glightbox="title: MediQ Antibiotic Analyze System; description: Online antibiotic tracking & analytics system.">
-            <i class="bi bi-arrows-angle-expand"></i>
-          </a>
-          <a href="portfolio-details-mediq.php"><i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </figure>
-</article>
-</div>
 
 
 </div>
