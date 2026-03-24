@@ -125,5 +125,5 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Combined JS Bundle -->
-  <script src="assets/js/bundle.min.js"></script>
+  <script src="assets/js/bundle.min.js" defer></script>
 <?php ob_end_flush(); ?>
