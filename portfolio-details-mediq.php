@@ -154,6 +154,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Combined CSS Bundle -->
+  <link rel="preload" href="assets/css/bundle.min.css" as="style">
   <link href="assets/css/bundle.min.css" rel="stylesheet">
 
   <!-- Custom Styles for Healthcare Theme -->
@@ -1248,7 +1249,7 @@
                         </div>
                         <h6>Live Platform</h6>
                         <p>Access the deployed hospital management system</p>
-                        <a href="https://mediq.42web.io/karapitiya" target="_blank" class="btn">
+                        <a href="https://malithatishamal.42web.io/karapitiya" target="_blank" class="btn">
                           <i class="bi bi-box-arrow-up-right"></i> Visit Live Site
                         </a>
                       </div>
