@@ -53,6 +53,7 @@ $about = $res->fetch_assoc();
             <a href="about.php" class="active"><i class="bi bi-person me-2"></i> About Me</a>
             <a href="resume.php"><i class="bi bi-file-earmark-person me-2"></i> Resume</a>
             <a href="portfolio.php"><i class="bi bi-grid me-2"></i> Portfolio</a>
+            <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
             <a href="messages.php"><i class="bi bi-envelope me-2"></i> Messages</a>
             <hr class="text-secondary">
