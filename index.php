@@ -241,7 +241,7 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
     </div>
   </div>
 
-  <img src="assets/img/profile/profile-malitha.jpg" alt="Malitha Tishamal - Full Stack Developer & DevOps Engineer" class="img-fluid hero-main-image" width="400" height="400" loading="eager">
+  <img src="assets/img/profile/profile-malitha.jpg" alt="Malitha Tishamal - Full Stack Developer & DevOps Engineer" class="img-fluid hero-main-image" width="1000" height="1000" loading="eager">
   <div class="image-overlay"></div>
 </div>
 
