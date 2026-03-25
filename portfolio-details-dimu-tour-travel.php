@@ -228,6 +228,12 @@
               </div>
               <h2 class="project-title">Dimu Tour & Traveling</h2>
               <p class="project-subtitle">Modern, fully manageable travel website with complete backend control</p>
+
+              <div class="project-website">
+                <i class="bi bi-link-45deg"></i>
+                <a href="https://dimutours.gt.tc" target="_blank">https://dimutours.gt.tc</a>
+              </div>
+
               
               <!-- CUSTOMER TESTIMONIAL (MOVED TO TOP) -->
               <div class="testimonial-card mt-3" data-aos="fade-up">
@@ -397,7 +403,7 @@
                         <h6>User View – Front End</h6>
                         <p>Explore the complete frontend experience: tour listings, booking forms, travel memories, and more.</p>
                         <!-- ↓ Replace with your actual video URL -->
-                        <a href="https://shorturl.at/demo1" target="_blank" class="btn-demo">Watch Demo</a>
+                        <a href="https://drive.google.com/file/d/1mMwCaICM_ojLAbXfCV4kRoB1GJh5m9_e/view?usp=drive_link" target="_blank" class="btn-demo">Watch Demo</a>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -406,7 +412,7 @@
                         <h6>User View – Admin Panel</h6>
                         <p>Full admin dashboard: manage tours, safaris, bookings, site settings, and reviews.</p>
                         <!-- ↓ Replace with your actual video URL -->
-                        <a href="https://shorturl.at/demo2" target="_blank" class="btn-demo">Watch Demo</a>
+                        <a href="https://drive.google.com/file/d/1OHmLYOzCTjxpQuDiE-JdCx1xY6ycytAM/view?usp=drive_link" target="_blank" class="btn-demo">Watch Demo</a>
                       </div>
                     </div>
                   </div>
