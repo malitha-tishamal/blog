@@ -1,3 +1,4 @@
+<?php require_once 'includes/seo-helper.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -473,7 +474,7 @@
 
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/spid/1.png" class="img-fluid" alt="SPID Website Homepage Interface" width="800" height="600">
+                    <img src="assets/img/portfolio/spid/1.png" class="img-fluid" alt="SPID Website Homepage Interface" width="800" height="600" loading="lazy">
                   </div>
                   <div class="swiper-slide">
                     <img src="assets/img/portfolio/spid/2.png" class="img-fluid" alt="Advanced Admin Panel for Content Management" loading="lazy" width="800" height="600">

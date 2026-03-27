@@ -1,3 +1,4 @@
+<?php require_once 'includes/seo-helper.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -137,22 +138,22 @@
               </script>
               <div class="swiper-wrapper">
                 <!-- Slides 1-31 -->
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/1.png" class="img-fluid" alt="Dimu Tour Homepage" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/2.png" class="img-fluid" alt="Tour Packages" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/3.png" class="img-fluid" alt="Admin Dashboard" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/4.png" class="img-fluid" alt="Booking Form" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/5.png" class="img-fluid" alt="Travel Memories Gallery" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/6.png" class="img-fluid" alt="Safari Listings" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/7.png" class="img-fluid" alt="Vehicle Fleet" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/8.png" class="img-fluid" alt="Guest Reviews" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/9.png" class="img-fluid" alt="Contact Page" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/10.png" class="img-fluid" alt="About Us" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/11.png" class="img-fluid" alt="Tour Itinerary" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/12.png" class="img-fluid" alt="Taxi Booking" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/13.png" class="img-fluid" alt="Gallery" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/14.png" class="img-fluid" alt="Blog" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/15.png" class="img-fluid" alt="Testimonials" width="800" height="600"></div>
-                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/16.png" class="img-fluid" alt="Footer" width="800" height="600"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/1.png" class="img-fluid" alt="Dimu Tour Homepage" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/2.png" class="img-fluid" alt="Tour Packages" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/3.png" class="img-fluid" alt="Admin Dashboard" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/4.png" class="img-fluid" alt="Booking Form" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/5.png" class="img-fluid" alt="Travel Memories Gallery" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/6.png" class="img-fluid" alt="Safari Listings" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/7.png" class="img-fluid" alt="Vehicle Fleet" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/8.png" class="img-fluid" alt="Guest Reviews" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/9.png" class="img-fluid" alt="Contact Page" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/10.png" class="img-fluid" alt="About Us" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/11.png" class="img-fluid" alt="Tour Itinerary" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/12.png" class="img-fluid" alt="Taxi Booking" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/13.png" class="img-fluid" alt="Gallery" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/14.png" class="img-fluid" alt="Blog" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/15.png" class="img-fluid" alt="Testimonials" width="800" height="600" loading="lazy"></div>
+                <div class="swiper-slide"><img src="assets/img/portfolio/dimu-tour/16.png" class="img-fluid" alt="Footer" width="800" height="600" loading="lazy"></div>
               </div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div>
@@ -163,22 +164,22 @@
               <h5>📸 Application Screens</h5>
               <div class="row g-2">
                 <!-- 31 thumbnails -->
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/1.png" class="img-fluid glightbox" alt="Thumbnail 1"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/2.png" class="img-fluid glightbox" alt="Thumbnail 2"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/3.png" class="img-fluid glightbox" alt="Thumbnail 3"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/4.png" class="img-fluid glightbox" alt="Thumbnail 4"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/5.png" class="img-fluid glightbox" alt="Thumbnail 5"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/6.png" class="img-fluid glightbox" alt="Thumbnail 6"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/7.png" class="img-fluid glightbox" alt="Thumbnail 7"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/8.png" class="img-fluid glightbox" alt="Thumbnail 8"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/9.png" class="img-fluid glightbox" alt="Thumbnail 9"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/10.png" class="img-fluid glightbox" alt="Thumbnail 10"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/11.png" class="img-fluid glightbox" alt="Thumbnail 11"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/12.png" class="img-fluid glightbox" alt="Thumbnail 12"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/13.png" class="img-fluid glightbox" alt="Thumbnail 13"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/14.png" class="img-fluid glightbox" alt="Thumbnail 14"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/15.png" class="img-fluid glightbox" alt="Thumbnail 15"></div>
-                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/16.png" class="img-fluid glightbox" alt="Thumbnail 15"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/1.png" class="img-fluid glightbox" alt="Thumbnail 1" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/2.png" class="img-fluid glightbox" alt="Thumbnail 2" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/3.png" class="img-fluid glightbox" alt="Thumbnail 3" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/4.png" class="img-fluid glightbox" alt="Thumbnail 4" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/5.png" class="img-fluid glightbox" alt="Thumbnail 5" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/6.png" class="img-fluid glightbox" alt="Thumbnail 6" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/7.png" class="img-fluid glightbox" alt="Thumbnail 7" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/8.png" class="img-fluid glightbox" alt="Thumbnail 8" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/9.png" class="img-fluid glightbox" alt="Thumbnail 9" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/10.png" class="img-fluid glightbox" alt="Thumbnail 10" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/11.png" class="img-fluid glightbox" alt="Thumbnail 11" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/12.png" class="img-fluid glightbox" alt="Thumbnail 12" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/13.png" class="img-fluid glightbox" alt="Thumbnail 13" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/14.png" class="img-fluid glightbox" alt="Thumbnail 14" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/15.png" class="img-fluid glightbox" alt="Thumbnail 15" loading="lazy"></div>
+                <div class="col-4"><img src="assets/img/portfolio/dimu-tour/16.png" class="img-fluid glightbox" alt="Thumbnail 15" loading="lazy"></div>
               </div>
             </div>
 

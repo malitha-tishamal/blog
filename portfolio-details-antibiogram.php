@@ -1,3 +1,4 @@
+<?php require_once 'includes/seo-helper.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -212,7 +213,7 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/antibiogram/1.png" alt="Antibiogram Management System Dashboard" class="img-fluid" width="800" height="600">
+                      <img src="assets/img/portfolio/antibiogram/1.png" alt="Antibiogram Management System Dashboard" class="img-fluid" width="800" height="600" loading="lazy">
                     </div>
                     <div class="swiper-slide">
                       <img src="assets/img/portfolio/antibiogram/2.png" alt="Microbiology Lab Results Interface" class="img-fluid" loading="lazy" width="800" height="600">

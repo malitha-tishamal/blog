@@ -122,12 +122,12 @@ $entries = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, 
     <div class="row">
         <!-- Sidebar -->
         <div class="col-md-2 d-none d-md-block sidebar">
-            <h4>CMS Admin</h4>
+            <h4 class="text-center text-white mb-4 mt-2">CMS Admin</h4>
             <a href="index.php"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
             <a href="settings.php"><i class="bi bi-gear me-2"></i> Site Settings</a>
             <a href="about.php"><i class="bi bi-person me-2"></i> About Me</a>
             <a href="resume.php"><i class="bi bi-file-earmark-person me-2"></i> Resume</a>
-            <a href="portfolio.php"><i class="bi bi-grid me-2"></i> Portfolio</a>
+            <a href="portfolio.php"><i class="bi bi-grid me-2"></i> App Projects</a>
             <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
             <a href="testimonials.php" class="active"><i class="bi bi-chat-quote me-2"></i> Testimonials</a>

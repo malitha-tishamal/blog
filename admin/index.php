@@ -27,7 +27,14 @@ $t_res = $conn->query("SELECT COUNT(*) as c FROM testimonials");
 if($t_res && $t_row = $t_res->fetch_assoc()) $stats['testimonials'] = $t_row['c'];
 
 // Certifications
-$stats['certifications'] = $conn->query("SELECT COUNT(*) FROM certifications")->fetch_row()[0];
+$cert_res = $conn->query("SELECT COUNT(*) FROM certifications");
+$stats['certifications'] = ($cert_res) ? $cert_res->fetch_row()[0] : 0;
+
+// Resume
+$exp_res = $conn->query("SELECT COUNT(*) FROM resume_experience");
+$stats['experience'] = ($exp_res) ? $exp_res->fetch_row()[0] : 0;
+$edu_res = $conn->query("SELECT COUNT(*) FROM resume_education");
+$stats['education'] = ($edu_res) ? $edu_res->fetch_row()[0] : 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -146,6 +153,19 @@ $stats['certifications'] = $conn->query("SELECT COUNT(*) FROM certifications")->
                         </div>
                     </div>
                 </div>
+
+                <!-- Stat Card 6 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card stat-card border-dark">
+                        <div class="card-body">
+                            <div>
+                                <p class="stat-label">Resume Items</p>
+                                <h3 class="stat-number text-dark"><?php echo number_format($stats['experience'] + $stats['education']); ?></h3>
+                            </div>
+                            <div class="stat-icon text-dark"><i class="bi bi-file-earmark-person-fill"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="row">
@@ -156,9 +176,9 @@ $stats['certifications'] = $conn->query("SELECT COUNT(*) FROM certifications")->
                         </div>
                         <div class="card-body text-center p-4">
                             <a href="portfolio.php" class="btn btn-lg btn-outline-primary m-2"><i class="bi bi-plus-circle me-1"></i> Add New Project</a>
-            <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
                             <a href="resume.php" class="btn btn-lg btn-outline-success m-2"><i class="bi bi-plus-circle me-1"></i> Add Resume Entry</a>
-                            <a href="settings.php" class="btn btn-lg btn-outline-secondary m-2"><i class="bi bi-pencil-square me-1"></i> Update Hero Text</a>
+                            <a href="settings.php" class="btn btn-lg btn-outline-secondary m-2"><i class="bi bi-pencil-square me-1"></i> Site Settings</a>
+                            <a href="messages.php" class="btn btn-lg btn-outline-warning m-2"><i class="bi bi-envelope me-1"></i> View Messages</a>
                         </div>
                     </div>
                 </div>

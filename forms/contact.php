@@ -29,12 +29,15 @@
   }
 
   // Skip actual email sending to avoid local mail server errors
-  /*
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  ...
-  echo $contact->send();
-  */
+  // WhatsApp Notification (Optional - requires CallMeBot API Key)
+  $wp_apikey = '4342416'; // User should replace this or it can be moved to settings
+  $wp_phone = '94775590992'; 
+  
+  if(!empty($wp_apikey)) {
+      $wp_text = urlencode("New Message from $name:\n$msg");
+      $wp_url = "https://api.callmebot.com/whatsapp.php?phone=$wp_phone&text=$wp_text&apikey=$wp_apikey";
+      @file_get_contents($wp_url); // Silent call
+  }
 
   echo "OK"; 
 ?>

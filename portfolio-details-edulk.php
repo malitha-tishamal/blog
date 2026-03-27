@@ -1,3 +1,4 @@
+<?php require_once 'includes/seo-helper.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -221,7 +222,7 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/edulk/edulk.png" class="img-fluid" alt="Edulk LMS Dashboard Overview" width="800" height="600">
+                      <img src="assets/img/portfolio/edulk/edulk.png" class="img-fluid" alt="Edulk LMS Dashboard Overview" width="800" height="600" loading="lazy">
                     </div>
                     <div class="swiper-slide">
                       <img src="assets/img/portfolio/edulk/2.jpg" class="img-fluid" alt="Course Management and Enrollment Interface" loading="lazy" width="800" height="600">

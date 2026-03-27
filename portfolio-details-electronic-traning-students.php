@@ -1,3 +1,4 @@
+<?php require_once 'includes/seo-helper.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -242,7 +243,7 @@
 
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/electronic/1.png" alt="Students learning electronic circuit assembly" class="img-fluid" width="800" height="600">
+                      <img src="assets/img/portfolio/electronic/1.png" alt="Students learning electronic circuit assembly" class="img-fluid" width="800" height="600" loading="lazy">
                     </div>
                     <div class="swiper-slide">
                       <img src="assets/img/portfolio/electronic/2.png" alt="Oscilloscope training session for A/L students" class="img-fluid" loading="lazy" width="800" height="600">
@@ -278,34 +279,34 @@
               <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2 mt-3">
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/1.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/1.png">
+                    <img src="assets/img/portfolio/electronic/1.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/1.png" loading="lazy">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/2.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/2.jpg">
+                    <img src="assets/img/portfolio/electronic/2.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/2.jpg" loading="lazy">
                   </div>
 
                    <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/3.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/3.jpg">
+                    <img src="assets/img/portfolio/electronic/3.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/3.jpg" loading="lazy">
                   </div>
 
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/3.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/3.jpg">
+                    <img src="assets/img/portfolio/electronic/3.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/3.jpg" loading="lazy">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/4.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/4.jpg">
+                    <img src="assets/img/portfolio/electronic/4.png"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/4.jpg" loading="lazy">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/5.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/5.jpg">
+                    <img src="assets/img/portfolio/electronic/5.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/5.jpg" loading="lazy">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/6.jpg" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/6.jpg">
+                    <img src="assets/img/portfolio/electronic/6.jpg" class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/6.jpg" loading="lazy">
                   </div>
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/7.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/7.jpg">
+                    <img src="assets/img/portfolio/electronic/7.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/7.jpg" loading="lazy">
                   </div>
 
                   <div class="col-3">
-                    <img src="assets/img/portfolio/electronic/8.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/7.jpg">
+                    <img src="assets/img/portfolio/electronic/8.jpg"  class="img-fluid thumbnail-image" data-full-src="assets/img/portfolio/electronic/7.jpg" loading="lazy">
                   </div>
 
                   <div class="col-3">

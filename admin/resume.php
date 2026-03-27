@@ -4,52 +4,72 @@ check_admin_auth();
 
 $message = '';
 
-// Handle Delete
-if(isset($_GET['delete'])) {
-    $id = (int)$_GET['delete'];
-    $conn->query("DELETE FROM resume_entries WHERE id = $id");
-    $message = "<div class='alert alert-success'>Entry deleted successfully.</div>";
+// Handle Delete Experience
+if(isset($_GET['delete_exp'])) {
+    $id = (int)$_GET['delete_exp'];
+    $conn->query("DELETE FROM resume_experience WHERE id = $id");
+    $message = "<div class='alert alert-success'>Experience entry deleted successfully.</div>";
 }
 
-// Handle Add/Edit
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $type = mysqli_real_escape_string($conn, $_POST['type']);
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
+// Handle Delete Education
+if(isset($_GET['delete_edu'])) {
+    $id = (int)$_GET['delete_edu'];
+    $conn->query("DELETE FROM resume_education WHERE id = $id");
+    $message = "<div class='alert alert-success'>Education entry deleted successfully.</div>";
+}
+
+// Handle Add/Edit Experience
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action_exp'])) {
+    $role = mysqli_real_escape_string($conn, $_POST['role']);
     $org = mysqli_real_escape_string($conn, $_POST['organization']);
-    $duration = mysqli_real_escape_string($conn, $_POST['duration']);
+    $dur = mysqli_real_escape_string($conn, $_POST['duration']);
     $desc = mysqli_real_escape_string($conn, $_POST['description']);
+    $achievements = mysqli_real_escape_string($conn, $_POST['achievements']);
     $order = (int)$_POST['display_order'];
+    $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 
-    if(!empty($_POST['id'])) {
-        // Update
-        $id = (int)$_POST['id'];
-        $query = "UPDATE resume_entries SET 
-                    type='$type', title='$title', organization='$org', duration='$duration', 
-                    description='$desc', display_order=$order 
-                  WHERE id=$id";
-        $msg = "Entry updated successfully.";
+    if($id > 0) {
+        $query = "UPDATE resume_experience SET role='$role', organization='$org', duration='$dur', description='$desc', achievements='$achievements', display_order=$order WHERE id=$id";
+        $msg = "Experience updated successfully.";
     } else {
-        // Insert
-        $query = "INSERT INTO resume_entries (type, title, organization, duration, description, display_order) 
-                  VALUES ('$type', '$title', '$org', '$duration', '$desc', $order)";
-        $msg = "New entry added successfully.";
+        $query = "INSERT INTO resume_experience (role, organization, duration, description, achievements, display_order) VALUES ('$role', '$org', '$dur', '$desc', '$achievements', $order)";
+        $msg = "New experience added successfully.";
     }
 
-    if(mysqli_query($conn, $query)) {
-        $message = "<div class='alert alert-success'>$msg</div>";
-    } else {
-        $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
-    }
+    if(mysqli_query($conn, $query)) $message = "<div class='alert alert-success'>$msg</div>";
+    else $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
 }
 
-// Fetch existing entries
-$entries = $conn->query("SELECT * FROM resume_entries ORDER BY type, display_order ASC, id DESC");
+// Handle Add/Edit Education
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action_edu'])) {
+    $degree = mysqli_real_escape_string($conn, $_POST['degree']);
+    $inst = mysqli_real_escape_string($conn, $_POST['institution']);
+    $year = mysqli_real_escape_string($conn, $_POST['year']);
+    $desc = mysqli_real_escape_string($conn, $_POST['description']);
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
+    $order = (int)$_POST['display_order'];
+    $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+
+    if($id > 0) {
+        $query = "UPDATE resume_education SET degree='$degree', institution='$inst', year='$year', description='$desc', details='$details', display_order=$order WHERE id=$id";
+        $msg = "Education updated successfully.";
+    } else {
+        $query = "INSERT INTO resume_education (degree, institution, year, description, details, display_order) VALUES ('$degree', '$inst', '$year', '$desc', '$details', $order)";
+        $msg = "New education added successfully.";
+    }
+
+    if(mysqli_query($conn, $query)) $message = "<div class='alert alert-success'>$msg</div>";
+    else $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
+}
+
+$experience = $conn->query("SELECT * FROM resume_experience ORDER BY display_order ASC, id DESC");
+$education = $conn->query("SELECT * FROM resume_education ORDER BY display_order ASC, id DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Resume Timeline - CMS</title>
+    <title>Resume Management - CMS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -58,6 +78,9 @@ $entries = $conn->query("SELECT * FROM resume_entries ORDER BY type, display_ord
         .sidebar a { color: #c2c7d0; text-decoration: none; display: block; padding: 10px 20px; margin-bottom: 5px; border-radius: 4px;}
         .sidebar a:hover, .sidebar a.active { background-color: #0066cc; color: #fff; }
         .content { padding: 30px; }
+        .card { border-radius: 10px; border: none; }
+        .nav-tabs .nav-link { color: #495057; font-weight: 600; }
+        .nav-tabs .nav-link.active { color: #0066cc; }
     </style>
 </head>
 <body>
@@ -70,7 +93,7 @@ $entries = $conn->query("SELECT * FROM resume_entries ORDER BY type, display_ord
             <a href="settings.php"><i class="bi bi-gear me-2"></i> Site Settings</a>
             <a href="about.php"><i class="bi bi-person me-2"></i> About Me</a>
             <a href="resume.php" class="active"><i class="bi bi-file-earmark-person me-2"></i> Resume</a>
-            <a href="portfolio.php"><i class="bi bi-grid me-2"></i> Portfolio</a>
+            <a href="portfolio.php"><i class="bi bi-grid me-2"></i> App Projects</a>
             <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
             <a href="testimonials.php"><i class="bi bi-chat-quote me-2"></i> Testimonials</a>
@@ -83,62 +106,111 @@ $entries = $conn->query("SELECT * FROM resume_entries ORDER BY type, display_ord
 
         <div class="col-md-10 content">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2>Manage Resume Timeline</h2>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#entryModal" onclick="resetForm()">
-                    <i class="bi bi-plus-circle me-1"></i> Add New Entry
-                </button>
+                <h2>Manage Resume</h2>
+                <div class="btn-group">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#expModal" onclick="resetExpForm()">
+                        <i class="bi bi-plus-circle me-1"></i> Add Experience
+                    </button>
+                    <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#eduModal" onclick="resetEduForm()">
+                        <i class="bi bi-plus-circle me-1"></i> Add Education
+                    </button>
+                </div>
             </div>
             
             <?php echo $message; ?>
 
-            <!-- Entries Table -->
-            <div class="card shadow-sm">
-                <div class="card-body p-0">
-                    <table class="table table-hover table-bordered mb-0">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Type</th>
-                                <th>Title</th>
-                                <th>Organization</th>
-                                <th>Duration</th>
-                                <th>Order</th>
-                                <th class="text-center">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if($entries->num_rows > 0): ?>
-                                <?php while($row = $entries->fetch_assoc()): ?>
-                                <tr>
-                                    <td>
-                                        <?php if($row['type'] == 'education'): ?>
-                                            <span class="badge bg-info text-dark">Education</span>
-                                        <?php else: ?>
-                                            <span class="badge bg-primary">Experience</span>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td><strong><?php echo htmlspecialchars($row['title']); ?></strong></td>
-                                    <td><?php echo htmlspecialchars($row['organization']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['duration']); ?></td>
-                                    <td><?php echo $row['display_order']; ?></td>
-                                    <td class="text-center border-start-0">
-                                        <!-- Edit button passes data to JS -->
-                                        <button class="btn btn-sm btn-outline-secondary me-1" 
-                                            onclick='editEntry(<?php echo json_encode($row); ?>)'>
-                                            <i class="bi bi-pencil"></i>
-                                        </button>
-                                        <a href="resume.php?delete=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this entry?');">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endwhile; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="6" class="text-center py-4 text-muted">No resume entries found. Create one above!</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
+            <ul class="nav nav-tabs mb-4" id="resumeTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="exp-tab" data-bs-toggle="tab" data-bs-target="#exp-pane" type="button">Professional Journey</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="edu-tab" data-bs-toggle="tab" data-bs-target="#edu-pane" type="button">Academic Excellence</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="resumeTabContent">
+                <!-- Experience Pane -->
+                <div class="tab-pane fade show active" id="exp-pane">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-0">
+                            <table class="table table-hover table-bordered mb-0 align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Role & Organization</th>
+                                        <th>Duration</th>
+                                        <th>Order</th>
+                                        <th class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if($experience->num_rows > 0): ?>
+                                        <?php while($row = $experience->fetch_assoc()): ?>
+                                        <tr>
+                                            <td>
+                                                <strong><?php echo htmlspecialchars($row['role']); ?></strong><br>
+                                                <small class="text-muted"><?php echo htmlspecialchars($row['organization']); ?></small>
+                                            </td>
+                                            <td><?php echo htmlspecialchars($row['duration']); ?></td>
+                                            <td><?php echo $row['display_order']; ?></td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-secondary me-1" onclick='editExp(<?php echo json_encode($row); ?>)'>
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <a href="resume.php?delete_exp=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this entry?');">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php endwhile; ?>
+                                    <?php else: ?>
+                                        <tr><td colspan="4" class="text-center py-4 text-muted">No experience items found.</td></tr>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Pane -->
+                <div class="tab-pane fade" id="edu-pane">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-0">
+                            <table class="table table-hover table-bordered mb-0 align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Degree & Institution</th>
+                                        <th>Year</th>
+                                        <th>Order</th>
+                                        <th class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if($education->num_rows > 0): ?>
+                                        <?php while($row = $education->fetch_assoc()): ?>
+                                        <tr>
+                                            <td>
+                                                <strong><?php echo htmlspecialchars($row['degree']); ?></strong><br>
+                                                <small class="text-muted"><?php echo htmlspecialchars($row['institution']); ?></small>
+                                            </td>
+                                            <td><?php echo htmlspecialchars($row['year']); ?></td>
+                                            <td><?php echo $row['display_order']; ?></td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-outline-secondary me-1" onclick='editEdu(<?php echo json_encode($row); ?>)'>
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <a href="resume.php?delete_edu=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this entry?');">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php endwhile; ?>
+                                    <?php else: ?>
+                                        <tr><td colspan="4" class="text-center py-4 text-muted">No education items found.</td></tr>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -146,52 +218,92 @@ $entries = $conn->query("SELECT * FROM resume_entries ORDER BY type, display_ord
     </div>
 </div>
 
-<!-- Add/Edit Modal -->
-<div class="modal fade" id="entryModal" tabindex="-1">
+<!-- Experience Modal -->
+<div class="modal fade" id="expModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <form method="POST" id="entryForm">
+      <form method="POST">
+          <input type="hidden" name="action_exp" value="1">
+          <input type="hidden" name="id" id="expId">
           <div class="modal-header">
-            <h5 class="modal-title" id="modalTitle">Add Resume Entry</h5>
+            <h5 class="modal-title" id="expModalTitle">Add Experience</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-              <input type="hidden" name="id" id="entryId">
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <label>Entry Type</label>
-                      <select name="type" id="type" class="form-select" required>
-                          <option value="education">Education</option>
-                          <option value="experience">Professional Experience</option>
-                      </select>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                      <label>Display Order</label>
-                      <input type="number" name="display_order" id="order" class="form-control" value="0">
-                      <small class="text-muted">Lower numbers show up first</small>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                      <label>Title / Role</label>
-                      <input type="text" name="title" id="title" class="form-control" required placeholder="e.g. Master of Fine Arts or Senior Developer">
-                  </div>
-                  <div class="col-md-7 mb-3">
-                      <label>Organization / University</label>
-                      <input type="text" name="organization" id="org" class="form-control" required>
-                  </div>
-                  <div class="col-md-5 mb-3">
-                      <label>Duration / Year</label>
-                      <input type="text" name="duration" id="duration" class="form-control" required placeholder="e.g. 2020 - 2023 or 2015">
-                  </div>
-                  <div class="col-md-12 mb-3">
-                      <label>Description Details</label>
-                      <textarea name="description" id="desc" class="form-control" rows="5"></textarea>
-                      <small class="text-muted">Supports HTML. Use &lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt; for bullet points.</small>
-                  </div>
+              <div class="mb-3">
+                  <label>Job Role*</label>
+                  <input type="text" name="role" id="expRole" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                  <label>Organization / Company*</label>
+                  <input type="text" name="organization" id="expOrg" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                  <label>Duration* (e.g. 2022 - Present)</label>
+                  <input type="text" name="duration" id="expDur" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                  <label>Short Description</label>
+                  <textarea name="description" id="expDesc" class="form-control" rows="2"></textarea>
+              </div>
+              <div class="mb-3">
+                  <label>Achievements / Key Responsibilities (One per line)</label>
+                  <textarea name="achievements" id="expAch" class="form-control" rows="4" placeholder="Designed UI...&#10;Developed web apps..."></textarea>
+              </div>
+              <div class="mb-3">
+                  <label>Display Order</label>
+                  <input type="number" name="display_order" id="expOrder" class="form-control" value="0">
               </div>
           </div>
-          <div class="modal-footer bg-light border-top-0">
+          <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="saveBtn">Save Entry</button>
+            <button type="submit" class="btn btn-primary" id="expSaveBtn">Save</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Education Modal -->
+<div class="modal fade" id="eduModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form method="POST">
+          <input type="hidden" name="action_edu" value="1">
+          <input type="hidden" name="id" id="eduId">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eduModalTitle">Add Education</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <div class="mb-3">
+                  <label>Degree / Certificate*</label>
+                  <input type="text" name="degree" id="eduDeg" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                  <label>Institution*</label>
+                  <input type="text" name="institution" id="eduInst" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                  <label>Year / Duration* (e.g. 2020 - 2024)</label>
+                  <input type="text" name="year" id="eduYear" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                  <label>Description</label>
+                  <textarea name="description" id="eduDesc" class="form-control" rows="2"></textarea>
+              </div>
+              <div class="mb-3">
+                  <label>Key Details / Subjects (One per line)</label>
+                  <textarea name="details" id="eduDet" class="form-control" rows="4" placeholder="Core Areas: ...&#10;Key Skills: ..."></textarea>
+              </div>
+              <div class="mb-3">
+                  <label>Display Order</label>
+                  <input type="number" name="display_order" id="eduOrder" class="form-control" value="0">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="eduSaveBtn">Save</button>
           </div>
       </form>
     </div>
@@ -200,28 +312,57 @@ $entries = $conn->query("SELECT * FROM resume_entries ORDER BY type, display_ord
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    const modal = new bootstrap.Modal(document.getElementById('entryModal'));
-    
-    function resetForm() {
-        document.getElementById('entryForm').reset();
-        document.getElementById('entryId').value = '';
-        document.getElementById('modalTitle').innerText = 'Add Resume Entry';
-        document.getElementById('saveBtn').innerText = 'Save Entry';
+    const expModal = new bootstrap.Modal(document.getElementById('expModal'));
+    const eduModal = new bootstrap.Modal(document.getElementById('eduModal'));
+
+    function resetExpForm() {
+        document.getElementById('expId').value = '';
+        document.getElementById('expRole').value = '';
+        document.getElementById('expOrg').value = '';
+        document.getElementById('expDur').value = '';
+        document.getElementById('expDesc').value = '';
+        document.getElementById('expAch').value = '';
+        document.getElementById('expOrder').value = '0';
+        document.getElementById('expModalTitle').innerText = 'Add Experience';
+        document.getElementById('expSaveBtn').innerText = 'Save';
     }
 
-    function editEntry(data) {
-        document.getElementById('entryId').value = data.id;
-        document.getElementById('type').value = data.type;
-        document.getElementById('title').value = data.title;
-        document.getElementById('org').value = data.organization;
-        document.getElementById('duration').value = data.duration;
-        document.getElementById('desc').value = data.description;
-        document.getElementById('order').value = data.display_order;
-        
-        document.getElementById('modalTitle').innerText = 'Edit Resume Entry';
-        document.getElementById('saveBtn').innerText = 'Update Entry';
-        
-        modal.show();
+    function editExp(data) {
+        document.getElementById('expId').value = data.id;
+        document.getElementById('expRole').value = data.role;
+        document.getElementById('expOrg').value = data.organization;
+        document.getElementById('expDur').value = data.duration;
+        document.getElementById('expDesc').value = data.description;
+        document.getElementById('expAch').value = data.achievements;
+        document.getElementById('expOrder').value = data.display_order;
+        document.getElementById('expModalTitle').innerText = 'Edit Experience';
+        document.getElementById('expSaveBtn').innerText = 'Update';
+        expModal.show();
+    }
+
+    function resetEduForm() {
+        document.getElementById('eduId').value = '';
+        document.getElementById('eduDeg').value = '';
+        document.getElementById('eduInst').value = '';
+        document.getElementById('eduYear').value = '';
+        document.getElementById('eduDesc').value = '';
+        document.getElementById('eduDet').value = '';
+        document.getElementById('eduOrder').value = '0';
+        document.getElementById('eduModalTitle').innerText = 'Add Education';
+        document.getElementById('eduSaveBtn').innerText = 'Save';
+    }
+
+    function editEdu(data) {
+        document.getElementById('eduId').value = data.id;
+        document.getElementById('eduDeg').value = data.degree;
+        document.getElementById('eduInst').value = data.institution;
+        document.getElementById('eduYear').value = data.year;
+        document.getElementById('eduDesc').value = data.description;
+        document.getElementById('eduDet').value = data.details;
+        document.getElementById('eduOrder').value = data.display_order;
+        document.getElementById('eduModalTitle').innerText = 'Edit Education';
+        document.getElementById('eduSaveBtn').innerText = 'Update';
+        eduModal.show();
     }
 </script>
 </body>

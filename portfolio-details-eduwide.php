@@ -1,3 +1,4 @@
+<?php require_once 'includes/seo-helper.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -450,7 +451,7 @@
 
       <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <!-- <img src="assets/img/logo.webp" alt="" loading="lazy"> -->
         <!-- Uncomment the line below if you also wish to use an text logo -->
         <!-- <h1 class="sitename">Style</h1>  -->
       </a>
@@ -458,12 +459,12 @@
       <nav id="navmenu" class="navmenu">
 
         <div class="profile-img">
-          <img src="assets/img/profile/profile-malitha.jpg" alt="" class="img-fluid rounded-circle">
+          <img src="assets/img/profile/profile-malitha.jpg" alt="" class="img-fluid rounded-circle" loading="lazy">
         </div>
 
         <a href="index.php" class="logo d-flex align-items-center justify-content-center active">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.webp" alt=""> -->
+          <!-- <img src="assets/img/logo.webp" alt="" loading="lazy"> -->
           <h1 class="sitename">Malitha Tishamal</h1>
         </a>
 
@@ -541,7 +542,7 @@
 
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img src="assets/img/portfolio/eduwide/1.png" class="img-fluid" alt="Career Guideline System Dashboard Overview" width="800" height="600">
+                    <img src="assets/img/portfolio/eduwide/1.png" class="img-fluid" alt="Career Guideline System Dashboard Overview" width="800" height="600" loading="lazy">
                   </div>
                   <div class="swiper-slide">
                     <img src="assets/img/portfolio/eduwide/2.png" class="img-fluid" alt="Student Career Pathway and Skills Profile" loading="lazy" width="800" height="600">

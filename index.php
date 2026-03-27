@@ -241,7 +241,7 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
     </div>
   </div>
 
-  <img src="assets/img/profile/profile-malitha.jpg" alt="Malitha Tishamal - Full Stack Developer & DevOps Engineer" class="img-fluid hero-main-image" width="1000" height="1000" loading="eager">
+  <img src="assets/img/profile/profile-malitha.jpg" alt="Malitha Tishamal - Full Stack Developer & DevOps Engineer" class="img-fluid hero-main-image" width="1000" height="1000" loading="eager" fetchpriority="high">
   <div class="image-overlay"></div>
 </div>
 
@@ -648,51 +648,40 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
           </div>
 
           <div class="experience-cards">
+            <?php
+            $exp_res = $conn->query("SELECT * FROM resume_experience ORDER BY display_order ASC, id DESC");
+            if($exp_res && $exp_res->num_rows > 0):
+                while($exp = $exp_res->fetch_assoc()):
+            ?>
             <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
-              <div class="card-header">
+              <div class="card-header border-0 pb-0">
                 <div class="role-info">
-                  <h3>Volunteer Software Developer</h3>
-                  <h4>Irrigation Department – Galle</h4>
+                  <h3 class="mb-1 fw-bold text-dark"><?php echo htmlspecialchars($exp['role']); ?></h3>
+                  <h4 class="text-primary mb-0"><?php echo htmlspecialchars($exp['organization']); ?></h4>
                 </div>
-                <span class="duration">Oct 2024 – Present</span>
+                <span class="duration badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill"><?php echo htmlspecialchars($exp['duration']); ?></span>
               </div>
               <div class="card-body">
-                <p>Contributing to digital transformation initiatives as a volunteer software developer while enhancing hands-on experience in modern software engineering practices.</p>
-                <ul class="achievements">
-                  <li>Designed intuitive UI/UX interfaces for internal systems to improve usability and accessibility.</li>
-                  <li>Developed web and mobile applications using modern technologies including <strong>Flutter</strong>, <strong>Dart</strong>, and <strong>Firebase</strong>.</li>
-                  <li>Continuously learning and applying best practices in cloud integration, API development, and performance optimization.</li>
+                <p class="text-muted mb-3"><?php echo htmlspecialchars($exp['description']); ?></p>
+                <?php if(!empty($exp['achievements'])): ?>
+                <ul class="achievements list-unstyled">
+                  <?php 
+                  $ach_arr = explode("\n", $exp['achievements']);
+                  foreach($ach_arr as $ach): if(trim($ach) == '') continue;
+                  ?>
+                    <li class="mb-2 d-flex align-items-start">
+                      <i class="bi bi-check2-circle text-primary me-2 mt-1"></i>
+                      <span><?php echo htmlspecialchars(trim($ach)); ?></span>
+                    </li>
+                  <?php endforeach; ?>
                 </ul>
+                <?php endif; ?>
               </div>
             </div>
-
-
-                <!--div class="experience-card" data-aos="zoom-in" data-aos-delay="400">
-                  <div class="card-header">
-                    <div class="role-info">
-                      <h3>Senior Development Manager</h3>
-                      <h4>Consectetur Solutions Inc</h4>
-                    </div>
-                    <span class="duration">2018 - 2022</span>
-                  </div>
-                  <div class="card-body">
-                    <p>Donec quam felis ultricies nec pellentesque eu pretium quis sem nulla consequat massa quis enim donec pede justo fringilla vel.</p>
-                  </div>
-                </div-->
-
-                <!--div class="experience-card" data-aos="zoom-in" data-aos-delay="500">
-                  <div class="card-header">
-                    <div class="role-info">
-                      <h3>Product Development Specialist</h3>
-                      <h4>Adipiscing Technologies</h4>
-                    </div>
-                    <span class="duration">2015 - 2018</span>
-                  </div>
-                  <div class="card-body">
-                    <p>Nam quam nunc blandit vel luctus pulvinar hendrerit id lorem maecenas nec odio et ante tincidunt tempus donec vitae sapien ut.</p>
-                  </div>
-                </div-->
-              </div>
+            <?php endwhile; else: ?>
+            <p class="text-muted">No experience entries found.</p>
+            <?php endif; ?>
+          </div>
             </div>
           </div>
 
@@ -704,135 +693,41 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
                 <p class="section-subtitle">A summary of my academic achievements, certifications, and ongoing studies.</p>
               </div>
 
-              <div class="education-timeline">
+              <div class="education-timeline p-0">
                 <div class="timeline-track"></div>
-
-                <!-- HNDIT -->
-                <div class="education-item" data-aos="slide-up" data-aos-delay="300">
+                <?php
+                $edu_res = $conn->query("SELECT * FROM resume_education ORDER BY display_order ASC, id DESC");
+                if($edu_res && $edu_res->num_rows > 0):
+                    while($edu = $edu_res->fetch_assoc()):
+                ?>
+                <div class="education-item mb-4" data-aos="slide-up">
                   <div class="timeline-marker"></div>
-                  <div class="education-content">
-                    <div class="degree-header">
-                      <h3>Higher National Diploma in Information Technology (HNDIT)</h3>
-                      <span class="year">2024 - 2026</span>
+                  <div class="education-content p-4 shadow-sm border-0 rounded-4 bg-white">
+                    <div class="degree-header d-flex justify-content-between align-items-center mb-2">
+                      <h3 class="h5 fw-bold text-dark mb-0"><?php echo htmlspecialchars($edu['degree']); ?></h3>
+                      <span class="year badge bg-dark px-3 py-2 rounded-pill"><?php echo htmlspecialchars($edu['year']); ?></span>
                     </div>
-                    <h4 class="institution">Sri Lanka Institute of Advanced Technological Institute - Galle</h4>
-                    <p>
-                      Currently pursuing a Higher National Diploma in Information Technology with a strong focus on both theoretical and practical aspects of modern computing.
-                    </p>
-                    <ul>
-                      <li><strong>Core Areas:</strong> Software Engineering, Networking, Database Management, Web  Application Development.</li>
-                      <li><strong>Practical Experience:</strong> Building real-world projects including web applications, database-driven systems, and network configurations.</li>
-                      <li><strong>Key Skills:</strong> Java, PHP, MySQL, HTML/CSS, JavaScript, and cloud technologies.</li>
-                      <li><strong>Professional Development:</strong> Emphasis on teamwork, project management, and industry-standard practices.</li>
+                    <h4 class="institution text-primary h6 mb-3"><?php echo htmlspecialchars($edu['institution']); ?></h4>
+                    <p class="small text-muted mb-3"><?php echo htmlspecialchars($edu['description']); ?></p>
+                    <?php if(!empty($edu['details'])): ?>
+                    <ul class="list-unstyled small">
+                      <?php 
+                      $det_arr = explode("\n", $edu['details']);
+                      foreach($det_arr as $det): if(trim($det) == '') continue;
+                      ?>
+                        <li class="mb-2 d-flex align-items-start">
+                          <i class="bi bi-dot text-primary fs-4 lh-1"></i>
+                          <span><?php echo htmlspecialchars(trim($det)); ?></span>
+                        </li>
+                      <?php endforeach; ?>
                     </ul>
+                    <?php endif; ?>
                   </div>
                 </div>
-
-                <!-- Web Development -->
-                <div class="education-item" data-aos="slide-up" data-aos-delay="400">
-                  <div class="timeline-marker"></div>
-                  <div class="education-content">
-                    <div class="degree-header">
-                      <h3>Certificate in Web Development</h3>
-                      <span class="year">2023</span>
-                    </div>
-                    <h4 class="institution">Southern Information Technology Education Center</h4>
-                    <p>
-                      Successfully completed a certificate course in Web Development covering both frontend and backend fundamentals.
-                    </p>
-                    <ul>
-                      <li><strong>Frontend Skills:</strong> HTML5, CSS3, JavaScript, responsive design, and UI/UX basics.</li>
-                      <li><strong>Backend Basics:</strong> Introduction to PHP and MySQL for building dynamic websites.</li>
-                      <li><strong>Projects:</strong> Developed small-scale websites and interactive forms.</li>
-                      <li><strong>Key Outcome:</strong> Gained the ability to design, develop, and deploy simple web applications.</li>
-                    </ul>
-                  </div>
-                </div>
-
-<!-- Java Development -->
-<div class="education-item" data-aos="slide-up" data-aos-delay="400">
-  <div class="timeline-marker"></div>
-  <div class="education-content">
-    <div class="degree-header">
-      <h3>Certificate in Java Application Development</h3>
-      <span class="year">2023</span>
-    </div>
-    <h4 class="institution">Southern Information Technology Education Center</h4>
-    <p>
-      Completed a comprehensive training program in Java application development with an emphasis on Object-Oriented Programming (OOP).
-    </p>
-    <ul>
-      <li><strong>Core Topics:</strong> Java syntax, OOP principles, exception handling, file I/O, and collections framework.</li>
-      <li><strong>Practical Work:</strong> Designed and implemented desktop and console-based applications.</li>
-      <li><strong>Database Integration:</strong> Learned JDBC for connecting Java programs with relational databases.</li>
-      <li><strong>Key Outcome:</strong> Acquired strong problem-solving skills through hands-on coding assignments and projects.</li>
-    </ul>
-  </div>
-</div>
-
-<!-- A/L -->
-<!-- Advanced Level -->
-<div class="education-item" data-aos="slide-up" data-aos-delay="400">
-  <div class="timeline-marker"></div>
-  <div class="education-content">
-    <div class="degree-header">
-      <h3>Advanced Level - Technology Stream</h3>
-      <span class="year">2020 - 2021</span>
-    </div>
-    <h4 class="institution">Matara Central College</h4>
-    <p>
-      Successfully completed A/Ls in the Technology stream, gaining strong analytical and technical knowledge.
-    </p>
-    <ul>
-      <li><strong>Subjects:</strong> Information & Communication Technology (ICT), Engineering Technology, Science for Technology.</li>
-      <li><strong>Achievements:</strong> Engaged in practical projects, lab experiments, and ICT-based assignments.</li>
-      <li><strong>Key Outcome:</strong> Built a strong foundation in logical reasoning, problem-solving, and applied technology concepts.</li>
-    </ul>
-  </div>
-</div>
-
-<!-- Diploma IT -->
-<div class="education-item" data-aos="slide-up" data-aos-delay="500">
-  <div class="timeline-marker"></div>
-  <div class="education-content">
-    <div class="degree-header">
-      <h3>Diploma in Information Technology</h3>
-      <span class="year">2018 - 2019</span>
-    </div>
-    <h4 class="institution">Esoft Metro Campus</h4>
-    <p>
-      Completed a diploma program in IT with exposure to hardware, software, and programming fundamentals.
-    </p>
-    <ul>
-      <li><strong>Core Topics:</strong> Computer hardware & maintenance, operating systems, networking basics, MS Office suite.</li>
-      <li><strong>Programming:</strong> Introduction to C and Visual Basic for problem-solving and simple application building.</li>
-      <li><strong>Key Outcome:</strong> Gained foundational IT knowledge to pursue higher-level studies in computing.</li>
-    </ul>
-  </div>
-</div>
-
-<!-- Diploma English -->
-<div class="education-item" data-aos="slide-up" data-aos-delay="500">
-  <div class="timeline-marker"></div>
-  <div class="education-content">
-    <div class="degree-header">
-      <h3>Diploma in English</h3>
-      <span class="year">2018 - 2019</span>
-    </div>
-    <h4 class="institution">Esoft Metro Campus</h4>
-    <p>
-      Completed a diploma in English focusing on communication, grammar, and professional language usage.
-    </p>
-    <ul>
-      <li><strong>Core Areas:</strong> Grammar, vocabulary, reading comprehension, and writing skills.</li>
-      <li><strong>Practical Skills:</strong> Spoken English, presentations, group discussions, and interview preparation.</li>
-      <li><strong>Key Outcome:</strong> Improved academic writing and professional communication skills for both academic and workplace settings.</li>
-    </ul>
-  </div>
-</div>
-
-
-</div>
+                <?php endwhile; else: ?>
+                <p class="text-muted ps-4">No education entries found.</p>
+                <?php endif; ?>
+              </div>
 
 </div>
 
