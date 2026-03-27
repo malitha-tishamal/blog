@@ -836,7 +836,137 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
 
 </div>
 
-</section><!-- /Resume Section -->
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <?php
+      // Fetch testimonials
+      $testi_res = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, id DESC");
+      $testimonials = [];
+      $total_rating = 0;
+      if($testi_res && $testi_res->num_rows > 0) {
+          while($row = $testi_res->fetch_assoc()) {
+              $testimonials[] = $row;
+              $total_rating += $row['rating'];
+          }
+      }
+      $num_testi = count($testimonials);
+      $avg_rating = $num_testi > 0 ? round($total_rating / $num_testi, 1) : 0;
+      ?>
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Testimonials</h2>
+        <p>What my clients and partners say about our collaboration and results.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <?php if($num_testi > 0): ?>
+        <div class="row">
+          <div class="col-12">
+            <!-- Optional: You can keep critic reviews or hide them if not needed. 
+                 Since the user asked for customer reviews specifically, I'll focus on the slider. -->
+            
+            <div class="testimonials-container">
+              <div class="swiper testimonials-slider init-swiper" data-aos="fade-up" data-aos-delay="400">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": 1,
+                    "spaceBetween": 30,
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "768": {
+                        "slidesPerView": 2
+                      },
+                      "992": {
+                        "slidesPerView": 3
+                      }
+                    }
+                  }
+                </script>
+
+                <div class="swiper-wrapper">
+                  <?php foreach($testimonials as $testi): ?>
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <?php 
+                        $stars = floor($testi['rating']);
+                        $has_half = ($testi['rating'] - $stars) >= 0.5;
+                        for($i=1; $i<=5; $i++) {
+                            if($i <= $stars) echo '<i class="bi bi-star-fill"></i>';
+                            elseif($has_half && $i == $stars + 1) {
+                                echo '<i class="bi bi-star-half"></i>';
+                                $has_half = false;
+                            }
+                            else echo '<i class="bi bi-star"></i>';
+                        }
+                        ?>
+                      </div>
+                      <p>
+                        <?php echo htmlspecialchars($testi['message']); ?>
+                      </p>
+                      <div class="testimonial-profile">
+                        <img src="<?php echo htmlspecialchars($testi['profile_pic']); ?>" alt="<?php echo htmlspecialchars($testi['name']); ?>" class="img-fluid rounded-circle">
+                        <div>
+                          <h3><?php echo htmlspecialchars($testi['name']); ?></h3>
+                          <h4><?php echo htmlspecialchars($testi['role']); ?></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End testimonial item -->
+                  <?php endforeach; ?>
+
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <div class="overall-rating">
+              <div class="rating-number"><?php echo $avg_rating; ?></div>
+              <div class="rating-stars">
+                <?php 
+                $stars = floor($avg_rating);
+                $has_half = ($avg_rating - $stars) >= 0.5;
+                for($i=1; $i<=5; $i++) {
+                    if($i <= $stars) echo '<i class="bi bi-star-fill"></i>';
+                    elseif($has_half && $i == $stars + 1) {
+                        echo '<i class="bi bi-star-half"></i>';
+                        $has_half = false;
+                    }
+                    else echo '<i class="bi bi-star"></i>';
+                }
+                ?>
+              </div>
+              <p>Based on <?php echo $num_testi; ?>+ reviews</p>
+              <div class="rating-platforms">
+                <span>Verified Clients</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php else: ?>
+        <p class="text-center text-muted">No testimonials found. Add some from the admin panel!</p>
+        <?php endif; ?>
+      </div>
+    </section><!-- /Testimonials Section -->
+
+
+<!-- /Resume Section -->
 
 <!-- Services Section -->
     <!--section id="services" class="services section">

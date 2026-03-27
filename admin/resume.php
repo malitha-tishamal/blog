@@ -73,6 +73,7 @@ $entries = $conn->query("SELECT * FROM resume_entries ORDER BY type, display_ord
             <a href="portfolio.php"><i class="bi bi-grid me-2"></i> Portfolio</a>
             <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
+            <a href="testimonials.php"><i class="bi bi-chat-quote me-2"></i> Testimonials</a>
             <a href="messages.php"><i class="bi bi-envelope me-2"></i> Messages</a>
             <hr class="text-secondary">
             <a href="../index.php" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i> View Site</a>

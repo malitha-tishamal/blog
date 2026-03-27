@@ -6,7 +6,8 @@ check_admin_auth();
 $stats = [
     'views' => 0,
     'projects' => 0,
-    'messages' => 0
+    'messages' => 0,
+    'testimonials' => 0
 ];
 
 // Views
@@ -20,6 +21,10 @@ if($p_res && $p_row = $p_res->fetch_assoc()) $stats['projects'] = $p_row['c'];
 // Unread Messages (assuming we just created the table, might be empty)
 $m_res = $conn->query("SELECT COUNT(*) as c FROM contact_messages WHERE status = 'unread'");
 if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
+
+// Testimonials
+$t_res = $conn->query("SELECT COUNT(*) as c FROM testimonials");
+if($t_res && $t_row = $t_res->fetch_assoc()) $stats['testimonials'] = $t_row['c'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +63,7 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
             <a href="portfolio.php"><i class="bi bi-grid me-2"></i> Portfolio</a>
             <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
+            <a href="testimonials.php"><i class="bi bi-chat-quote me-2"></i> Testimonials</a>
             <a href="messages.php"><i class="bi bi-envelope me-2"></i> Messages</a>
             <hr class="text-secondary">
             <a href="../index.php" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i> View Site</a>
@@ -73,7 +79,7 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
 
             <div class="row">
                 <!-- Stat Card 1 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="card stat-card border-primary">
                         <div class="card-body">
                             <div>
@@ -86,7 +92,7 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
                 </div>
 
                 <!-- Stat Card 2 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="card stat-card border-success">
                         <div class="card-body">
                             <div>
@@ -99,7 +105,7 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
                 </div>
 
                 <!-- Stat Card 3 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="card stat-card border-warning">
                         <div class="card-body">
                             <div>
@@ -107,6 +113,19 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
                                 <h3 class="stat-number text-warning"><?php echo number_format($stats['messages']); ?></h3>
                             </div>
                             <div class="stat-icon text-warning"><i class="bi bi-chat-dots-fill"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card stat-card border-info">
+                        <div class="card-body">
+                            <div>
+                                <p class="stat-label">Testimonials</p>
+                                <h3 class="stat-number text-info"><?php echo number_format($stats['testimonials']); ?></h3>
+                            </div>
+                            <div class="stat-icon text-info"><i class="bi bi-chat-quote-fill"></i></div>
                         </div>
                     </div>
                 </div>
