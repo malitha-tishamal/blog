@@ -25,6 +25,9 @@ if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
 // Testimonials
 $t_res = $conn->query("SELECT COUNT(*) as c FROM testimonials");
 if($t_res && $t_row = $t_res->fetch_assoc()) $stats['testimonials'] = $t_row['c'];
+
+// Certifications
+$stats['certifications'] = $conn->query("SELECT COUNT(*) FROM certifications")->fetch_row()[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +67,7 @@ if($t_res && $t_row = $t_res->fetch_assoc()) $stats['testimonials'] = $t_row['c'
             <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
             <a href="testimonials.php"><i class="bi bi-chat-quote me-2"></i> Testimonials</a>
+            <a href="certifications.php"><i class="bi bi-award me-2"></i> Licenses & Certifications</a>
             <a href="messages.php"><i class="bi bi-envelope me-2"></i> Messages</a>
             <hr class="text-secondary">
             <a href="../index.php" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i> View Site</a>
@@ -126,6 +130,19 @@ if($t_res && $t_row = $t_res->fetch_assoc()) $stats['testimonials'] = $t_row['c'
                                 <h3 class="stat-number text-info"><?php echo number_format($stats['testimonials']); ?></h3>
                             </div>
                             <div class="stat-icon text-info"><i class="bi bi-chat-quote-fill"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 5 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card stat-card border-secondary">
+                        <div class="card-body">
+                            <div>
+                                <p class="stat-label">Certifications</p>
+                                <h3 class="stat-number text-secondary"><?php echo number_format($stats['certifications']); ?></h3>
+                            </div>
+                            <div class="stat-icon text-secondary"><i class="bi bi-award-fill"></i></div>
                         </div>
                     </div>
                 </div>
