@@ -853,72 +853,53 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
       if($cert_res && $cert_res->num_rows > 0):
           while($cert = $cert_res->fetch_assoc()):
       ?>
-      <div class="col-12" data-aos="fade-up">
-        <div class="cert-item d-flex align-items-start">
-          <div class="cert-logo-wrapper">
-            <?php if(!empty($cert['logo'])): ?>
-              <img src="<?php echo htmlspecialchars($cert['logo']); ?>" alt="<?php echo htmlspecialchars($cert['organization']); ?>">
-            <?php else: ?>
-              <div class="bg-light d-flex align-items-center justify-content-center h-100 rounded border">
-                <i class="bi bi-award text-muted fs-2"></i>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="cert-card card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+          <div class="card-header bg-white border-bottom-0 pb-0 pt-3 px-3 d-flex align-items-center">
+            <div class="cert-logo-small me-3">
+              <?php if(!empty($cert['logo'])): ?>
+                <img src="<?php echo htmlspecialchars($cert['logo']); ?>" alt="Org Logo" style="width: 45px; height: 45px; object-fit: contain;">
+              <?php else: ?>
+                <div class="bg-light rounded p-2"><i class="bi bi-award fs-3 text-muted"></i></div>
+              <?php endif; ?>
+            </div>
+            <div class="cert-meta">
+              <h6 class="mb-0 fw-bold text-dark"><?php echo htmlspecialchars($cert['organization']); ?></h6>
+              <small class="text-muted">Issued <?php echo htmlspecialchars($cert['issue_month']); ?> <?php echo htmlspecialchars($cert['issue_year']); ?></small>
+            </div>
+          </div>
+          <div class="card-body px-3 pt-3">
+            <h5 class="card-title fw-bold" style="font-size: 1.05rem; min-height: 2.6rem;"><?php echo htmlspecialchars($cert['title']); ?></h5>
+            <?php if(!empty($cert['skills'])): ?>
+              <div class="cert-skills-small mb-3">
+                 <?php 
+                  $skills_arr = explode(',', $cert['skills']);
+                  foreach($skills_arr as $skill): 
+                  ?>
+                    <span class="badge bg-light text-dark fw-normal border me-1 small mb-1" style="font-size: 0.75rem;">
+                      <i class="bi bi-diamond text-primary"></i> <?php echo htmlspecialchars(trim($skill)); ?>
+                    </span>
+                  <?php endforeach; ?>
               </div>
             <?php endif; ?>
           </div>
-          <div class="cert-content flex-grow-1">
-            <h3><?php echo htmlspecialchars($cert['title']); ?></h3>
-            <div class="org-name"><?php echo htmlspecialchars($cert['organization']); ?></div>
-            <div class="issue-date">
-              Issued <?php echo htmlspecialchars($cert['issue_month']); ?> <?php echo htmlspecialchars($cert['issue_year']); ?>
-              <?php if(!empty($cert['expiry_year'])): ?>
-                · Expires <?php echo htmlspecialchars($cert['expiry_month']); ?> <?php echo htmlspecialchars($cert['expiry_year']); ?>
-              <?php else: ?>
-                · No Expiration Date
-              <?php endif; ?>
+          <?php if(!empty($cert['media_image'])): ?>
+            <div class="cert-media-thumb">
+              <a href="<?php echo htmlspecialchars($cert['media_image']); ?>" class="glightbox">
+                 <img src="<?php echo htmlspecialchars($cert['media_image']); ?>" alt="Certificate Preview" class="w-100" style="height: 180px; object-fit: cover; border-top: 1px solid #f0f0f0;">
+              </a>
             </div>
-            
-            <?php if(!empty($cert['credential_id'])): ?>
-              <div class="credential-info text-muted small">Credential ID <?php echo htmlspecialchars($cert['credential_id']); ?></div>
-            <?php endif; ?>
-
+          <?php endif; ?>
+          <div class="card-footer bg-white border-top-0 px-3 pb-3 pt-2">
             <?php if(!empty($cert['credential_url'])): ?>
-              <div class="credential-info mt-2">
-                <a href="<?php echo htmlspecialchars($cert['credential_url']); ?>" target="_blank" class="btn-link">
-                   <i class="bi bi-patch-check-fill text-primary"></i> Show credential <i class="bi bi-box-arrow-up-right"></i>
-                </a>
-              </div>
-            <?php endif; ?>
-
-            <?php if(!empty($cert['skills'])): ?>
-              <div class="cert-skills">
-                <?php 
-                $skills_arr = explode(',', $cert['skills']);
-                foreach($skills_arr as $skill): 
-                ?>
-                  <span class="skill-tag">
-                    <i class="bi bi-diamond"></i> <?php echo htmlspecialchars(trim($skill)); ?>
-                  </span>
-                <?php endforeach; ?>
-              </div>
-            <?php endif; ?>
-
-            <?php if(!empty($cert['media_image'])): ?>
-              <div class="cert-media mt-4">
-                <a href="<?php echo htmlspecialchars($cert['media_image']); ?>" class="glightbox">
-                  <img src="<?php echo htmlspecialchars($cert['media_image']); ?>" alt="Certificate Media" class="img-fluid">
-                  <div class="cert-media-info">
-                    <h4><?php echo htmlspecialchars($cert['title']); ?></h4>
-                    <p>Click to view full certificate</p>
-                  </div>
-                </a>
-              </div>
+              <a href="<?php echo htmlspecialchars($cert['credential_url']); ?>" target="_blank" class="btn btn-outline-primary btn-sm w-100 rounded-pill py-1">
+                <i class="bi bi-patch-check-fill me-1"></i> Show credential <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 0.7rem;"></i>
+              </a>
             <?php endif; ?>
           </div>
         </div>
       </div>
-      <?php 
-          endwhile;
-      else:
-      ?>
+      <?php endwhile; else: ?>
       <div class="col-12 text-center py-5">
         <p class="text-muted">No certifications added yet. Manage them from the admin panel.</p>
       </div>
@@ -1377,6 +1358,16 @@ Explore a diverse portfolio capturing professional events and achievements, offi
                 <div class="content">
                   <h4>Email Address</h4>
                   <p><?php echo htmlspecialchars($site_settings['contact_email']); ?></p>
+                </div>
+              </div>
+
+              <div class="info-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="icon-box">
+                  <i class="bi bi-whatsapp"></i>
+                </div>
+                <div class="content">
+                  <h4>WhatsApp</h4>
+                  <p><a href="https://wa.me/94775590992" target="_blank">+94 77 559 0992</a></p>
                 </div>
               </div>
             </div>

@@ -27,20 +27,14 @@
       $stmt->bind_param("ssss", $name, $email, $subject, $msg);
       $stmt->execute();
   }
-  // ==========================
 
+  // Skip actual email sending to avoid local mail server errors
+  /*
   $contact = new PHP_Email_Form;
   $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $name;
-  $contact->from_email = $email;
-  $contact->subject = $subject;
-
-  $contact->add_message( $name, 'From');
-  $contact->add_message( $email, 'Email');
-  isset($_POST['phone']) && $contact->add_message($_POST['phone'], 'Phone');
-  $contact->add_message( $msg, 'Message', 10);
-
+  ...
   echo $contact->send();
+  */
+
+  echo "OK"; 
 ?>
