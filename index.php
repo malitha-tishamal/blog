@@ -838,6 +838,95 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
 
 </section>
 
+<!-- Licenses & Certifications Section -->
+<section id="certifications" class="certifications section light-background">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Licenses & certifications</h2>
+    <p>Professional certifications and credentials verifying my expertise and continuous learning.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="row gy-4">
+      <?php
+      $cert_res = $conn->query("SELECT * FROM certifications ORDER BY display_order ASC, issue_year DESC, id DESC");
+      if($cert_res && $cert_res->num_rows > 0):
+          while($cert = $cert_res->fetch_assoc()):
+      ?>
+      <div class="col-12" data-aos="fade-up">
+        <div class="cert-item d-flex align-items-start">
+          <div class="cert-logo-wrapper">
+            <?php if(!empty($cert['logo'])): ?>
+              <img src="<?php echo htmlspecialchars($cert['logo']); ?>" alt="<?php echo htmlspecialchars($cert['organization']); ?>">
+            <?php else: ?>
+              <div class="bg-light d-flex align-items-center justify-content-center h-100 rounded border">
+                <i class="bi bi-award text-muted fs-2"></i>
+              </div>
+            <?php endif; ?>
+          </div>
+          <div class="cert-content flex-grow-1">
+            <h3><?php echo htmlspecialchars($cert['title']); ?></h3>
+            <div class="org-name"><?php echo htmlspecialchars($cert['organization']); ?></div>
+            <div class="issue-date">
+              Issued <?php echo htmlspecialchars($cert['issue_month']); ?> <?php echo htmlspecialchars($cert['issue_year']); ?>
+              <?php if(!empty($cert['expiry_year'])): ?>
+                · Expires <?php echo htmlspecialchars($cert['expiry_month']); ?> <?php echo htmlspecialchars($cert['expiry_year']); ?>
+              <?php else: ?>
+                · No Expiration Date
+              <?php endif; ?>
+            </div>
+            
+            <?php if(!empty($cert['credential_id'])): ?>
+              <div class="credential-info text-muted small">Credential ID <?php echo htmlspecialchars($cert['credential_id']); ?></div>
+            <?php endif; ?>
+
+            <?php if(!empty($cert['credential_url'])): ?>
+              <div class="credential-info mt-2">
+                <a href="<?php echo htmlspecialchars($cert['credential_url']); ?>" target="_blank" class="btn-link">
+                   <i class="bi bi-patch-check-fill text-primary"></i> Show credential <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+            <?php endif; ?>
+
+            <?php if(!empty($cert['skills'])): ?>
+              <div class="cert-skills">
+                <?php 
+                $skills_arr = explode(',', $cert['skills']);
+                foreach($skills_arr as $skill): 
+                ?>
+                  <span class="skill-tag">
+                    <i class="bi bi-diamond"></i> <?php echo htmlspecialchars(trim($skill)); ?>
+                  </span>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if(!empty($cert['media_image'])): ?>
+              <div class="cert-media mt-4">
+                <a href="<?php echo htmlspecialchars($cert['media_image']); ?>" class="glightbox">
+                  <img src="<?php echo htmlspecialchars($cert['media_image']); ?>" alt="Certificate Media" class="img-fluid">
+                  <div class="cert-media-info">
+                    <h4><?php echo htmlspecialchars($cert['title']); ?></h4>
+                    <p>Click to view full certificate</p>
+                  </div>
+                </a>
+              </div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <?php 
+          endwhile;
+      else:
+      ?>
+      <div class="col-12 text-center py-5">
+        <p class="text-muted">No certifications added yet. Manage them from the admin panel.</p>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
       <?php
