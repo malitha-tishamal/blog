@@ -1,13 +1,22 @@
 <?php
 require_once 'includes/db-conn.php';
-$site_settings = $conn->query("SELECT * FROM site_settings WHERE id=1")->fetch_assoc();
-$about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_assoc();
+
+// Prepare and execute for Site Settings
+$stmt = $conn->prepare("SELECT * FROM site_settings WHERE id = 1");
+$stmt->execute();
+$site_settings = $stmt->fetch();
+
+// Prepare and execute for About Section
+$stmt = $conn->prepare("SELECT * FROM about_section WHERE id = 1");
+$stmt->execute();
+$about_settings = $stmt->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self';">
   
   <!-- Primary Title with Focus Keywords -->
   <title>Malitha Tishamal – Full Stack Developer & DevOps Engineer | AI & Cybersecurity Specialist</title>
@@ -298,21 +307,21 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
 
                   <div class="skills-grid">
                     <?php 
-                    $service_res = $conn->query("SELECT * FROM services ORDER BY display_order ASC");
+                    $service_res = $conn->query("SELECT * FROM services ORDER BY display_order ASC")->fetchAll();
                     $delay = 400;
-                    if($service_res->num_rows > 0) {
-                        while($s = $service_res->fetch_assoc()): 
+                    if(count($service_res) > 0) {
+                        foreach($service_res as $s): 
                     ?>
                     <div class="skill-item" data-aos="zoom-in" data-aos-delay="<?php echo $delay; ?>">
                       <div class="skill-icon">
-                        <i class="<?php echo htmlspecialchars($s['icon_class']); ?>"></i>
+                        <i class="<?php echo htmlspecialchars($s['icon_class'], ENT_QUOTES, 'UTF-8'); ?>"></i>
                       </div>
-                      <h4><?php echo htmlspecialchars($s['title']); ?></h4>
-                      <p><?php echo htmlspecialchars($s['description']); ?></p>
+                      <h4><?php echo htmlspecialchars($s['title'], ENT_QUOTES, 'UTF-8'); ?></h4>
+                      <p><?php echo htmlspecialchars($s['description'], ENT_QUOTES, 'UTF-8'); ?></p>
                     </div>
                     <?php 
                             $delay += 50;
-                        endwhile; 
+                        endforeach; 
                     } else {
                         echo "<p class='text-muted'>No services added yet.</p>";
                     }
@@ -350,34 +359,34 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
                   </style>
                <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
 <?php 
-$resume_res = $conn->query("SELECT * FROM resume_entries ORDER BY display_order ASC");
-if($resume_res->num_rows > 0) {
-    while($r = $resume_res->fetch_assoc()): 
+$resume_res = $conn->query("SELECT * FROM resume_entries ORDER BY display_order ASC")->fetchAll();
+if(count($resume_res) > 0) {
+    foreach($resume_res as $r): 
 ?>
 <div class="timeline-item">
     <div class="year">
-        <?php echo htmlspecialchars($r['duration']); ?>
+        <?php echo htmlspecialchars($r['duration'], ENT_QUOTES, 'UTF-8'); ?>
     </div>
 
     <div class="description">
         <strong>
             <span style="color:blue">
-                <?php echo htmlspecialchars($r['organization']); ?>
+                <?php echo htmlspecialchars($r['organization'], ENT_QUOTES, 'UTF-8'); ?>
             </span>
         </strong>
         <br>
-        <?php echo htmlspecialchars($r['title']); ?>
+        <?php echo htmlspecialchars($r['title'], ENT_QUOTES, 'UTF-8'); ?>
 
         <?php if(!empty($r['description'])): ?>
             <br>
-            <?php echo htmlspecialchars($r['description']); ?>
+            <?php echo htmlspecialchars($r['description'], ENT_QUOTES, 'UTF-8'); ?>
         <?php endif; ?>
     </div>
 
 </div>
 
 <?php 
-    endwhile; 
+    endforeach; 
 } else {
     echo "<p class='text-muted'>No timeline entries found.</p>";
 }
@@ -418,36 +427,38 @@ if($resume_res->num_rows > 0) {
         <div class="skills-grid">
           <div class="row g-4">
             <?php 
-            $cat_res = $conn->query("SELECT * FROM skill_categories ORDER BY display_order ASC, name ASC");
+            $cat_res = $conn->query("SELECT * FROM skill_categories ORDER BY display_order ASC, name ASC")->fetchAll();
             $cat_delay = 200;
-            if ($cat_res && $cat_res->num_rows > 0):
-                while($cat = $cat_res->fetch_assoc()):
+            if (count($cat_res) > 0):
+                foreach($cat_res as $cat):
             ?>
-            <!-- <?php echo htmlspecialchars($cat['name']); ?> -->
+            <!-- <?php echo htmlspecialchars($cat['name'], ENT_QUOTES, 'UTF-8'); ?> -->
             <div class="col-md-6" data-aos="flip-left" data-aos-delay="<?php echo $cat_delay; ?>">
               <div class="skill-card">
                 <div class="skill-header">
-                  <i class="<?php echo htmlspecialchars($cat['icon']); ?>"></i>
-                  <h3><?php echo htmlspecialchars($cat['name']); ?></h3>
+                  <i class="<?php echo htmlspecialchars($cat['icon'], ENT_QUOTES, 'UTF-8'); ?>"></i>
+                  <h3><?php echo htmlspecialchars($cat['name'], ENT_QUOTES, 'UTF-8'); ?></h3>
                 </div>
                 <div class="skills-animation">
                   <?php 
                   $cat_id = $cat['id'];
-                  $skill_res = $conn->query("SELECT * FROM skills WHERE category_id = $cat_id ORDER BY display_order ASC, name ASC");
-                  if ($skill_res && $skill_res->num_rows > 0):
-                      while($s = $skill_res->fetch_assoc()):
+                  $skill_stmt = $conn->prepare("SELECT * FROM skills WHERE category_id = ? ORDER BY display_order ASC, name ASC");
+                  $skill_stmt->execute([$cat_id]);
+                  $skills = $skill_stmt->fetchAll();
+                  if (count($skills) > 0):
+                      foreach($skills as $s):
                   ?>
                   <div class="skill-item">
                     <div class="skill-info">
-                      <span class="skill-name"><?php echo htmlspecialchars($s['name']); ?></span>
-                      <span class="skill-percentage"><?php echo $s['percentage']; ?>%</span>
+                      <span class="skill-name"><?php echo htmlspecialchars($s['name'], ENT_QUOTES, 'UTF-8'); ?></span>
+                      <span class="skill-percentage"><?php echo (int)$s['percentage']; ?>%</span>
                     </div>
                     <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:<?php echo $s['percentage']; ?>%"></div>
+                      <div class="progress-bar" style="width:<?php echo (int)$s['percentage']; ?>%"></div>
                     </div>
                   </div>
                   <?php 
-                      endwhile;
+                      endforeach;
                   endif;
                   ?>
                 </div>
@@ -455,7 +466,7 @@ if($resume_res->num_rows > 0) {
             </div>
             <?php 
                 $cat_delay += 100;
-                endwhile; 
+                endforeach; 
             endif; 
             ?>
           </div>
@@ -465,20 +476,21 @@ if($resume_res->num_rows > 0) {
       <!-- RIGHT SIDE: Expertise Summary -->
       <div class="col-lg-4">
         <?php 
-        $exp_res = $conn->query("SELECT * FROM skills_expertise WHERE id = 1");
-        $exp = ($exp_res && $exp_res->num_rows > 0) ? $exp_res->fetch_assoc() : null;
+        $exp_stmt = $conn->prepare("SELECT * FROM skills_expertise WHERE id = 1");
+        $exp_stmt->execute();
+        $exp = $exp_stmt->fetch();
         if ($exp):
         ?>
         <div class="skills-summary" data-aos="fade-left" data-aos-delay="200">
-          <h3><?php echo htmlspecialchars($exp['title']); ?></h3>
-          <p><?php echo htmlspecialchars($exp['description']); ?></p>
+          <h3><?php echo htmlspecialchars($exp['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+          <p><?php echo htmlspecialchars($exp['description'], ENT_QUOTES, 'UTF-8'); ?></p>
 
           <ul class="list-unstyled expertise-list mt-3">
             <?php 
             $highlights = explode("\n", $exp['highlights']);
             foreach($highlights as $h): if(trim($h) == '') continue;
             ?>
-            <li><?php echo htmlspecialchars(trim($h)); ?></li>
+            <li><?php echo htmlspecialchars(trim($h), ENT_QUOTES, 'UTF-8'); ?></li>
             <?php endforeach; ?>
           </ul>
 
@@ -486,14 +498,14 @@ if($resume_res->num_rows > 0) {
             <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
               <div class="stat-circle"><i class="bi bi-trophy"></i></div>
               <div class="stat-info">
-                <span class="stat-number"><?php echo htmlspecialchars($exp['years_experience']); ?></span>
+                <span class="stat-number"><?php echo htmlspecialchars($exp['years_experience'], ENT_QUOTES, 'UTF-8'); ?></span>
                 <span class="stat-label">Years Experience</span>
               </div>
             </div>
             <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
               <div class="stat-circle"><i class="bi bi-diagram-3"></i></div>
               <div class="stat-info">
-                <span class="stat-number"><?php echo htmlspecialchars($exp['projects_completed']); ?></span>
+                <span class="stat-number"><?php echo htmlspecialchars($exp['projects_completed'], ENT_QUOTES, 'UTF-8'); ?></span>
                 <span class="stat-label">Projects Completed</span>
               </div>
             </div>
@@ -505,7 +517,7 @@ if($resume_res->num_rows > 0) {
               $badges = explode(",", $exp['badges']);
               foreach($badges as $b): if(trim($b) == '') continue;
               ?>
-              <div class="skill-badge"><?php echo htmlspecialchars(trim($b)); ?></div>
+              <div class="skill-badge"><?php echo htmlspecialchars(trim($b), ENT_QUOTES, 'UTF-8'); ?></div>
               <?php endforeach; ?>
             </div>
           </div>
@@ -539,20 +551,20 @@ if($resume_res->num_rows > 0) {
 
           <div class="experience-cards">
             <?php
-            $exp_res = $conn->query("SELECT * FROM resume_experience ORDER BY display_order ASC, id DESC");
-            if($exp_res && $exp_res->num_rows > 0):
-                while($exp = $exp_res->fetch_assoc()):
+            $exp_res = $conn->query("SELECT * FROM resume_experience ORDER BY display_order ASC, id DESC")->fetchAll();
+            if(count($exp_res) > 0):
+                foreach($exp_res as $exp):
             ?>
             <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
               <div class="card-header border-0 pb-0">
                 <div class="role-info">
-                  <h3 class="mb-1 fw-bold text-dark"><?php echo htmlspecialchars($exp['role']); ?></h3>
-                  <h4 class="text-primary mb-0"><?php echo htmlspecialchars($exp['organization']); ?></h4>
+                  <h3 class="mb-1 fw-bold text-dark"><?php echo htmlspecialchars($exp['role'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                  <h4 class="text-primary mb-0"><?php echo htmlspecialchars($exp['organization'], ENT_QUOTES, 'UTF-8'); ?></h4>
                 </div>
-                <span class="duration badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill"><?php echo htmlspecialchars($exp['duration']); ?></span>
+                <span class="duration badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill"><?php echo htmlspecialchars($exp['duration'], ENT_QUOTES, 'UTF-8'); ?></span>
               </div>
               <div class="card-body">
-                <p class="text-muted mb-3"><?php echo htmlspecialchars($exp['description']); ?></p>
+                <p class="text-muted mb-3"><?php echo htmlspecialchars($exp['description'], ENT_QUOTES, 'UTF-8'); ?></p>
                 <?php if(!empty($exp['achievements'])): ?>
                 <ul class="achievements list-unstyled">
                   <?php 
@@ -561,14 +573,14 @@ if($resume_res->num_rows > 0) {
                   ?>
                     <li class="mb-2 d-flex align-items-start">
                       <i class="bi bi-check2-circle text-primary me-2 mt-1"></i>
-                      <span><?php echo htmlspecialchars(trim($ach)); ?></span>
+                      <span><?php echo htmlspecialchars(trim($ach), ENT_QUOTES, 'UTF-8'); ?></span>
                     </li>
                   <?php endforeach; ?>
                 </ul>
                 <?php endif; ?>
               </div>
             </div>
-            <?php endwhile; else: ?>
+            <?php endforeach; else: ?>
             <p class="text-muted">No experience entries found.</p>
             <?php endif; ?>
           </div>
@@ -586,19 +598,19 @@ if($resume_res->num_rows > 0) {
               <div class="education-timeline p-0">
                 <div class="timeline-track"></div>
                 <?php
-                $edu_res = $conn->query("SELECT * FROM resume_education ORDER BY display_order ASC, id DESC");
-                if($edu_res && $edu_res->num_rows > 0):
-                    while($edu = $edu_res->fetch_assoc()):
+                $edu_res = $conn->query("SELECT * FROM resume_education ORDER BY display_order ASC, id DESC")->fetchAll();
+                if(count($edu_res) > 0):
+                    foreach($edu_res as $edu):
                 ?>
                 <div class="education-item mb-4" data-aos="slide-up">
                   <div class="timeline-marker"></div>
                   <div class="education-content p-4 shadow-sm border-0 rounded-4 bg-white">
                     <div class="degree-header d-flex justify-content-between align-items-center mb-2">
-                      <h3 class="h5 fw-bold text-dark mb-0"><?php echo htmlspecialchars($edu['degree']); ?></h3>
-                      <span class="year badge bg-dark px-3 py-2 rounded-pill"><?php echo htmlspecialchars($edu['year']); ?></span>
+                      <h3 class="h5 fw-bold text-dark mb-0"><?php echo htmlspecialchars($edu['degree'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                      <span class="year badge px-3 py-2 rounded-pill"><?php echo htmlspecialchars($edu['year'], ENT_QUOTES, 'UTF-8'); ?></span>
                     </div>
-                    <h4 class="institution text-primary h6 mb-3"><?php echo htmlspecialchars($edu['institution']); ?></h4>
-                    <p class="small text-muted mb-3"><?php echo htmlspecialchars($edu['description']); ?></p>
+                    <h4 class="institution text-primary h6 mb-3"><?php echo htmlspecialchars($edu['institution'], ENT_QUOTES, 'UTF-8'); ?></h4>
+                    <p class="small text-muted mb-3"><?php echo htmlspecialchars($edu['description'], ENT_QUOTES, 'UTF-8'); ?></p>
                     <?php if(!empty($edu['details'])): ?>
                     <ul class="list-unstyled small">
                       <?php 
@@ -607,14 +619,14 @@ if($resume_res->num_rows > 0) {
                       ?>
                         <li class="mb-2 d-flex align-items-start">
                           <i class="bi bi-dot text-primary fs-4 lh-1"></i>
-                          <span><?php echo htmlspecialchars(trim($det)); ?></span>
+                          <span><?php echo htmlspecialchars(trim($det), ENT_QUOTES, 'UTF-8'); ?></span>
                         </li>
                       <?php endforeach; ?>
                     </ul>
                     <?php endif; ?>
                   </div>
                 </div>
-                <?php endwhile; else: ?>
+                <?php endforeach; else: ?>
                 <p class="text-muted ps-4">No education entries found.</p>
                 <?php endif; ?>
               </div>
@@ -634,57 +646,71 @@ if($resume_res->num_rows > 0) {
   <div class="container">
     <div class="row gy-4">
       <?php
-      $cert_res = $conn->query("SELECT * FROM certifications ORDER BY display_order ASC, issue_year DESC, id DESC");
-      if($cert_res && $cert_res->num_rows > 0):
-          while($cert = $cert_res->fetch_assoc()):
+      $cert_res = $conn->query("SELECT * FROM certifications ORDER BY display_order ASC, issue_year DESC, id DESC")->fetchAll();
+      if(count($cert_res) > 0):
+        foreach($cert_res as $cert):
       ?>
-      <div class="col-lg-4 col-md-6" data-aos="fade-up">
-        <div class="cert-card card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-          <div class="card-header bg-white border-bottom-0 pb-0 pt-3 px-3 d-flex align-items-center">
-            <div class="cert-logo-small me-3">
-              <?php if(!empty($cert['logo'])): ?>
-                <img src="<?php echo htmlspecialchars($cert['logo']); ?>" alt="Org Logo" style="width: 45px; height: 45px; object-fit: contain;">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="certification-card h-100 shadow-sm border-0 rounded-4 overflow-hidden bg-white transition-hover">
+          <div class="card-header-top d-flex align-items-center p-3">
+             <div class="org-logo me-3 shadow-sm rounded-circle p-1 bg-white" style="width: 50px; height: 50px;">
+                <img src="<?php echo !empty($cert['logo']) ? htmlspecialchars($cert['logo'], ENT_QUOTES, 'UTF-8') : 'assets/img/certifications/default-org.png'; ?>" alt="<?php echo htmlspecialchars($cert['organization'], ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid rounded-circle h-100 w-100" style="object-fit: contain;">
+             </div>
+             <div class="cert-info">
+               <h3 class="h6 mb-0 fw-bold"><?php echo htmlspecialchars($cert['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+               <p class="text-muted small mb-0"><?php echo htmlspecialchars($cert['organization'], ENT_QUOTES, 'UTF-8'); ?></p>
+             </div>
+          </div>
+          <div class="card-body px-3 py-2">
+            <div class="cert-meta mb-2">
+              <span class="badge bg-light text-secondary border rounded-pill me-1 small">
+                <i class="bi bi-calendar-event me-1"></i> Issued <?php echo htmlspecialchars($cert['issue_month'], ENT_QUOTES, 'UTF-8'); ?> <?php echo (int)$cert['issue_year']; ?>
+              </span>
+              <?php if(!empty($cert['expiry_month']) && !empty($cert['expiry_year'])): ?>
+                <span class="badge bg-light text-secondary border rounded-pill small">
+                  <i class="bi bi-calendar-x me-1"></i> Expires <?php echo htmlspecialchars($cert['expiry_month'], ENT_QUOTES, 'UTF-8'); ?> <?php echo (int)$cert['expiry_year']; ?>
+                </span>
               <?php else: ?>
-                <div class="bg-light rounded p-2"><i class="bi bi-award fs-3 text-muted"></i></div>
+                <span class="badge bg-light text-success border rounded-pill small">
+                  <i class="bi bi-infinity me-1"></i> No Expiration
+                </span>
               <?php endif; ?>
             </div>
-            <div class="cert-meta">
-              <h6 class="mb-0 fw-bold text-dark"><?php echo htmlspecialchars($cert['organization']); ?></h6>
-              <small class="text-muted">Issued <?php echo htmlspecialchars($cert['issue_month']); ?> <?php echo htmlspecialchars($cert['issue_year']); ?></small>
-            </div>
-          </div>
-          <div class="card-body px-3 pt-3">
-            <h5 class="card-title fw-bold" style="font-size: 1.05rem; min-height: 2.6rem;"><?php echo htmlspecialchars($cert['title']); ?></h5>
-            <?php if(!empty($cert['skills'])): ?>
-              <div class="cert-skills-small mb-3">
-                 <?php 
-                  $skills_arr = explode(',', $cert['skills']);
-                  foreach($skills_arr as $skill): 
-                  ?>
-                    <span class="badge bg-light text-dark fw-normal border me-1 small mb-1" style="font-size: 0.75rem;">
-                      <i class="bi bi-diamond text-primary"></i> <?php echo htmlspecialchars(trim($skill)); ?>
-                    </span>
-                  <?php endforeach; ?>
+            <?php if(!empty($cert['credential_id'])): ?>
+              <div class="cred-id small text-muted mb-2">
+                <strong>ID:</strong> <?php echo htmlspecialchars($cert['credential_id'], ENT_QUOTES, 'UTF-8'); ?>
+              </div>
+            <?php endif; ?>
+            <?php if(!empty($cert['skills'])): 
+              $skills_arr = explode(',', $cert['skills']);
+            ?>
+              <div class="cert-skills-tags">
+                <?php foreach(array_slice($skills_arr, 0, 4) as $s_tag): ?>
+                  <span class="skill-tag"><?php echo htmlspecialchars(trim($s_tag), ENT_QUOTES, 'UTF-8'); ?></span>
+                <?php endforeach; ?>
+                <?php if(count($skills_arr) > 4): ?>
+                  <span class="skill-tag">+<?php echo count($skills_arr) - 4; ?></span>
+                <?php endif; ?>
               </div>
             <?php endif; ?>
           </div>
           <?php if(!empty($cert['media_image'])): ?>
             <div class="cert-media-thumb">
-              <a href="<?php echo htmlspecialchars($cert['media_image']); ?>" class="glightbox">
-                 <img src="<?php echo htmlspecialchars($cert['media_image']); ?>" alt="Certificate Preview" class="w-100" style="height: 180px; object-fit: cover; border-top: 1px solid #f0f0f0;">
+              <a href="<?php echo htmlspecialchars($cert['media_image'], ENT_QUOTES, 'UTF-8'); ?>" class="glightbox">
+                 <img src="<?php echo htmlspecialchars($cert['media_image'], ENT_QUOTES, 'UTF-8'); ?>" alt="Certificate Preview" class="w-100" style="height: 180px; object-fit: cover; border-top: 1px solid #f0f0f0;">
               </a>
             </div>
           <?php endif; ?>
           <div class="card-footer bg-white border-top-0 px-3 pb-3 pt-2">
             <?php if(!empty($cert['credential_url'])): ?>
-              <a href="<?php echo htmlspecialchars($cert['credential_url']); ?>" target="_blank" class="btn btn-outline-primary btn-sm w-100 rounded-pill py-1">
+              <a href="<?php echo htmlspecialchars($cert['credential_url'], ENT_QUOTES, 'UTF-8'); ?>" target="_blank" class="btn btn-outline-primary btn-sm w-100 rounded-pill py-1">
                 <i class="bi bi-patch-check-fill me-1"></i> Show credential <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 0.7rem;"></i>
               </a>
             <?php endif; ?>
           </div>
         </div>
       </div>
-      <?php endwhile; else: ?>
+      <?php endforeach; else: ?>
       <div class="col-12 text-center py-5">
         <p class="text-muted">No certifications added yet. Manage them from the admin panel.</p>
       </div>
@@ -697,12 +723,10 @@ if($resume_res->num_rows > 0) {
     <section id="testimonials" class="testimonials section">
       <?php
       // Fetch testimonials
-      $testi_res = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, id DESC");
-      $testimonials = [];
+      $testimonials = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, id DESC")->fetchAll();
       $total_rating = 0;
-      if($testi_res && $testi_res->num_rows > 0) {
-          while($row = $testi_res->fetch_assoc()) {
-              $testimonials[] = $row;
+      if(count($testimonials) > 0) {
+          foreach($testimonials as $row) {
               $total_rating += $row['rating'];
           }
       }
@@ -983,22 +1007,23 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
           <?php 
-          $evt_res = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order ASC");
-          if($evt_res->num_rows > 0) {
-              while($e = $evt_res->fetch_assoc()): 
+          try {
+              $evt_res = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order ASC")->fetchAll();
+              if(count($evt_res) > 0) {
+                  foreach($evt_res as $e): 
           ?>
-           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($e['category']); ?>">
+           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($e['category'], ENT_QUOTES, 'UTF-8'); ?>">
              <article class="portfolio-entry">
                <figure class="entry-image entry-image-fixed">
-                 <img src="<?php echo htmlspecialchars($e['main_image']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($e['title']); ?>" loading="lazy" width="380" height="380">
+                 <img src="<?php echo htmlspecialchars($e['main_image'], ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($e['title'], ENT_QUOTES, 'UTF-8'); ?>" loading="lazy" width="380" height="380">
                  <div class="entry-overlay">
                    <div class="overlay-content">
-                     <div class="entry-meta text-highlight"><?php echo htmlspecialchars($e['highlight_text']); ?></div>
-                     <h3 class="entry-title"><?php echo htmlspecialchars($e['title']); ?></h3>
-                     <p class="text-white-desc"><?php echo $e['description']; ?></p>
+                     <div class="entry-meta text-highlight"><?php echo htmlspecialchars($e['highlight_text'], ENT_QUOTES, 'UTF-8'); ?></div>
+                     <h3 class="entry-title"><?php echo htmlspecialchars($e['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                     <p class="text-white-desc"><?php echo htmlspecialchars($e['description'], ENT_QUOTES, 'UTF-8'); ?></p>
                      <div class="entry-links">
-                       <a href="<?php echo htmlspecialchars($e['main_image']); ?>" class="glightbox" data-gallery="<?php echo htmlspecialchars($e['gallery_id']); ?>" data-glightbox="title: <?php echo htmlspecialchars($e['title']); ?>; description: <?php echo htmlspecialchars(strip_tags(str_replace('<br>', ' ', $e['description']))); ?>"><i class="bi bi-arrows-angle-expand"></i></a>
-                       <a href="<?php echo htmlspecialchars($e['link_url']); ?>" target="_blank"><i class="bi bi-arrow-right"></i></a>
+                       <a href="<?php echo htmlspecialchars($e['main_image'], ENT_QUOTES, 'UTF-8'); ?>" class="glightbox" data-gallery="<?php echo htmlspecialchars($e['gallery_id'], ENT_QUOTES, 'UTF-8'); ?>" data-glightbox="title: <?php echo htmlspecialchars($e['title'], ENT_QUOTES, 'UTF-8'); ?>; description: <?php echo htmlspecialchars(strip_tags(str_replace('<br>', ' ', $e['description']))); ?>"><i class="bi bi-arrows-angle-expand"></i></a>
+                       <a href="<?php echo htmlspecialchars($e['link_url'], ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><i class="bi bi-arrow-right"></i></a>
                      </div>
                    </div>
                  </div>
@@ -1006,9 +1031,12 @@ Explore a diverse portfolio capturing professional events and achievements, offi
              </article>
            </div>
           <?php 
-              endwhile; 
-          } else {
-              echo "<p class='text-center w-100 text-muted'>No events found.</p>";
+                  endforeach; 
+              } else {
+                  echo "<p class='text-center w-100 text-muted'>No events found.</p>";
+              }
+          } catch (PDOException $ex) {
+              echo "<p class='text-danger'>Error loading events.</p>";
           }
           ?>
           <!-- End Portfolio Container -->
@@ -1058,21 +1086,22 @@ Explore a diverse portfolio capturing professional events and achievements, offi
 
       <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
           <?php 
-          $proj_res = $conn->query("SELECT * FROM portfolio_projects ORDER BY display_order ASC");
-          if($proj_res->num_rows > 0) {
-              while($p = $proj_res->fetch_assoc()): 
+          try {
+              $proj_res = $conn->query("SELECT * FROM portfolio_projects ORDER BY display_order ASC")->fetchAll();
+              if(count($proj_res) > 0) {
+                  foreach($proj_res as $p): 
           ?>
-          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($p['category']); ?>">
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($p['category'], ENT_QUOTES, 'UTF-8'); ?>">
             <article class="portfolio-entry">
               <figure class="entry-image">
-                <img src="<?php echo htmlspecialchars($p['main_image']); ?>" class="img-fluid portfolio-app-img" alt="<?php echo htmlspecialchars($p['title']); ?>" loading="lazy">
+                <img src="<?php echo htmlspecialchars($p['main_image'], ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid portfolio-app-img" alt="<?php echo htmlspecialchars($p['title'], ENT_QUOTES, 'UTF-8'); ?>" loading="lazy">
                 <div class="entry-overlay">
                   <div class="overlay-content">
-                    <div class="entry-meta text-highlight"><?php echo htmlspecialchars($p['title']); ?></div>
-                    <p class="text-white-desc"><?php echo htmlspecialchars($p['short_description']); ?></p>
+                    <div class="entry-meta text-highlight"><?php echo htmlspecialchars($p['title'], ENT_QUOTES, 'UTF-8'); ?></div>
+                    <p class="text-white-desc"><?php echo htmlspecialchars($p['short_description'], ENT_QUOTES, 'UTF-8'); ?></p>
                     <div class="entry-links">
-                      <a href="<?php echo htmlspecialchars($p['main_image']); ?>" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: <b><?php echo htmlspecialchars($p['title']); ?></b><br><br><?php echo htmlspecialchars($p['short_description']); ?>"><i class="bi bi-arrows-angle-expand"></i></a>
-                      <a href="<?php echo htmlspecialchars($p['details_link']); ?>"><i class="bi bi-arrow-right"></i></a>
+                      <a href="<?php echo htmlspecialchars($p['main_image'], ENT_QUOTES, 'UTF-8'); ?>" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: <b><?php echo htmlspecialchars($p['title'], ENT_QUOTES, 'UTF-8'); ?></b><br><br><?php echo htmlspecialchars($p['short_description'], ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-arrows-angle-expand"></i></a>
+                      <a href="<?php echo htmlspecialchars($p['details_link'], ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-arrow-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -1080,9 +1109,12 @@ Explore a diverse portfolio capturing professional events and achievements, offi
             </article>
           </div>
           <?php 
-              endwhile; 
-          } else {
-              echo "<p class='text-center w-100 text-muted'>No projects found.</p>";
+                  endforeach; 
+              } else {
+                  echo "<p class='text-center w-100 text-muted'>No projects found.</p>";
+              }
+          } catch (PDOException $ex) {
+              echo "<p class='text-danger'>Error loading projects.</p>";
           }
           ?>
           <!-- End Portfolio Container -->
