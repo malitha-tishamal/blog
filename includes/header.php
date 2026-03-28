@@ -2,13 +2,18 @@
 ob_start();
 include "db-conn.php";
 
-// Increase total website views
-mysqli_query($conn, "UPDATE site_views SET total_views = total_views + 1 WHERE id = 1");
+try {
+    // Increase total website views
+    $conn->query("UPDATE site_views SET total_views = total_views + 1 WHERE id = 1");
 
-// Get total views
-$res = mysqli_query($conn, "SELECT total_views FROM site_views WHERE id = 1");
-$row = mysqli_fetch_assoc($res);
-$totalViews = $row['total_views'];
+    // Get total views
+    $stmt = $conn->prepare("SELECT total_views FROM site_views WHERE id = 1");
+    $stmt->execute();
+    $row = $stmt->fetch();
+    $totalViews = $row ? $row['total_views'] : 0;
+} catch (PDOException $e) {
+    $totalViews = 0; // Fallback
+}
 ?>
 
 
