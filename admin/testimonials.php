@@ -136,24 +136,7 @@ try {
 
 <div class="container-fluid">
     <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-2 d-none d-md-block sidebar">
-            <h4 class="text-center text-white mb-4 mt-2">CMS Admin</h4>
-            <a href="index.php"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-            <a href="settings.php"><i class="bi bi-gear me-2"></i> Site Settings</a>
-            <a href="about.php"><i class="bi bi-person me-2"></i> About Me</a>
-            <a href="resume.php"><i class="bi bi-file-earmark-person me-2"></i> Resume</a>
-            <a href="skills.php"><i class="bi bi-stars me-2"></i> Skills</a>
-            <a href="portfolio.php"><i class="bi bi-grid me-2"></i> App Projects</a>
-            <a href="events.php"><i class="bi bi-camera me-2"></i> Events Gallery</a>
-            <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
-            <a href="testimonials.php" class="active"><i class="bi bi-chat-quote me-2"></i> Testimonials</a>
-            <a href="certifications.php"><i class="bi bi-award me-2"></i> Licenses & Certifications</a>
-            <a href="messages.php"><i class="bi bi-envelope me-2"></i> Messages</a>
-            <hr class="text-secondary">
-            <a href="../index.php" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i> View Site</a>
-            <a href="logout.php" class="text-danger"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
-        </div>
+        <?php include 'includes/sidebar.php'; ?>
 
         <!-- Main Content -->
         <div class="col-md-10 content">
