@@ -10,6 +10,11 @@ $site_settings = $stmt->fetch();
 $stmt = $conn->prepare("SELECT * FROM about_section WHERE id = 1");
 $stmt->execute();
 $about_settings = $stmt->fetch();
+
+// Fetch Hero Floating Cards
+$stmt = $conn->prepare("SELECT * FROM hero_cards ORDER BY display_order ASC LIMIT 6");
+$stmt->execute();
+$hero_cards = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -226,34 +231,26 @@ $about_settings = $stmt->fetch();
           </div>
 
           <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-delay="200">
-           <!-- Updated HTML: 6 floating cards -->
-<div class="image-container">
-  <div class="floating-elements" aria-hidden="true">
-    <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="300">
-      <i class="bi bi-palette"></i>
-      <span>UI/UX Design</span>
-    </div>
-
-    <div class="floating-card card-2" data-aos="zoom-in" data-aos-delay="400">
-      <i class="bi bi-code-slash"></i>
-      <span>Fullstack Development & DevOps</span>
-    </div>
-
-    <div class="floating-card card-3" data-aos="zoom-in" data-aos-delay="500">
-      <i class="bi bi-lightning"></i>
-      <span>Creative Ideas</span>
-    </div>
-
-    <div class="floating-card card-5" data-aos="zoom-in" data-aos-delay="700">
-      <i class="bi bi-shield-lock"></i>
-      <span>Cybersecurity & AI ML</span>
-    </div>
-  </div>
-
-  <img src="assets/img/profile/profile-malitha.jpg" alt="Malitha Tishamal - Full Stack Developer & DevOps Engineer" class="img-fluid hero-main-image" width="1000" height="1000" loading="eager" fetchpriority="high">
-  <div class="image-overlay"></div>
-</div>
-
+            <div class="image-container">
+              <div class="floating-elements" aria-hidden="true">
+                <?php 
+                $card_index = 1;
+                foreach($hero_cards as $card): 
+                  $delay = 200 + ($card_index * 100);
+                  $card_class = "card-" . $card_index;
+                ?>
+                <div class="floating-card <?php echo $card_class; ?>" data-aos="zoom-in" data-aos-delay="<?php echo $delay; ?>">
+                  <i class="bi <?php echo htmlspecialchars($card['icon']); ?>"></i>
+                  <span><?php echo htmlspecialchars($card['title']); ?></span>
+                </div>
+                <?php 
+                $card_index++;
+                endforeach; 
+                ?>
+              </div>
+              <img src="<?php echo htmlspecialchars($site_settings['hero_image']); ?>" alt="<?php echo htmlspecialchars($site_settings['site_name']); ?> - Full Stack Developer & DevOps Engineer" class="img-fluid hero-main-image" width="1000" height="1000" loading="eager" fetchpriority="high">
+              <div class="image-overlay"></div>
+            </div>
           </div>
 
         </div>
