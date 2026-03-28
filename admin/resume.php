@@ -7,63 +7,85 @@ $message = '';
 // Handle Delete Experience
 if(isset($_GET['delete_exp'])) {
     $id = (int)$_GET['delete_exp'];
-    $conn->query("DELETE FROM resume_experience WHERE id = $id");
-    $message = "<div class='alert alert-success'>Experience entry deleted successfully.</div>";
+    try {
+        $stmt = $conn->prepare("DELETE FROM resume_experience WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success'>Experience entry deleted successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+    }
 }
 
 // Handle Delete Education
 if(isset($_GET['delete_edu'])) {
     $id = (int)$_GET['delete_edu'];
-    $conn->query("DELETE FROM resume_education WHERE id = $id");
-    $message = "<div class='alert alert-success'>Education entry deleted successfully.</div>";
+    try {
+        $stmt = $conn->prepare("DELETE FROM resume_education WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success'>Education entry deleted successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+    }
 }
 
 // Handle Add/Edit Experience
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action_exp'])) {
-    $role = mysqli_real_escape_string($conn, $_POST['role']);
-    $org = mysqli_real_escape_string($conn, $_POST['organization']);
-    $dur = mysqli_real_escape_string($conn, $_POST['duration']);
-    $desc = mysqli_real_escape_string($conn, $_POST['description']);
-    $achievements = mysqli_real_escape_string($conn, $_POST['achievements']);
+    $role = $_POST['role'];
+    $org = $_POST['organization'];
+    $dur = $_POST['duration'];
+    $desc = $_POST['description'];
+    $achievements = $_POST['achievements'];
     $order = (int)$_POST['display_order'];
     $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 
-    if($id > 0) {
-        $query = "UPDATE resume_experience SET role='$role', organization='$org', duration='$dur', description='$desc', achievements='$achievements', display_order=$order WHERE id=$id";
-        $msg = "Experience updated successfully.";
-    } else {
-        $query = "INSERT INTO resume_experience (role, organization, duration, description, achievements, display_order) VALUES ('$role', '$org', '$dur', '$desc', '$achievements', $order)";
-        $msg = "New experience added successfully.";
+    try {
+        if($id > 0) {
+            $stmt = $conn->prepare("UPDATE resume_experience SET role=?, organization=?, duration=?, description=?, achievements=?, display_order=? WHERE id=?");
+            $stmt->execute([$role, $org, $dur, $desc, $achievements, $order, $id]);
+            $msg = "Experience updated successfully.";
+        } else {
+            $stmt = $conn->prepare("INSERT INTO resume_experience (role, organization, duration, description, achievements, display_order) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$role, $org, $dur, $desc, $achievements, $order]);
+            $msg = "New experience added successfully.";
+        }
+        $message = "<div class='alert alert-success'>$msg</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
-
-    if(mysqli_query($conn, $query)) $message = "<div class='alert alert-success'>$msg</div>";
-    else $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
 }
 
 // Handle Add/Edit Education
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action_edu'])) {
-    $degree = mysqli_real_escape_string($conn, $_POST['degree']);
-    $inst = mysqli_real_escape_string($conn, $_POST['institution']);
-    $year = mysqli_real_escape_string($conn, $_POST['year']);
-    $desc = mysqli_real_escape_string($conn, $_POST['description']);
-    $details = mysqli_real_escape_string($conn, $_POST['details']);
+    $degree = $_POST['degree'];
+    $inst = $_POST['institution'];
+    $year = $_POST['year'];
+    $desc = $_POST['description'];
+    $details = $_POST['details'];
     $order = (int)$_POST['display_order'];
     $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 
-    if($id > 0) {
-        $query = "UPDATE resume_education SET degree='$degree', institution='$inst', year='$year', description='$desc', details='$details', display_order=$order WHERE id=$id";
-        $msg = "Education updated successfully.";
-    } else {
-        $query = "INSERT INTO resume_education (degree, institution, year, description, details, display_order) VALUES ('$degree', '$inst', '$year', '$desc', '$details', $order)";
-        $msg = "New education added successfully.";
+    try {
+        if($id > 0) {
+            $stmt = $conn->prepare("UPDATE resume_education SET degree=?, institution=?, year=?, description=?, details=?, display_order=? WHERE id=?");
+            $stmt->execute([$degree, $inst, $year, $desc, $details, $order, $id]);
+            $msg = "Education updated successfully.";
+        } else {
+            $stmt = $conn->prepare("INSERT INTO resume_education (degree, institution, year, description, details, display_order) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$degree, $inst, $year, $desc, $details, $order]);
+            $msg = "New education added successfully.";
+        }
+        $message = "<div class='alert alert-success'>$msg</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
-
-    if(mysqli_query($conn, $query)) $message = "<div class='alert alert-success'>$msg</div>";
-    else $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
 }
 
-$experience = $conn->query("SELECT * FROM resume_experience ORDER BY display_order ASC, id DESC");
-$education = $conn->query("SELECT * FROM resume_education ORDER BY display_order ASC, id DESC");
+try {
+    $experience = $conn->query("SELECT * FROM resume_experience ORDER BY display_order ASC, id DESC")->fetchAll();
+    $education = $conn->query("SELECT * FROM resume_education ORDER BY display_order ASC, id DESC")->fetchAll();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,8 +166,8 @@ $education = $conn->query("SELECT * FROM resume_education ORDER BY display_order
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if($experience->num_rows > 0): ?>
-                                        <?php while($row = $experience->fetch_assoc()): ?>
+                                    <?php if(count($experience) > 0): ?>
+                                        <?php foreach($experience as $row): ?>
                                         <tr>
                                             <td>
                                                 <strong><?php echo htmlspecialchars($row['role']); ?></strong><br>
@@ -162,7 +184,7 @@ $education = $conn->query("SELECT * FROM resume_education ORDER BY display_order
                                                 </a>
                                             </td>
                                         </tr>
-                                        <?php endwhile; ?>
+                                        <?php endforeach; ?>
                                     <?php else: ?>
                                         <tr><td colspan="4" class="text-center py-4 text-muted">No experience items found.</td></tr>
                                     <?php endif; ?>
@@ -186,8 +208,8 @@ $education = $conn->query("SELECT * FROM resume_education ORDER BY display_order
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if($education->num_rows > 0): ?>
-                                        <?php while($row = $education->fetch_assoc()): ?>
+                                    <?php if(count($education) > 0): ?>
+                                        <?php foreach($education as $row): ?>
                                         <tr>
                                             <td>
                                                 <strong><?php echo htmlspecialchars($row['degree']); ?></strong><br>
@@ -204,7 +226,7 @@ $education = $conn->query("SELECT * FROM resume_education ORDER BY display_order
                                                 </a>
                                             </td>
                                         </tr>
-                                        <?php endwhile; ?>
+                                        <?php endforeach; ?>
                                     <?php else: ?>
                                         <tr><td colspan="4" class="text-center py-4 text-muted">No education items found.</td></tr>
                                     <?php endif; ?>
