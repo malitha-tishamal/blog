@@ -318,28 +318,71 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
                     }
                     ?>
                   </div>
-                  <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
-                    <?php 
-                    $resume_res = $conn->query("SELECT * FROM resume_entries ORDER BY display_order ASC");
-                    if($resume_res->num_rows > 0) {
-                        while($r = $resume_res->fetch_assoc()): 
-                    ?>
-                   <div class="timeline-item">
-                    <div class="year"><?php echo htmlspecialchars($r['duration']); ?></div>
-                    <div class="description">
-                        <strong><span style="color:blue"><?php echo htmlspecialchars($r['organization']); ?></strong> <br><?php echo htmlspecialchars($r['title']); ?>
-                        <?php if(!empty($r['description'])): ?>
-                            <br><?php echo htmlspecialchars($r['description']); ?>
-                        <?php endif; ?>
-                    </div>
-                  </div>
-                    <?php 
-                        endwhile; 
-                    } else {
-                        echo "<p class='text-muted'>No timeline entries found.</p>";
-                    }
-                    ?>
-                </div>
+
+                  <style>
+                    .journey-timeline .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 35px;
+}
+
+/* Year / Duration Style */
+.journey-timeline .timeline-item .year {
+    color: #0d6efd;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* Desktop View Only */
+@media (min-width: 992px) {
+
+    .journey-timeline .timeline-item .year {
+        width: 240px;      /* adjust if needed */
+        min-width: 240px;
+        padding-right: 30px;
+    }
+
+    .journey-timeline .timeline-item .description {
+        flex: 1;
+    }
+
+}
+                  </style>
+               <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
+<?php 
+$resume_res = $conn->query("SELECT * FROM resume_entries ORDER BY display_order ASC");
+if($resume_res->num_rows > 0) {
+    while($r = $resume_res->fetch_assoc()): 
+?>
+<div class="timeline-item">
+    <div class="year">
+        <?php echo htmlspecialchars($r['duration']); ?>
+    </div>
+
+    <div class="description">
+        <strong>
+            <span style="color:blue">
+                <?php echo htmlspecialchars($r['organization']); ?>
+            </span>
+        </strong>
+        <br>
+        <?php echo htmlspecialchars($r['title']); ?>
+
+        <?php if(!empty($r['description'])): ?>
+            <br>
+            <?php echo htmlspecialchars($r['description']); ?>
+        <?php endif; ?>
+    </div>
+
+</div>
+
+<?php 
+    endwhile; 
+} else {
+    echo "<p class='text-muted'>No timeline entries found.</p>";
+}
+?>
+</div>
                 
                 
 
@@ -363,7 +406,6 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
         </div>
       </div>
     </div>
-
   </section><!-- /About Section -->
 
 <!-- Skills Section -->
@@ -375,234 +417,83 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
       <div class="col-lg-8">
         <div class="skills-grid">
           <div class="row g-4">
-
-            <!-- Frontend Development -->
-            <div class="col-md-6" data-aos="flip-left" data-aos-delay="200">
+            <?php 
+            $cat_res = $conn->query("SELECT * FROM skill_categories ORDER BY display_order ASC, name ASC");
+            $cat_delay = 200;
+            if ($cat_res && $cat_res->num_rows > 0):
+                while($cat = $cat_res->fetch_assoc()):
+            ?>
+            <!-- <?php echo htmlspecialchars($cat['name']); ?> -->
+            <div class="col-md-6" data-aos="flip-left" data-aos-delay="<?php echo $cat_delay; ?>">
               <div class="skill-card">
                 <div class="skill-header">
-                  <i class="bi bi-code-slash"></i>
-                  <h3>Frontend Development</h3>
+                  <i class="<?php echo htmlspecialchars($cat['icon']); ?>"></i>
+                  <h3><?php echo htmlspecialchars($cat['name']); ?></h3>
                 </div>
                 <div class="skills-animation">
+                  <?php 
+                  $cat_id = $cat['id'];
+                  $skill_res = $conn->query("SELECT * FROM skills WHERE category_id = $cat_id ORDER BY display_order ASC, name ASC");
+                  if ($skill_res && $skill_res->num_rows > 0):
+                      while($s = $skill_res->fetch_assoc()):
+                  ?>
                   <div class="skill-item">
                     <div class="skill-info">
-                      <span class="skill-name">HTML / CSS / Bootstrap</span>
-                      <span class="skill-percentage">95%</span>
+                      <span class="skill-name"><?php echo htmlspecialchars($s['name']); ?></span>
+                      <span class="skill-percentage"><?php echo $s['percentage']; ?>%</span>
                     </div>
                     <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:95%"></div>
+                      <div class="progress-bar" style="width:<?php echo $s['percentage']; ?>%"></div>
                     </div>
                   </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">JavaScript</span>
-                      <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:90%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">React.js</span>
-                      <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:85%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Flutter</span>
-                      <span class="skill-percentage">82%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:82%"></div>
-                    </div>
-                  </div>
+                  <?php 
+                      endwhile;
+                  endif;
+                  ?>
                 </div>
               </div>
             </div>
-
-            <!-- Backend Development -->
-            <div class="col-md-6" data-aos="flip-left" data-aos-delay="300">
-              <div class="skill-card">
-                <div class="skill-header">
-                  <i class="bi bi-server"></i>
-                  <h3>Backend Development</h3>
-                </div>
-                <div class="skills-animation">
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Java</span>
-                      <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:85%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Python</span>
-                      <span class="skill-percentage">55%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:55%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">PHP / Laravel</span>
-                      <span class="skill-percentage">78%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:78%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">MySQL</span>
-                      <span class="skill-percentage">72%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:72%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Design & Tools -->
-            <div class="col-md-6" data-aos="flip-left" data-aos-delay="400">
-              <div class="skill-card">
-                <div class="skill-header">
-                  <i class="bi bi-palette"></i>
-                  <h3>Design & Tools</h3>
-                </div>
-                <div class="skills-animation">
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Figma</span>
-                      <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:85%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Photoshop / Illustrator</span>
-                      <span class="skill-percentage">70%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:70%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Adobe XD / Canva</span>
-                      <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:80%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Cloud & DevOps -->
-            <div class="col-md-6" data-aos="flip-left" data-aos-delay="500">
-              <div class="skill-card">
-                <div class="skill-header">
-                  <i class="bi bi-cloud"></i>
-                  <h3>Cloud & DevOps</h3>
-                </div>
-                <div class="skills-animation">
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">AWS</span>
-                      <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:90%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Git / CI-CD</span>
-                      <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:90%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- AI & Cybersecurity -->
-            <div class="col-md-6" data-aos="flip-left" data-aos-delay="600">
-              <div class="skill-card">
-                <div class="skill-header">
-                  <i class="bi bi-cpu-fill"></i>
-                  <h3>AI & Cybersecurity</h3>
-                </div>
-                <div class="skills-animation">
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Python / TensorFlow / PyTorch</span>
-                      <span class="skill-percentage">70%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:70%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Secure Coding / Pen Testing</span>
-                      <span class="skill-percentage">65%</span>
-                    </div>
-                    <div class="skill-bar progress">
-                      <div class="progress-bar" style="width:65%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <?php 
+                $cat_delay += 100;
+                endwhile; 
+            endif; 
+            ?>
           </div>
         </div>
       </div>
 
       <!-- RIGHT SIDE: Expertise Summary -->
       <div class="col-lg-4">
+        <?php 
+        $exp_res = $conn->query("SELECT * FROM skills_expertise WHERE id = 1");
+        $exp = ($exp_res && $exp_res->num_rows > 0) ? $exp_res->fetch_assoc() : null;
+        if ($exp):
+        ?>
         <div class="skills-summary" data-aos="fade-left" data-aos-delay="200">
-          <h3>Core Technologies & Expertise</h3>
-          <p>I craft scalable, modern, and visually engaging applications using a blend of mobile, web, cloud, AI, and cybersecurity technologies — bridging creativity with functionality.</p>
+          <h3><?php echo htmlspecialchars($exp['title']); ?></h3>
+          <p><?php echo htmlspecialchars($exp['description']); ?></p>
 
           <ul class="list-unstyled expertise-list mt-3">
-            <li>🔹 <b>Flutter & Dart</b> — Cross-platform app development</li>
-            <li>🔹 <b>Firebase</b> — Auth, Firestore, Storage, Hosting & Functions</li>
-            <li>🔹 <b>Frontend:</b> HTML / CSS / Bootstrap / JS / React.js</li>
-            <li>🔹 <b>Backend:</b> PHP / Laravel / MySQL / Java / Python</li>
-            <li>🔹 <b>DevOps:</b> AWS / Git / CI-CD Pipelines</li>
-            <li>🔹 <b>AI & ML:</b> Python, TensorFlow, PyTorch</li>
-            <li>🔹 <b>Cybersecurity:</b> Secure Coding, Pen Testing</li>
+            <?php 
+            $highlights = explode("\n", $exp['highlights']);
+            foreach($highlights as $h): if(trim($h) == '') continue;
+            ?>
+            <li><?php echo htmlspecialchars(trim($h)); ?></li>
+            <?php endforeach; ?>
           </ul>
 
           <div class="summary-stats mt-4">
             <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
               <div class="stat-circle"><i class="bi bi-trophy"></i></div>
               <div class="stat-info">
-                <span class="stat-number">2+</span>
+                <span class="stat-number"><?php echo htmlspecialchars($exp['years_experience']); ?></span>
                 <span class="stat-label">Years Experience</span>
               </div>
             </div>
             <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
               <div class="stat-circle"><i class="bi bi-diagram-3"></i></div>
               <div class="stat-info">
-                <span class="stat-number">15+</span>
+                <span class="stat-number"><?php echo htmlspecialchars($exp['projects_completed']); ?></span>
                 <span class="stat-label">Projects Completed</span>
               </div>
             </div>
@@ -610,21 +501,20 @@ $about_settings = $conn->query("SELECT * FROM about_section WHERE id=1")->fetch_
 
           <div class="skills-badges" data-aos="fade-up" data-aos-delay="600">
             <div class="badge-list">
-              <div class="skill-badge">Flutter</div>
-              <div class="skill-badge">Firebase</div>
-              <div class="skill-badge">React.js</div>
-              <div class="skill-badge">Laravel</div>
-              <div class="skill-badge">AWS</div>
-              <div class="skill-badge">AI/ML</div>
-              <div class="skill-badge">Cybersecurity</div>
+              <?php 
+              $badges = explode(",", $exp['badges']);
+              foreach($badges as $b): if(trim($b) == '') continue;
+              ?>
+              <div class="skill-badge"><?php echo htmlspecialchars(trim($b)); ?></div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
       <!-- End Expertise Summary -->
     </div>
   </div>
-
 
 </section>
 
