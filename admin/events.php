@@ -8,26 +8,32 @@ $upload_dir = '../assets/img/portfolio/';
 // Handle Delete
 if(isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
-    $res = $conn->query("SELECT main_image FROM portfolio_events WHERE id = $id");
-    if($res && $row = $res->fetch_assoc()) {
-        $file_path = '../' . $row['main_image'];
-        // delete if it's not a generic name to prevent deleting placeholders inadvertently
-        if(file_exists($file_path) && !is_dir($file_path)) {
-            @unlink($file_path);
+    try {
+        $stmt = $conn->prepare("SELECT main_image FROM portfolio_events WHERE id = ?");
+        $stmt->execute([$id]);
+        $row = $stmt->fetch();
+        if($row) {
+            $file_path = '../' . $row['main_image'];
+            if(file_exists($file_path) && !is_dir($file_path)) {
+                @unlink($file_path);
+            }
         }
+        $stmt = $conn->prepare("DELETE FROM portfolio_events WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-warning'>Event deleted successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
-    $conn->query("DELETE FROM portfolio_events WHERE id = $id");
-    $message = "<div class='alert alert-warning'>Event deleted successfully.</div>";
 }
 
 // Handle Add/Edit
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $category = mysqli_real_escape_string($conn, $_POST['category']);
-    $highlight = mysqli_real_escape_string($conn, $_POST['highlight_text']);
-    $desc = mysqli_real_escape_string($conn, $_POST['description']);
-    $link = mysqli_real_escape_string($conn, $_POST['link_url']);
-    $gallery = mysqli_real_escape_string($conn, $_POST['gallery_id']);
+    $title = $_POST['title'];
+    $category = $_POST['category'];
+    $highlight = $_POST['highlight_text'];
+    $desc = $_POST['description'];
+    $link = $_POST['link_url'];
+    $gallery = $_POST['gallery_id'];
     $order = (int)$_POST['display_order'];
 
     $image_path = '';
@@ -52,38 +58,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
     }
 
     if(empty($message)) {
-        if($id > 0) {
-            // Update
-            if($image_path != '') {
-                $res = $conn->query("SELECT main_image FROM portfolio_events WHERE id = $id");
-                if($row = $res->fetch_assoc()) {
-                    @unlink('../'.$row['main_image']);
+        try {
+            if($id > 0) {
+                // Update
+                if($image_path != '') {
+                    $stmt = $conn->prepare("SELECT main_image FROM portfolio_events WHERE id = ?");
+                    $stmt->execute([$id]);
+                    $row = $stmt->fetch();
+                    if($row) {
+                        @unlink('../'.$row['main_image']);
+                    }
+                    $stmt = $conn->prepare("UPDATE portfolio_events SET title=?, category=?, highlight_text=?, description=?, link_url=?, gallery_id=?, display_order=?, main_image=? WHERE id=?");
+                    $stmt->execute([$title, $category, $highlight, $desc, $link, $gallery, $order, $image_path, $id]);
+                } else {
+                    $stmt = $conn->prepare("UPDATE portfolio_events SET title=?, category=?, highlight_text=?, description=?, link_url=?, gallery_id=?, display_order=? WHERE id=?");
+                    $stmt->execute([$title, $category, $highlight, $desc, $link, $gallery, $order, $id]);
                 }
-                $query = "UPDATE portfolio_events SET title='$title', category='$category', highlight_text='$highlight', description='$desc', link_url='$link', gallery_id='$gallery', display_order=$order, main_image='$image_path' WHERE id=$id";
+                $msg = "Event updated successfully.";
             } else {
-                $query = "UPDATE portfolio_events SET title='$title', category='$category', highlight_text='$highlight', description='$desc', link_url='$link', gallery_id='$gallery', display_order=$order WHERE id=$id";
+                // Insert
+                if($image_path == '') {
+                    $image_path = 'assets/img/portfolio/default-event.jpg';
+                }
+                $stmt = $conn->prepare("INSERT INTO portfolio_events (title, category, highlight_text, description, main_image, link_url, gallery_id, display_order) 
+                          VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$title, $category, $highlight, $desc, $image_path, $link, $gallery, $order]);
+                $msg = "New event added successfully.";
             }
-            $msg = "Event updated successfully.";
-        } else {
-            // Insert
-            if($image_path == '') {
-                $image_path = 'assets/img/portfolio/default-event.jpg';
-            }
-            $query = "INSERT INTO portfolio_events (title, category, highlight_text, description, main_image, link_url, gallery_id, display_order) 
-                      VALUES ('$title', '$category', '$highlight', '$desc', '$image_path', '$link', '$gallery', $order)";
-            $msg = "New event added successfully.";
-        }
-
-        if(mysqli_query($conn, $query)) {
             $message = "<div class='alert alert-success'>$msg</div>";
-        } else {
-            $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
+        } catch (PDOException $e) {
+            $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
         }
     }
 }
 
-// Fetch existing entries
-$entries = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order ASC, id DESC");
+try {
+    $entries = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order ASC, id DESC")->fetchAll();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -146,8 +159,8 @@ $entries = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order A
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if($entries->num_rows > 0): ?>
-                                <?php while($row = $entries->fetch_assoc()): ?>
+                            <?php if(count($entries) > 0): ?>
+                                <?php foreach($entries as $row): ?>
                                 <tr>
                                     <td class="text-center">
                                         <img src="../<?php echo htmlspecialchars($row['main_image']); ?>" class="proj-img">
@@ -168,7 +181,7 @@ $entries = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order A
                                         </a>
                                     </td>
                                 </tr>
-                                <?php endwhile; ?>
+                                <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
                                     <td colspan="5" class="text-center py-4 text-muted">No events found. Add one!</td>
