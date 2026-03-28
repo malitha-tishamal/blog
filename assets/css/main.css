@@ -862,18 +862,7 @@ section,
 }
 
 .hero .floating-card.card-6 {
-  bottom: 5%;
-  right: -5%;
   animation-delay: 5s;
-}
-
-@media (max-width: 991px) {
-  .hero .floating-card.card-1 { top: 5%; left: -5%; }
-  .hero .floating-card.card-2 { top: 35%; right: -10%; }
-  .hero .floating-card.card-3 { bottom: 10%; left: 0%; }
-  .hero .floating-card.card-4 { top: -5%; right: 10%; }
-  .hero .floating-card.card-5 { top: 5%; right: -5%; }
-  .hero .floating-card.card-6 { bottom: 0%; right: -2%; }
 }
 
 @keyframes float {
