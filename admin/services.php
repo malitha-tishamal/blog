@@ -7,40 +7,49 @@ $message = '';
 // Handle Delete
 if(isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
-    $conn->query("DELETE FROM services WHERE id = $id");
-    $message = "<div class='alert alert-success'>Service deleted successfully.</div>";
+    try {
+        $stmt = $conn->prepare("DELETE FROM services WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success'>Service deleted successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+    }
 }
 
 // Handle Add/Edit
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $desc = mysqli_real_escape_string($conn, $_POST['description']);
-    $icon = mysqli_real_escape_string($conn, $_POST['icon_class']);
+    $title = $_POST['title'];
+    $desc = $_POST['description'];
+    $icon = $_POST['icon_class'];
     $order = (int)$_POST['display_order'];
 
-    if(!empty($_POST['id'])) {
-        // Update
-        $id = (int)$_POST['id'];
-        $query = "UPDATE services SET 
-                    title='$title', description='$desc', icon_class='$icon', display_order=$order 
-                  WHERE id=$id";
-        $msg = "Service updated successfully.";
-    } else {
-        // Insert
-        $query = "INSERT INTO services (title, description, icon_class, display_order) 
-                  VALUES ('$title', '$desc', '$icon', $order)";
-        $msg = "New service added successfully.";
-    }
-
-    if(mysqli_query($conn, $query)) {
+    try {
+        if(!empty($_POST['id'])) {
+            // Update
+            $id = (int)$_POST['id'];
+            $stmt = $conn->prepare("UPDATE services SET 
+                        title=?, description=?, icon_class=?, display_order=? 
+                      WHERE id=?");
+            $stmt->execute([$title, $desc, $icon, $order, $id]);
+            $msg = "Service updated successfully.";
+        } else {
+            // Insert
+            $stmt = $conn->prepare("INSERT INTO services (title, description, icon_class, display_order) 
+                      VALUES (?, ?, ?, ?)");
+            $stmt->execute([$title, $desc, $icon, $order]);
+            $msg = "New service added successfully.";
+        }
         $message = "<div class='alert alert-success'>$msg</div>";
-    } else {
-        $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
 }
 
-// Fetch existing entries
-$entries = $conn->query("SELECT * FROM services ORDER BY display_order ASC, id DESC");
+try {
+    $entries = $conn->query("SELECT * FROM services ORDER BY display_order ASC, id DESC")->fetchAll();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,8 +112,8 @@ $entries = $conn->query("SELECT * FROM services ORDER BY display_order ASC, id D
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if($entries->num_rows > 0): ?>
-                                <?php while($row = $entries->fetch_assoc()): ?>
+                            <?php if(count($entries) > 0): ?>
+                                <?php foreach($entries as $row): ?>
                                 <tr>
                                     <td class="text-center fs-4"><i class="<?php echo htmlspecialchars($row['icon_class']); ?> text-primary"></i></td>
                                     <td><strong><?php echo htmlspecialchars($row['title']); ?></strong></td>
@@ -121,7 +130,7 @@ $entries = $conn->query("SELECT * FROM services ORDER BY display_order ASC, id D
                                         </a>
                                     </td>
                                 </tr>
-                                <?php endwhile; ?>
+                                <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
                                     <td colspan="5" class="text-center py-4 text-muted">No services found. Add one above!</td>
