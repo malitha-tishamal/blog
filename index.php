@@ -238,8 +238,15 @@ $hero_cards = $stmt->fetchAll();
                 foreach($hero_cards as $card): 
                   $delay = 200 + ($card_index * 100);
                   $card_class = "card-" . $card_index;
+                  
+                  // Construct inline style for positioning
+                  $style = "";
+                  if (($card['pos_top'] ?? 'auto') != 'auto') $style .= "top: " . ($card['pos_top'] ?? 'auto') . "; ";
+                  if (($card['pos_bottom'] ?? 'auto') != 'auto') $style .= "bottom: " . ($card['pos_bottom'] ?? 'auto') . "; ";
+                  if (($card['pos_left'] ?? 'auto') != 'auto') $style .= "left: " . ($card['pos_left'] ?? 'auto') . "; ";
+                  if (($card['pos_right'] ?? 'auto') != 'auto') $style .= "right: " . ($card['pos_right'] ?? 'auto') . "; ";
                 ?>
-                <div class="floating-card <?php echo $card_class; ?>" data-aos="zoom-in" data-aos-delay="<?php echo $delay; ?>">
+                <div class="floating-card <?php echo $card_class; ?>" data-aos="zoom-in" data-aos-delay="<?php echo $delay; ?>" style="<?php echo $style; ?>">
                   <i class="bi <?php echo htmlspecialchars($card['icon']); ?>"></i>
                   <span><?php echo htmlspecialchars($card['title']); ?></span>
                 </div>
