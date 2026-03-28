@@ -111,6 +111,7 @@ $entries = $conn->query("SELECT * FROM portfolio_events ORDER BY display_order A
             <a href="settings.php"><i class="bi bi-gear me-2"></i> Site Settings</a>
             <a href="about.php"><i class="bi bi-person me-2"></i> About Me</a>
             <a href="resume.php"><i class="bi bi-file-earmark-person me-2"></i> Resume</a>
+            <a href="skills.php"><i class="bi bi-stars me-2"></i> Skills</a>
             <a href="portfolio.php"><i class="bi bi-laptop me-2"></i> App Projects</a>
             <a href="events.php" class="active"><i class="bi bi-camera me-2"></i> Events Gallery</a>
             <a href="services.php"><i class="bi bi-briefcase me-2"></i> Services</a>
