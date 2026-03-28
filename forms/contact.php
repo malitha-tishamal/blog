@@ -29,13 +29,20 @@
       // Log error if needed, but don't stop the flow
   }
 
-  // Skip actual email sending to avoid local mail server errors
-  // WhatsApp Notification (Optional - requires CallMeBot API Key)
-  $wp_apikey = '4342416'; // User should replace this or it can be moved to settings
-  $wp_phone = '94775590992'; 
-  
-  if(!empty($wp_apikey)) {
-      $wp_text = urlencode("New Message from $name:\n$msg");
+  // WhatsApp Notification (Dynamic from database)
+  $settings_stmt = $conn->query("SELECT whatsapp_number, whatsapp_apikey, whatsapp_enabled FROM site_settings WHERE id = 1");
+  $ws = $settings_stmt->fetch();
+
+  if($ws && $ws['whatsapp_enabled'] == 1 && !empty($ws['whatsapp_apikey']) && !empty($ws['whatsapp_number'])) {
+      $wp_phone = $ws['whatsapp_number'];
+      $wp_apikey = $ws['whatsapp_apikey'];
+      
+      // Prepend 94 if it starts with 07 (for convenience)
+      if(strpos($wp_phone, '07') === 0 && strlen($wp_phone) == 10) {
+          $wp_phone = '94' . substr($wp_phone, 1);
+      }
+
+      $wp_text = urlencode("🚀 *New Website Message*\n\n*From:* $name\n*Email:* $email\n*Subject:* $subject\n\n*Message:*\n$msg");
       $wp_url = "https://api.callmebot.com/whatsapp.php?phone=$wp_phone&text=$wp_text&apikey=$wp_apikey";
       @file_get_contents($wp_url); // Silent call
   }
