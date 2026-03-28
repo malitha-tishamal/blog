@@ -98,10 +98,10 @@ try {
                                     <td><strong><?php echo htmlspecialchars($row['title']); ?></strong></td>
                                     <td>
                                         <small class="text-muted">
-                                            T: <?php echo $row['pos_top']; ?>, 
-                                            B: <?php echo $row['pos_bottom']; ?>, 
-                                            L: <?php echo $row['pos_left']; ?>, 
-                                            R: <?php echo $row['pos_right']; ?>
+                                            T: <?php echo $row['pos_top'] ?? 'auto'; ?>, 
+                                            B: <?php echo $row['pos_bottom'] ?? 'auto'; ?>, 
+                                            L: <?php echo $row['pos_left'] ?? 'auto'; ?>, 
+                                            R: <?php echo $row['pos_right'] ?? 'auto'; ?>
                                         </small>
                                     </td>
                                     <td><?php echo $row['display_order']; ?></td>
