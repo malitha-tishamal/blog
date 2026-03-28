@@ -7,34 +7,50 @@ $stats = [
     'views' => 0,
     'projects' => 0,
     'messages' => 0,
-    'testimonials' => 0
+    'testimonials' => 0,
+    'certifications' => 0,
+    'experience' => 0,
+    'education' => 0
 ];
 
-// Views
-$v_res = $conn->query("SELECT total_views FROM site_views WHERE id = 1");
-if($v_res && $v_row = $v_res->fetch_assoc()) $stats['views'] = $v_row['total_views'];
+try {
+    // Views
+    $stmt = $conn->query("SELECT total_views FROM site_views WHERE id = 1");
+    $v_row = $stmt->fetch();
+    if($v_row) $stats['views'] = $v_row['total_views'];
 
-// Projects
-$p_res = $conn->query("SELECT COUNT(*) as c FROM portfolio_projects");
-if($p_res && $p_row = $p_res->fetch_assoc()) $stats['projects'] = $p_row['c'];
+    // Projects
+    $stmt = $conn->query("SELECT COUNT(*) as c FROM portfolio_projects");
+    $p_row = $stmt->fetch();
+    if($p_row) $stats['projects'] = $p_row['c'];
 
-// Unread Messages (assuming we just created the table, might be empty)
-$m_res = $conn->query("SELECT COUNT(*) as c FROM contact_messages WHERE status = 'unread'");
-if($m_res && $m_row = $m_res->fetch_assoc()) $stats['messages'] = $m_row['c'];
+    // Unread Messages
+    $stmt = $conn->query("SELECT COUNT(*) as c FROM contact_messages WHERE status = 'unread'");
+    $m_row = $stmt->fetch();
+    if($m_row) $stats['messages'] = $m_row['c'];
 
-// Testimonials
-$t_res = $conn->query("SELECT COUNT(*) as c FROM testimonials");
-if($t_res && $t_row = $t_res->fetch_assoc()) $stats['testimonials'] = $t_row['c'];
+    // Testimonials
+    $stmt = $conn->query("SELECT COUNT(*) as c FROM testimonials");
+    $t_row = $stmt->fetch();
+    if($t_row) $stats['testimonials'] = $t_row['c'];
 
-// Certifications
-$cert_res = $conn->query("SELECT COUNT(*) FROM certifications");
-$stats['certifications'] = ($cert_res) ? $cert_res->fetch_row()[0] : 0;
+    // Certifications
+    $stmt = $conn->query("SELECT COUNT(*) as c FROM certifications");
+    $cert_row = $stmt->fetch();
+    if($cert_row) $stats['certifications'] = $cert_row['c'];
 
-// Resume
-$exp_res = $conn->query("SELECT COUNT(*) FROM resume_experience");
-$stats['experience'] = ($exp_res) ? $exp_res->fetch_row()[0] : 0;
-$edu_res = $conn->query("SELECT COUNT(*) FROM resume_education");
-$stats['education'] = ($edu_res) ? $edu_res->fetch_row()[0] : 0;
+    // Resume
+    $stmt = $conn->query("SELECT COUNT(*) as c FROM resume_experience");
+    $exp_row = $stmt->fetch();
+    if($exp_row) $stats['experience'] = $exp_row['c'];
+
+    $stmt = $conn->query("SELECT COUNT(*) as c FROM resume_education");
+    $edu_row = $stmt->fetch();
+    if($edu_row) $stats['education'] = $edu_row['c'];
+
+} catch (PDOException $e) {
+    // In a production app, log this error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -178,7 +194,7 @@ $stats['education'] = ($edu_res) ? $edu_res->fetch_row()[0] : 0;
                         <div class="card-body text-center p-4">
                             <a href="portfolio.php" class="btn btn-lg btn-outline-primary m-2"><i class="bi bi-plus-circle me-1"></i> Add New Project</a>
                             <a href="resume.php" class="btn btn-lg btn-outline-success m-2"><i class="bi bi-plus-circle me-1"></i> Add Resume Entry</a>
-            <a href="skills.php"><i class="bi bi-stars me-2"></i> Skills</a>
+                            <a href="skills.php" class="btn btn-lg btn-outline-info m-2"><i class="bi bi-stars me-1"></i> Manage Skills</a>
                             <a href="settings.php" class="btn btn-lg btn-outline-secondary m-2"><i class="bi bi-pencil-square me-1"></i> Site Settings</a>
                             <a href="messages.php" class="btn btn-lg btn-outline-warning m-2"><i class="bi bi-envelope me-1"></i> View Messages</a>
                         </div>
