@@ -838,29 +838,42 @@ section,
 }
 
 .hero .floating-card.card-2 {
-  top: 60%;
-  right: -15%;
-  animation-delay: 2s;
-}
-
-@media (max-width: 768px) {
-  .hero .floating-card.card-2 {
-    top: 70%;
-    right: -10%;
-  }
+  top: 40%;
+  right: -18%;
+  animation-delay: 1s;
 }
 
 .hero .floating-card.card-3 {
   bottom: 15%;
-  left: -5%;
+  left: -10%;
+  animation-delay: 2s;
+}
+
+.hero .floating-card.card-4 {
+  top: -10%;
+  right: 15%;
+  animation-delay: 3s;
+}
+
+.hero .floating-card.card-5 {
+  top: 10%;
+  right: -10%;
   animation-delay: 4s;
 }
 
-@media (max-width: 768px) {
-  .hero .floating-card.card-3 {
-    bottom: 10%;
-    left: 0%;
-  }
+.hero .floating-card.card-6 {
+  bottom: 5%;
+  right: -5%;
+  animation-delay: 5s;
+}
+
+@media (max-width: 991px) {
+  .hero .floating-card.card-1 { top: 5%; left: -5%; }
+  .hero .floating-card.card-2 { top: 35%; right: -10%; }
+  .hero .floating-card.card-3 { bottom: 10%; left: 0%; }
+  .hero .floating-card.card-4 { top: -5%; right: 10%; }
+  .hero .floating-card.card-5 { top: 5%; right: -5%; }
+  .hero .floating-card.card-6 { bottom: 0%; right: -2%; }
 }
 
 @keyframes float {
