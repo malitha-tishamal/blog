@@ -5,33 +5,38 @@ check_admin_auth();
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $site_name = mysqli_real_escape_string($conn, $_POST['site_name']);
-    $hero_title = mysqli_real_escape_string($conn, $_POST['hero_title']);
-    $hero_desc = mysqli_real_escape_string($conn, $_POST['hero_description']);
-    $contact_email = mysqli_real_escape_string($conn, $_POST['contact_email']);
-    $contact_phone1 = mysqli_real_escape_string($conn, $_POST['contact_phone1']);
-    $address = mysqli_real_escape_string($conn, $_POST['address']);
-    $cv_link = mysqli_real_escape_string($conn, $_POST['cv_link']);
+    $site_name = $_POST['site_name'];
+    $hero_title = $_POST['hero_title'];
+    $hero_desc = $_POST['hero_description'];
+    $contact_email = $_POST['contact_email'];
+    $contact_phone1 = $_POST['contact_phone1'];
+    $address = $_POST['address'];
+    $cv_link = $_POST['cv_link'];
 
-    $query = "UPDATE site_settings SET 
-                site_name = '$site_name', 
-                hero_title = '$hero_title', 
-                hero_description = '$hero_desc',
-                contact_email = '$contact_email',
-                contact_phone1 = '$contact_phone1',
-                address = '$address',
-                cv_link = '$cv_link'
-              WHERE id = 1";
-              
-    if(mysqli_query($conn, $query)) {
+    try {
+        $stmt = $conn->prepare("UPDATE site_settings SET 
+                    site_name = ?, 
+                    hero_title = ?, 
+                    hero_description = ?,
+                    contact_email = ?,
+                    contact_phone1 = ?,
+                    address = ?,
+                    cv_link = ?
+                  WHERE id = 1");
+                  
+        $stmt->execute([$site_name, $hero_title, $hero_desc, $contact_email, $contact_phone1, $address, $cv_link]);
         $message = "<div class='alert alert-success'>Settings updated successfully.</div>";
-    } else {
-        $message = "<div class='alert alert-danger'>Error updating settings: ".mysqli_error($conn)."</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error updating settings: " . $e->getMessage() . "</div>";
     }
 }
 
-$res = $conn->query("SELECT * FROM site_settings WHERE id = 1");
-$settings = $res->fetch_assoc();
+try {
+    $stmt = $conn->query("SELECT * FROM site_settings WHERE id = 1");
+    $settings = $stmt->fetch();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
