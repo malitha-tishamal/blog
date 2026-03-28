@@ -7,19 +7,33 @@ $message = '';
 // Handle Delete
 if(isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
-    $conn->query("DELETE FROM contact_messages WHERE id = $id");
-    $message = "<div class='alert alert-warning'>Message deleted.</div>";
+    try {
+        $stmt = $conn->prepare("DELETE FROM contact_messages WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-warning'>Message deleted.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+    }
 }
 
 // Handle Mark as Read
 if(isset($_GET['mark_read'])) {
     $id = (int)$_GET['mark_read'];
-    $conn->query("UPDATE contact_messages SET status='read' WHERE id = $id");
-    $message = "<div class='alert alert-success'>Message marked as read.</div>";
+    try {
+        $stmt = $conn->prepare("UPDATE contact_messages SET status='read' WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success'>Message marked as read.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+    }
 }
 
-// Fetch existing entries
-$entries = $conn->query("SELECT * FROM contact_messages ORDER BY created_at DESC");
+try {
+    // Fetch existing entries
+    $entries = $conn->query("SELECT * FROM contact_messages ORDER BY created_at DESC")->fetchAll();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,8 +93,8 @@ $entries = $conn->query("SELECT * FROM contact_messages ORDER BY created_at DESC
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if($entries->num_rows > 0): ?>
-                                <?php while($row = $entries->fetch_assoc()): ?>
+                            <?php if(count($entries) > 0): ?>
+                                <?php foreach($entries as $row): ?>
                                 <tr class="<?php echo $row['status'] == 'unread' ? 'msg-unread' : 'msg-read'; ?>">
                                     <td>
                                         <?php if($row['status'] == 'unread'): ?>
@@ -106,7 +120,7 @@ $entries = $conn->query("SELECT * FROM contact_messages ORDER BY created_at DESC
                                         </a>
                                     </td>
                                 </tr>
-                                <?php endwhile; ?>
+                                <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
                                     <td colspan="6" class="text-center py-4 text-muted">No messages received yet.</td>
