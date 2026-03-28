@@ -13,26 +13,35 @@ if (!is_dir($upload_dir)) {
 // Handle Delete
 if(isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
-    // Fetch image path to delete file
-    $res = $conn->query("SELECT profile_pic FROM testimonials WHERE id = $id");
-    if($res && $row = $res->fetch_assoc()) {
-        $file_path = '../' . $row['profile_pic'];
-        if(file_exists($file_path) && !is_dir($file_path) && !empty($row['profile_pic'])) {
-            @unlink($file_path);
+    try {
+        // Fetch image path to delete file
+        $stmt = $conn->prepare("SELECT profile_pic FROM testimonials WHERE id = ?");
+        $stmt->execute([$id]);
+        $row = $stmt->fetch();
+        
+        if($row && !empty($row['profile_pic'])) {
+            $file_path = '../' . $row['profile_pic'];
+            if(file_exists($file_path) && !is_dir($file_path)) {
+                @unlink($file_path);
+            }
         }
+        
+        $stmt = $conn->prepare("DELETE FROM testimonials WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                        Testimonial deleted successfully.
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
-    $conn->query("DELETE FROM testimonials WHERE id = $id");
-    $message = "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                    Testimonial deleted successfully.
-                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                </div>";
 }
 
 // Handle Add/Edit
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $role = mysqli_real_escape_string($conn, $_POST['role']);
-    $msg_content = mysqli_real_escape_string($conn, $_POST['message']);
+    $name = $_POST['name'];
+    $role = $_POST['role'];
+    $msg_content = $_POST['message'];
     $rating = (float)$_POST['rating'];
     $order = (int)$_POST['display_order'];
 
@@ -58,42 +67,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
     }
 
     if(empty($message)) {
-        if($id > 0) {
-            // Update
-            if($image_path != '') {
-                // Remove old image
-                $res = $conn->query("SELECT profile_pic FROM testimonials WHERE id = $id");
-                if($row = $res->fetch_assoc()) {
-                    if(!empty($row['profile_pic'])) @unlink('../'.$row['profile_pic']);
+        try {
+            if($id > 0) {
+                // Update
+                if($image_path != '') {
+                    // Remove old image
+                    $stmt = $conn->prepare("SELECT profile_pic FROM testimonials WHERE id = ?");
+                    $stmt->execute([$id]);
+                    $row = $stmt->fetch();
+                    if($row && !empty($row['profile_pic'])) {
+                        @unlink('../'.$row['profile_pic']);
+                    }
+                    $stmt = $conn->prepare("UPDATE testimonials SET name=?, role=?, message=?, rating=?, display_order=?, profile_pic=? WHERE id=?");
+                    $stmt->execute([$name, $role, $msg_content, $rating, $order, $image_path, $id]);
+                } else {
+                    $stmt = $conn->prepare("UPDATE testimonials SET name=?, role=?, message=?, rating=?, display_order=? WHERE id=?");
+                    $stmt->execute([$name, $role, $msg_content, $rating, $order, $id]);
                 }
-                $query = "UPDATE testimonials SET name='$name', role='$role', message='$msg_content', rating=$rating, display_order=$order, profile_pic='$image_path' WHERE id=$id";
+                $success_msg = "Testimonial updated successfully.";
             } else {
-                $query = "UPDATE testimonials SET name='$name', role='$role', message='$msg_content', rating=$rating, display_order=$order WHERE id=$id";
+                // Insert
+                if($image_path == '') {
+                    $image_path = 'assets/img/testimonials/default-user.png'; // fallback
+                }
+                $stmt = $conn->prepare("INSERT INTO testimonials (name, role, message, rating, profile_pic, display_order) 
+                          VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$name, $role, $msg_content, $rating, $image_path, $order]);
+                $success_msg = "New testimonial added successfully.";
             }
-            $success_msg = "Testimonial updated successfully.";
-        } else {
-            // Insert
-            if($image_path == '') {
-                $image_path = 'assets/img/testimonials/default-user.png'; // fallback
-            }
-            $query = "INSERT INTO testimonials (name, role, message, rating, profile_pic, display_order) 
-                      VALUES ('$name', '$role', '$msg_content', $rating, '$image_path', $order)";
-            $success_msg = "New testimonial added successfully.";
-        }
-
-        if(mysqli_query($conn, $query)) {
             $message = "<div class='alert alert-success alert-dismissible fade show' role='alert'>
                             $success_msg
                             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         </div>";
-        } else {
-            $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
+        } catch (PDOException $e) {
+            $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
         }
     }
 }
 
-// Fetch existing entries
-$entries = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, id DESC");
+try {
+    $entries = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, id DESC")->fetchAll();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,8 +181,8 @@ $entries = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, 
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if($entries && $entries->num_rows > 0): ?>
-                                    <?php while($row = $entries->fetch_assoc()): ?>
+                                <?php if($entries && count($entries) > 0): ?>
+                                    <?php foreach($entries as $row): ?>
                                     <tr>
                                         <td class="text-center">
                                             <img src="../<?php echo htmlspecialchars($row['profile_pic']); ?>" class="testi-img" alt="User">
@@ -195,7 +211,7 @@ $entries = $conn->query("SELECT * FROM testimonials ORDER BY display_order ASC, 
                                             </a>
                                         </td>
                                     </tr>
-                                    <?php endwhile; ?>
+                                    <?php endforeach; ?>
                                 <?php else: ?>
                                     <tr>
                                         <td colspan="6" class="text-center py-4 text-muted">No testimonials found.</td>
