@@ -10,14 +10,28 @@ try {
         echo "Column hero_image added to site_settings.\n";
     }
 
-    // Create hero_cards table if not exists
+    // Create hero_cards table if not exists with position columns
     $conn->exec("CREATE TABLE IF NOT EXISTS hero_cards (
         id INT AUTO_INCREMENT PRIMARY KEY,
         icon VARCHAR(100) NOT NULL,
         title VARCHAR(255) NOT NULL,
+        pos_top VARCHAR(50) DEFAULT 'auto',
+        pos_bottom VARCHAR(50) DEFAULT 'auto',
+        pos_left VARCHAR(50) DEFAULT 'auto',
+        pos_right VARCHAR(50) DEFAULT 'auto',
         display_order INT DEFAULT 0,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )");
+    
+    // Ensure columns exist if table was already created
+    $cols = ['pos_top', 'pos_bottom', 'pos_left', 'pos_right'];
+    foreach ($cols as $col) {
+        $stmt = $conn->query("SHOW COLUMNS FROM hero_cards LIKE '$col'");
+        if (!$stmt->fetch()) {
+            $conn->exec("ALTER TABLE hero_cards ADD COLUMN $col VARCHAR(50) DEFAULT 'auto' AFTER title");
+            echo "Column $col added to hero_cards.\n";
+        }
+    }
     echo "Table hero_cards created/checked.\n";
 
     // Seed hero_cards if empty
