@@ -23,9 +23,10 @@
   $msg = $_POST['message'] ?? '';
   
   $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
-  if($stmt) {
-      $stmt->bind_param("ssss", $name, $email, $subject, $msg);
-      $stmt->execute();
+  try {
+      $stmt->execute([$name, $email, $subject, $msg]);
+  } catch (PDOException $e) {
+      // Log error if needed, but don't stop the flow
   }
 
   // Skip actual email sending to avoid local mail server errors
