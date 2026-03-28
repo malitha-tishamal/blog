@@ -5,27 +5,30 @@ require_once '../includes/db-conn.php';
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = mysqli_real_escape_string($conn, trim($_POST['username']));
+    $username = trim($_POST['username']);
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, password_hash, role FROM admin_users WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    try {
+        $stmt = $conn->prepare("SELECT id, password_hash, role FROM admin_users WHERE username = ?");
+        $stmt->execute([$username]);
+        $user = $stmt->fetch();
 
-    if ($result->num_rows === 1) {
-        $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password_hash'])) {
-            $_SESSION['admin_id'] = $user['id'];
-            $_SESSION['admin_role'] = $user['role'];
-            $_SESSION['admin_username'] = $username;
-            header("Location: index.php");
-            exit();
+        if ($user) {
+            if (password_verify($password, $user['password_hash'])) {
+                $_SESSION['admin_id'] = $user['id'];
+                $_SESSION['admin_role'] = $user['role'];
+                $_SESSION['admin_username'] = $username;
+                session_regenerate_id(true); // Extra security on login
+                header("Location: index.php");
+                exit();
+            } else {
+                $error = "Invalid password.";
+            }
         } else {
-            $error = "Invalid password.";
+            $error = "Invalid username.";
         }
-    } else {
-        $error = "Invalid username.";
+    } catch (PDOException $e) {
+        $error = "Database error. Please try again later.";
     }
 }
 ?>
