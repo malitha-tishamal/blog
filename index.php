@@ -684,6 +684,25 @@ if(count($resume_res) > 0) {
             <?php if(!empty($cert['skills'])): 
               $skills_arr = explode(',', $cert['skills']);
             ?>
+
+            <style>
+              .skill-tag {
+                  background: rgba(13, 110, 253, 0.1);
+                  color: #0d6efd;
+                  padding: 4px 10px;
+                  font-size: 0.75rem;
+                  border-radius: 50px;
+                  font-weight: 500;
+                  border: 1px solid rgba(13,110,253,0.2);
+                  transition: all 0.3s ease;
+                }
+
+                .skill-tag:hover {
+                  background: #0d6efd;
+                  color: #fff;
+                  transform: translateY(-2px);
+                }
+            </style>
               <div class="cert-skills-tags">
                 <?php foreach(array_slice($skills_arr, 0, 4) as $s_tag): ?>
                   <span class="skill-tag"><?php echo htmlspecialchars(trim($s_tag), ENT_QUOTES, 'UTF-8'); ?></span>
