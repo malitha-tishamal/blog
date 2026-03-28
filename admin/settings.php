@@ -12,6 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $contact_phone1 = $_POST['contact_phone1'];
     $address = $_POST['address'];
     $cv_link = $_POST['cv_link'];
+    $whatsapp_number = $_POST['whatsapp_number'];
+    $whatsapp_apikey = $_POST['whatsapp_apikey'];
+    $whatsapp_enabled = isset($_POST['whatsapp_enabled']) ? 1 : 0;
 
     $upload_dir = '../assets/img/profile/';
     if (!is_dir($upload_dir)) {
@@ -46,10 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     contact_phone1 = ?,
                     address = ?,
                     cv_link = ?,
-                    hero_image = ?
+                    hero_image = ?,
+                    whatsapp_number = ?,
+                    whatsapp_apikey = ?,
+                    whatsapp_enabled = ?
                   WHERE id = 1");
                   
-        $stmt->execute([$site_name, $hero_title, $hero_desc, $contact_email, $contact_phone1, $address, $cv_link, $hero_image]);
+        $stmt->execute([$site_name, $hero_title, $hero_desc, $contact_email, $contact_phone1, $address, $cv_link, $hero_image, $whatsapp_number, $whatsapp_apikey, $whatsapp_enabled]);
         $message = "<div class='alert alert-success'>Settings updated successfully.</div>";
     } catch (PDOException $e) {
         $message = "<div class='alert alert-danger'>Error updating settings: " . $e->getMessage() . "</div>";
@@ -141,6 +147,27 @@ try {
                             <div class="col-md-4 mb-3">
                                 <label>Address</label>
                                 <input type="text" name="address" class="form-control" value="<?php echo htmlspecialchars($settings['address']); ?>">
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h5 class="mb-3 text-success mt-4"><i class="bi bi-whatsapp"></i> WhatsApp Notifications (CallMeBot)</h5>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label>WhatsApp Number</label>
+                                <input type="text" name="whatsapp_number" class="form-control" value="<?php echo htmlspecialchars($settings['whatsapp_number']); ?>" placeholder="e.g. 94785530992">
+                                <small class="text-muted">International format (e.g. 94XXXXXXXXX)</small>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>CallMeBot API Key</label>
+                                <input type="text" name="whatsapp_apikey" class="form-control" value="<?php echo htmlspecialchars($settings['whatsapp_apikey']); ?>">
+                                <small class="text-muted"><a href="https://www.callmebot.com/faq/how-to-get-an-api-key-for-whatsapp/" target="_blank">Get API Key here</a></small>
+                            </div>
+                            <div class="col-md-4 mb-3 d-flex align-items-center pt-3">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" name="whatsapp_enabled" id="whatsapp_enabled" <?php echo $settings['whatsapp_enabled'] ? 'checked' : ''; ?>>
+                                    <label class="form-check-label" for="whatsapp_enabled">Enable WhatsApp Alerts</label>
+                                </div>
                             </div>
                         </div>
                         
