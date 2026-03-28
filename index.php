@@ -406,7 +406,7 @@ if(count($resume_res) > 0) {
 
                   </div>
                   <div class="action-buttons">
-                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#portfolio2" class="btn btn-primary">View My Work</a>
                     <a href="#" class="btn btn-outline">Download Resume</a>
                   </div>
                 </div>
