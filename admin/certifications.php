@@ -13,26 +13,33 @@ if (!is_dir($upload_dir)) {
 // Handle Delete
 if(isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
-    $res = $conn->query("SELECT logo, media_image FROM certifications WHERE id = $id");
-    if($res && $row = $res->fetch_assoc()) {
-        if(!empty($row['logo']) && file_exists('../' . $row['logo'])) unlink('../' . $row['logo']);
-        if(!empty($row['media_image']) && file_exists('../' . $row['media_image'])) unlink('../' . $row['media_image']);
+    try {
+        $stmt = $conn->prepare("SELECT logo, media_image FROM certifications WHERE id = ?");
+        $stmt->execute([$id]);
+        $row = $stmt->fetch();
+        if($row) {
+            if(!empty($row['logo']) && file_exists('../' . $row['logo'])) unlink('../' . $row['logo']);
+            if(!empty($row['media_image']) && file_exists('../' . $row['media_image'])) unlink('../' . $row['media_image']);
+        }
+        $stmt = $conn->prepare("DELETE FROM certifications WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success'>Certification deleted successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
-    $conn->query("DELETE FROM certifications WHERE id = $id");
-    $message = "<div class='alert alert-success'>Certification deleted successfully.</div>";
 }
 
 // Handle Add/Edit
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $org = mysqli_real_escape_string($conn, $_POST['organization']);
-    $issue_month = mysqli_real_escape_string($conn, $_POST['issue_month']);
+    $title = $_POST['title'];
+    $org = $_POST['organization'];
+    $issue_month = $_POST['issue_month'];
     $issue_year = (int)$_POST['issue_year'];
-    $expiry_month = mysqli_real_escape_string($conn, $_POST['expiry_month']);
-    $expiry_year = isset($_POST['expiry_year']) && $_POST['expiry_year'] != '' ? (int)$_POST['expiry_year'] : 'NULL';
-    $cred_id = mysqli_real_escape_string($conn, $_POST['credential_id']);
-    $cred_url = mysqli_real_escape_string($conn, $_POST['credential_url']);
-    $skills = mysqli_real_escape_string($conn, $_POST['skills']);
+    $expiry_month = $_POST['expiry_month'];
+    $expiry_year = (isset($_POST['expiry_year']) && $_POST['expiry_year'] !== '') ? (int)$_POST['expiry_year'] : null;
+    $cred_id = $_POST['credential_id'];
+    $cred_url = $_POST['credential_url'];
+    $skills = $_POST['skills'];
     $order = (int)$_POST['display_order'];
 
     $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
@@ -41,11 +48,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
     $logo_path = '';
     $media_path = '';
     if($id > 0) {
-        $old_res = $conn->query("SELECT logo, media_image FROM certifications WHERE id = $id");
-        if($old_row = $old_res->fetch_assoc()) {
-            $logo_path = $old_row['logo'];
-            $media_path = $old_row['media_image'];
-        }
+        try {
+            $stmt = $conn->prepare("SELECT logo, media_image FROM certifications WHERE id = ?");
+            $stmt->execute([$id]);
+            $old_row = $stmt->fetch();
+            if($old_row) {
+                $logo_path = $old_row['logo'];
+                $media_path = $old_row['media_image'];
+            }
+        } catch (PDOException $e) { }
     }
 
     // Handle Logo Upload
@@ -68,29 +79,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
         }
     }
 
-    if($id > 0) {
-        $query = "UPDATE certifications SET 
-                    title='$title', organization='$org', issue_month='$issue_month', issue_year=$issue_year, 
-                    expiry_month='$expiry_month', expiry_year=$expiry_year, credential_id='$cred_id', 
-                    credential_url='$cred_url', skills='$skills', display_order=$order, 
-                    logo='$logo_path', media_image='$media_path' 
-                  WHERE id=$id";
-        $msg = "Certification updated successfully.";
-    } else {
-        $query = "INSERT INTO certifications (title, organization, issue_month, issue_year, expiry_month, expiry_year, credential_id, credential_url, skills, display_order, logo, media_image) 
-                  VALUES ('$title', '$org', '$issue_month', $issue_year, '$expiry_month', $expiry_year, '$cred_id', '$cred_url', '$skills', $order, '$logo_path', '$media_path')";
-        $msg = "New certification added successfully.";
-    }
-
-    if(mysqli_query($conn, $query)) {
+    try {
+        if($id > 0) {
+            $stmt = $conn->prepare("UPDATE certifications SET 
+                        title=?, organization=?, issue_month=?, issue_year=?, 
+                        expiry_month=?, expiry_year=?, credential_id=?, 
+                        credential_url=?, skills=?, display_order=?, 
+                        logo=?, media_image=? 
+                      WHERE id=?");
+            $stmt->execute([$title, $org, $issue_month, $issue_year, $expiry_month, $expiry_year, $cred_id, $cred_url, $skills, $order, $logo_path, $media_path, $id]);
+            $msg = "Certification updated successfully.";
+        } else {
+            $stmt = $conn->prepare("INSERT INTO certifications (title, organization, issue_month, issue_year, expiry_month, expiry_year, credential_id, credential_url, skills, display_order, logo, media_image) 
+                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$title, $org, $issue_month, $issue_year, $expiry_month, $expiry_year, $cred_id, $cred_url, $skills, $order, $logo_path, $media_path]);
+            $msg = "New certification added successfully.";
+        }
         $message = "<div class='alert alert-success'>$msg</div>";
-    } else {
-        $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
 }
 
-// Fetch existing
-$entries = $conn->query("SELECT * FROM certifications ORDER BY display_order ASC, id DESC");
+try {
+    $entries = $conn->query("SELECT * FROM certifications ORDER BY display_order ASC, id DESC")->fetchAll();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -143,49 +158,46 @@ $entries = $conn->query("SELECT * FROM certifications ORDER BY display_order ASC
             <!-- Entries Table -->
             <div class="card shadow-sm">
                 <div class="card-body p-0">
-                    <table class="table table-hover table-bordered mb-0 align-middle">
+                    <table class="table table-hover mb-0 align-middle">
                         <thead class="table-light">
                             <tr>
-                                <th class="text-center">Logo</th>
+                                <th width="80">Logo</th>
                                 <th>Name & Organization</th>
                                 <th>Issue Date</th>
-                                <th>Order</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if($entries->num_rows > 0): ?>
-                                <?php while($row = $entries->fetch_assoc()): ?>
+                            <?php if(count($entries) > 0): ?>
+                                <?php foreach($entries as $row): ?>
                                 <tr>
-                                    <td class="text-center">
-                                        <?php if(!empty($row['logo'])): ?>
-                                            <img src="../<?php echo htmlspecialchars($row['logo']); ?>" class="cert-logo border" alt="Logo">
+                                    <td>
+                                        <?php if($row['logo']): ?>
+                                            <img src="../<?php echo htmlspecialchars($row['logo']); ?>" alt="Logo" class="rounded" style="width: 50px; height: 50px; object-fit: contain;">
                                         <?php else: ?>
-                                            <div class="bg-light text-muted d-inline-block border text-center" style="width:50px; height:50px; line-height: 50px;">-</div>
+                                            <div class="bg-light rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                <i class="bi bi-award text-muted"></i>
+                                            </div>
                                         <?php endif; ?>
                                     </td>
                                     <td>
-                                        <strong><?php echo htmlspecialchars($row['title']); ?></strong><br>
-                                        <small class="text-muted"><?php echo htmlspecialchars($row['organization']); ?></small>
+                                        <div class="fw-bold"><?php echo htmlspecialchars($row['title']); ?></div>
+                                        <div class="small text-muted"><?php echo htmlspecialchars($row['organization']); ?></div>
                                     </td>
-                                    <td>
-                                        <?php echo htmlspecialchars($row['issue_month']); ?> <?php echo htmlspecialchars($row['issue_year']); ?>
-                                    </td>
-                                    <td><?php echo $row['display_order']; ?></td>
+                                    <td><?php echo htmlspecialchars($row['issue_month']) . ' ' . $row['issue_year']; ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-sm btn-outline-secondary me-1" 
-                                            onclick='editEntry(<?php echo json_encode($row); ?>)'>
+                                        <button class="btn btn-sm btn-outline-secondary me-1" onclick='editCert(<?php echo json_encode($row); ?>)'>
                                             <i class="bi bi-pencil"></i>
                                         </button>
-                                        <a href="certifications.php?delete=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this certification?');">
+                                        <a href="certifications.php?delete=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Full delete this entry?');">
                                             <i class="bi bi-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                <?php endwhile; ?>
+                                <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
-                                    <td colspan="5" class="text-center py-4 text-muted">No certifications found. Add one above!</td>
+                                    <td colspan="4" class="text-center py-4 text-muted">No certifications found. Add one above!</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
