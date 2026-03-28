@@ -6,85 +6,113 @@ $message = '';
 
 // --- Handle Category Actions ---
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action_cat'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $icon = mysqli_real_escape_string($conn, $_POST['icon']);
+    $name = trim($_POST['name']);
+    $icon = trim($_POST['icon']);
     $order = (int)$_POST['display_order'];
     $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 
-    if ($id > 0) {
-        $query = "UPDATE skill_categories SET name='$name', icon='$icon', display_order=$order WHERE id=$id";
-        $msg = "Category updated successfully.";
-    } else {
-        $query = "INSERT INTO skill_categories (name, icon, display_order) VALUES ('$name', '$icon', $order)";
-        $msg = "New category added successfully.";
+    try {
+        if ($id > 0) {
+            $stmt = $conn->prepare("UPDATE skill_categories SET name=?, icon=?, display_order=? WHERE id=?");
+            $stmt->execute([$name, $icon, $order, $id]);
+            $msg = "Category updated successfully.";
+        } else {
+            $stmt = $conn->prepare("INSERT INTO skill_categories (name, icon, display_order) VALUES (?, ?, ?)");
+            $stmt->execute([$name, $icon, $order]);
+            $msg = "New category added successfully.";
+        }
+        $message = "<div class='alert alert-success'>$msg</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
-
-    if (mysqli_query($conn, $query)) $message = "<div class='alert alert-success'>$msg</div>";
-    else $message = "<div class='alert alert-danger'>Error: " . mysqli_error($conn) . "</div>";
 }
 
 if (isset($_GET['delete_cat'])) {
     $id = (int)$_GET['delete_cat'];
-    $conn->query("DELETE FROM skill_categories WHERE id = $id");
-    $message = "<div class='alert alert-success'>Category deleted successfully.</div>";
+    try {
+        $stmt = $conn->prepare("DELETE FROM skill_categories WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success'>Category deleted successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+    }
 }
 
 // --- Handle Skill Actions ---
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action_skill'])) {
     $cat_id = (int)$_POST['category_id'];
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $name = trim($_POST['name']);
     $percentage = (int)$_POST['percentage'];
     $order = (int)$_POST['display_order'];
     $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
 
-    if ($id > 0) {
-        $query = "UPDATE skills SET category_id=$cat_id, name='$name', percentage=$percentage, display_order=$order WHERE id=$id";
-        $msg = "Skill updated successfully.";
-    } else {
-        $query = "INSERT INTO skills (category_id, name, percentage, display_order) VALUES ($cat_id, '$name', $percentage, $order)";
-        $msg = "New skill added successfully.";
+    try {
+        if ($id > 0) {
+            $stmt = $conn->prepare("UPDATE skills SET category_id=?, name=?, percentage=?, display_order=? WHERE id=?");
+            $stmt->execute([$cat_id, $name, $percentage, $order, $id]);
+            $msg = "Skill updated successfully.";
+        } else {
+            $stmt = $conn->prepare("INSERT INTO skills (category_id, name, percentage, display_order) VALUES (?, ?, ?, ?)");
+            $stmt->execute([$cat_id, $name, $percentage, $order]);
+            $msg = "New skill added successfully.";
+        }
+        $message = "<div class='alert alert-success'>$msg</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
-
-    if (mysqli_query($conn, $query)) $message = "<div class='alert alert-success'>$msg</div>";
-    else $message = "<div class='alert alert-danger'>Error: " . mysqli_error($conn) . "</div>";
 }
 
 if (isset($_GET['delete_skill'])) {
     $id = (int)$_GET['delete_skill'];
-    $conn->query("DELETE FROM skills WHERE id = $id");
-    $message = "<div class='alert alert-success'>Skill deleted successfully.</div>";
+    try {
+        $stmt = $conn->prepare("DELETE FROM skills WHERE id = ?");
+        $stmt->execute([$id]);
+        $message = "<div class='alert alert-success'>Skill deleted successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+    }
 }
 
 // --- Handle Expertise Actions ---
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action_expertise'])) {
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $description = mysqli_real_escape_string($conn, $_POST['description']);
-    $highlights = mysqli_real_escape_string($conn, $_POST['highlights']);
-    $years = mysqli_real_escape_string($conn, $_POST['years_experience']);
-    $projects = mysqli_real_escape_string($conn, $_POST['projects_completed']);
-    $badges = mysqli_real_escape_string($conn, $_POST['badges']);
+    $title = trim($_POST['title']);
+    $description = trim($_POST['description']);
+    $highlights = trim($_POST['highlights']);
+    $years = trim($_POST['years_experience']);
+    $projects = trim($_POST['projects_completed']);
+    $badges = trim($_POST['badges']);
 
-    $query = "UPDATE skills_expertise SET title='$title', description='$description', highlights='$highlights', years_experience='$years', projects_completed='$projects', badges='$badges' WHERE id=1";
-    
-    if (mysqli_query($conn, $query)) $message = "<div class='alert alert-success'>Expertise settings updated successfully.</div>";
-    else $message = "<div class='alert alert-danger'>Error: " . mysqli_error($conn) . "</div>";
-}
-
-// Fetch data
-$categories = $conn->query("SELECT * FROM skill_categories ORDER BY display_order ASC, name ASC");
-$expertise = $conn->query("SELECT * FROM skills_expertise WHERE id=1")->fetch_assoc();
-
-// Build nested skills array
-$cat_list = [];
-while($c = $categories->fetch_assoc()) {
-    $c['skills'] = [];
-    $cat_list[$c['id']] = $c;
-}
-$skills_res = $conn->query("SELECT * FROM skills ORDER BY category_id, display_order ASC, name ASC");
-while($s = $skills_res->fetch_assoc()) {
-    if(isset($cat_list[$s['category_id']])) {
-        $cat_list[$s['category_id']]['skills'][] = $s;
+    try {
+        $stmt = $conn->prepare("UPDATE skills_expertise SET title=?, description=?, highlights=?, years_experience=?, projects_completed=?, badges=? WHERE id=1");
+        $stmt->execute([$title, $description, $highlights, $years, $projects, $badges]);
+        $message = "<div class='alert alert-success'>Expertise settings updated successfully.</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
+}
+
+// Fetch data using PDO
+try {
+    $categories_stmt = $conn->query("SELECT * FROM skill_categories ORDER BY display_order ASC, name ASC");
+    $all_categories = $categories_stmt->fetchAll();
+    
+    $expertise = $conn->query("SELECT * FROM skills_expertise WHERE id=1")->fetch();
+
+    // Build nested skills array
+    $cat_list = [];
+    foreach ($all_categories as $c) {
+        $c['skills'] = [];
+        $cat_list[$c['id']] = $c;
+    }
+    
+    $skills_res = $conn->query("SELECT * FROM skills ORDER BY category_id, display_order ASC, name ASC")->fetchAll();
+    foreach ($skills_res as $s) {
+        if (isset($cat_list[$s['category_id']])) {
+            $cat_list[$s['category_id']]['skills'][] = $s;
+        }
+    }
+} catch (PDOException $e) {
+    $message = "<div class='alert alert-danger'>Database Error: " . $e->getMessage() . "</div>";
 }
 ?>
 <!DOCTYPE html>
@@ -220,11 +248,10 @@ while($s = $skills_res->fetch_assoc()) {
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    mysqli_data_seek($categories, 0);
-                                    while($row = $categories->fetch_assoc()): 
+                                    foreach($all_categories as $row): 
                                     ?>
                                     <tr>
-                                        <td class="text-center"><i class="<?php echo $row['icon']; ?> fs-4"></i></td>
+                                        <td class="text-center"><i class="<?php echo htmlspecialchars($row['icon']); ?> fs-4"></i></td>
                                         <td><strong><?php echo htmlspecialchars($row['name']); ?></strong></td>
                                         <td><?php echo $row['display_order']; ?></td>
                                         <td class="text-center">
@@ -236,7 +263,7 @@ while($s = $skills_res->fetch_assoc()) {
                                             </a>
                                         </td>
                                     </tr>
-                                    <?php endwhile; ?>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -341,11 +368,10 @@ while($s = $skills_res->fetch_assoc()) {
                   <label>Category*</label>
                   <select name="category_id" id="skillCatId" class="form-select" required>
                       <?php 
-                      mysqli_data_seek($categories, 0);
-                      while($row = $categories->fetch_assoc()): 
+                      foreach($all_categories as $row): 
                       ?>
                       <option value="<?php echo $row['id']; ?>"><?php echo htmlspecialchars($row['name']); ?></option>
-                      <?php endwhile; ?>
+                      <?php endforeach; ?>
                   </select>
               </div>
               <div class="mb-3">
