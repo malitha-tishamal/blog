@@ -5,27 +5,32 @@ check_admin_auth();
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $bio = mysqli_real_escape_string($conn, $_POST['bio']);
+    $title = $_POST['title'];
+    $bio = $_POST['bio'];
     $stat_projects = (int)$_POST['stat_projects'];
     $stat_exp = (int)$_POST['stat_experience'];
     
-    $query = "UPDATE about_section SET 
-                title = '$title', 
-                bio = '$bio', 
-                stat_projects = $stat_projects,
-                stat_experience = $stat_exp
-              WHERE id = 1";
-              
-    if(mysqli_query($conn, $query)) {
+    try {
+        $stmt = $conn->prepare("UPDATE about_section SET 
+                    title = ?, 
+                    bio = ?, 
+                    stat_projects = ?,
+                    stat_experience = ?
+                  WHERE id = 1");
+                  
+        $stmt->execute([$title, $bio, $stat_projects, $stat_exp]);
         $message = "<div class='alert alert-success'>About section updated!</div>";
-    } else {
-        $message = "<div class='alert alert-danger'>Error: ".mysqli_error($conn)."</div>";
+    } catch (PDOException $e) {
+        $message = "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
     }
 }
 
-$res = $conn->query("SELECT * FROM about_section WHERE id = 1");
-$about = $res->fetch_assoc();
+try {
+    $stmt = $conn->query("SELECT * FROM about_section WHERE id = 1");
+    $about = $stmt->fetch();
+} catch (PDOException $e) {
+    // Log error
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
