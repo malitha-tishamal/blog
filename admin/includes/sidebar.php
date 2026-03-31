@@ -12,6 +12,7 @@
     <a href="testimonials.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'testimonials.php' ? 'active' : ''; ?>"><i class="bi bi-chat-quote me-2"></i> Testimonials</a>
     <a href="certifications.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'certifications.php' ? 'active' : ''; ?>"><i class="bi bi-award me-2"></i> Licenses & Certifications</a>
     <a href="messages.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'messages.php' ? 'active' : ''; ?>"><i class="bi bi-envelope me-2"></i> Messages</a>
+    <a href="file_manager.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'file_manager.php' ? 'active' : ''; ?>"><i class="bi bi-folder-symlink me-2"></i> File Manager</a>
     <hr class="text-secondary">
     <a href="../index.php" target="_blank"><i class="bi bi-box-arrow-up-right me-2"></i> View Site</a>
     <a href="logout.php" class="text-danger"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
